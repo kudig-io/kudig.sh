@@ -1,0 +1,1063 @@
+
+-----------------run ip --details ad show------------------
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 promiscuity 0 minmtu 0 maxmtu 0 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:16:3e:51:72:30 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 numtxqueues 2 numrxqueues 2 gso_max_size 65536 gso_max_segs 65535 
+    altname enp0s6
+    altname ens6
+    inet 10.157.28.94/16 brd 10.157.255.255 scope global dynamic noprefixroute eth0
+       valid_lft 1892159124sec preferred_lft 1892159124sec
+    inet6 fe80::216:3eff:fe51:7230/64 scope link 
+       valid_lft forever preferred_lft forever
+3: kube-ipvs0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 5e:7e:16:ba:54:e5 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 0 maxmtu 0 
+    dummy numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet 192.168.231.25/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.0.10/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.77.134/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.200.66/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.230.150/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.95.65/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.0.1/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.153.223/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.149.7/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.147.12/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.176.232/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.64.26/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.75.124/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+    inet 192.168.112.102/32 scope global kube-ipvs0
+       valid_lft forever preferred_lft forever
+4: nodelocaldns: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default 
+    link/ether c2:59:5a:f6:06:c4 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 0 maxmtu 0 
+    dummy numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet 169.254.20.10/32 scope global nodelocaldns
+       valid_lft forever preferred_lft forever
+5: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:16:3e:51:89:05 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 numtxqueues 2 numrxqueues 2 gso_max_size 65536 gso_max_segs 65535 
+    altname enp0s8
+    altname ens8
+    inet 10.157.28.94/32 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::216:3eff:fe51:8905/64 scope link 
+       valid_lft forever preferred_lft forever
+6: cali5ad34283949@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 8e:5c:00:28:4f:74 brd ff:ff:ff:ff:ff:ff link-netns cni-359a3e23-6f5c-d4d0-0109-49ef272559a9 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::8c5c:ff:fe28:4f74/64 scope link 
+       valid_lft forever preferred_lft forever
+7: cali68fb6a15829@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 26:bd:1b:9b:a8:33 brd ff:ff:ff:ff:ff:ff link-netns cni-a353ea4c-5b9a-c6fd-2218-39c51bcedadc promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::24bd:1bff:fe9b:a833/64 scope link 
+       valid_lft forever preferred_lft forever
+8: cali1191fd38b83@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 06:ed:27:2b:72:d4 brd ff:ff:ff:ff:ff:ff link-netns cni-a9cb1292-f4a6-9658-17c7-c4b05b2ec173 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::4ed:27ff:fe2b:72d4/64 scope link 
+       valid_lft forever preferred_lft forever
+10: calie7925a0e4a0@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether e6:cc:06:4e:c1:8e brd ff:ff:ff:ff:ff:ff link-netns cni-786471a4-ee9c-eb32-6aa8-bd9660ff428f promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::e4cc:6ff:fe4e:c18e/64 scope link 
+       valid_lft forever preferred_lft forever
+11: cali73d5bea84dd@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 46:c3:6a:42:5c:9d brd ff:ff:ff:ff:ff:ff link-netns cni-8b2f216e-a8f8-c2d4-4919-d393539c7474 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::44c3:6aff:fe42:5c9d/64 scope link 
+       valid_lft forever preferred_lft forever
+12: cali8de7f29a4fa@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether f6:36:e5:c3:9f:36 brd ff:ff:ff:ff:ff:ff link-netns cni-6e56c722-56ba-a6c3-f4f9-6c9d04cd0778 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::f436:e5ff:fec3:9f36/64 scope link 
+       valid_lft forever preferred_lft forever
+13: cali7358fa5f4fa@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether fa:f7:7b:8e:8c:92 brd ff:ff:ff:ff:ff:ff link-netns cni-076ff3bc-e52a-9884-f234-0208ed9594f0 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::f8f7:7bff:fe8e:8c92/64 scope link 
+       valid_lft forever preferred_lft forever
+14: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:16:3e:51:8a:d0 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 numtxqueues 2 numrxqueues 2 gso_max_size 65536 gso_max_segs 65535 
+    altname enp0s9
+    altname ens9
+    inet 10.157.28.94/32 scope global eth2
+       valid_lft forever preferred_lft forever
+    inet6 fe80::216:3eff:fe51:8ad0/64 scope link 
+       valid_lft forever preferred_lft forever
+15: cali46c9d9ad507@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether da:07:b9:57:70:13 brd ff:ff:ff:ff:ff:ff link-netns cni-a35c36b6-8d33-cd78-6571-bf7fdf64caa1 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::d807:b9ff:fe57:7013/64 scope link 
+       valid_lft forever preferred_lft forever
+16: cali7d888e85ad4@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether ce:9f:b9:e9:fc:12 brd ff:ff:ff:ff:ff:ff link-netns cni-d6995970-8eab-b992-8d24-4a0da028283f promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::cc9f:b9ff:fee9:fc12/64 scope link 
+       valid_lft forever preferred_lft forever
+18: cali6bd58105986@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 0a:58:3e:a7:0a:7e brd ff:ff:ff:ff:ff:ff link-netns cni-779d4d66-4ce0-8650-3337-05e9c9f37642 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::858:3eff:fea7:a7e/64 scope link 
+       valid_lft forever preferred_lft forever
+19: caliaf7e585270b@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 8e:23:4b:40:74:7c brd ff:ff:ff:ff:ff:ff link-netns cni-bb1e7d9a-7cda-882f-ef53-697108b1ded4 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    inet6 fe80::8c23:4bff:fe40:747c/64 scope link 
+       valid_lft forever preferred_lft forever
+------------End of ip----------------
+
+-----------------run ip --details link show------------------
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 promiscuity 0 minmtu 0 maxmtu 0 addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:16:3e:51:72:30 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 addrgenmode eui64 numtxqueues 2 numrxqueues 2 gso_max_size 65536 gso_max_segs 65535 
+    altname enp0s6
+    altname ens6
+3: kube-ipvs0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN mode DEFAULT group default 
+    link/ether 5e:7e:16:ba:54:e5 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 0 maxmtu 0 
+    dummy addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+4: nodelocaldns: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN mode DEFAULT group default 
+    link/ether c2:59:5a:f6:06:c4 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 0 maxmtu 0 
+    dummy addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+5: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:16:3e:51:89:05 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 addrgenmode eui64 numtxqueues 2 numrxqueues 2 gso_max_size 65536 gso_max_segs 65535 
+    altname enp0s8
+    altname ens8
+6: cali5ad34283949@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 8e:5c:00:28:4f:74 brd ff:ff:ff:ff:ff:ff link-netns cni-359a3e23-6f5c-d4d0-0109-49ef272559a9 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+7: cali68fb6a15829@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 26:bd:1b:9b:a8:33 brd ff:ff:ff:ff:ff:ff link-netns cni-a353ea4c-5b9a-c6fd-2218-39c51bcedadc promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+8: cali1191fd38b83@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 06:ed:27:2b:72:d4 brd ff:ff:ff:ff:ff:ff link-netns cni-a9cb1292-f4a6-9658-17c7-c4b05b2ec173 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+10: calie7925a0e4a0@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether e6:cc:06:4e:c1:8e brd ff:ff:ff:ff:ff:ff link-netns cni-786471a4-ee9c-eb32-6aa8-bd9660ff428f promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+11: cali73d5bea84dd@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 46:c3:6a:42:5c:9d brd ff:ff:ff:ff:ff:ff link-netns cni-8b2f216e-a8f8-c2d4-4919-d393539c7474 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+12: cali8de7f29a4fa@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether f6:36:e5:c3:9f:36 brd ff:ff:ff:ff:ff:ff link-netns cni-6e56c722-56ba-a6c3-f4f9-6c9d04cd0778 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+13: cali7358fa5f4fa@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether fa:f7:7b:8e:8c:92 brd ff:ff:ff:ff:ff:ff link-netns cni-076ff3bc-e52a-9884-f234-0208ed9594f0 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+14: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:16:3e:51:8a:d0 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 addrgenmode eui64 numtxqueues 2 numrxqueues 2 gso_max_size 65536 gso_max_segs 65535 
+    altname enp0s9
+    altname ens9
+15: cali46c9d9ad507@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether da:07:b9:57:70:13 brd ff:ff:ff:ff:ff:ff link-netns cni-a35c36b6-8d33-cd78-6571-bf7fdf64caa1 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+16: cali7d888e85ad4@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether ce:9f:b9:e9:fc:12 brd ff:ff:ff:ff:ff:ff link-netns cni-d6995970-8eab-b992-8d24-4a0da028283f promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+18: cali6bd58105986@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 0a:58:3e:a7:0a:7e brd ff:ff:ff:ff:ff:ff link-netns cni-779d4d66-4ce0-8650-3337-05e9c9f37642 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+19: caliaf7e585270b@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 8e:23:4b:40:74:7c brd ff:ff:ff:ff:ff:ff link-netns cni-bb1e7d9a-7cda-882f-ef53-697108b1ded4 promiscuity 0 minmtu 68 maxmtu 65535 
+    veth addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+------------End of ip----------------
+
+-----------------run ip route show------------------
+default via 10.157.255.253 dev eth0 proto dhcp src 10.157.28.94 metric 100 
+10.157.0.0/16 dev eth0 proto kernel scope link src 10.157.28.94 metric 100 
+10.157.28.95 dev cali6bd58105986 scope link 
+10.157.28.96 dev cali8de7f29a4fa scope link 
+10.157.28.98 dev cali5ad34283949 scope link 
+10.157.28.99 dev cali73d5bea84dd scope link 
+10.157.28.100 dev caliaf7e585270b scope link 
+10.157.28.101 dev calie7925a0e4a0 scope link 
+10.157.28.102 dev cali68fb6a15829 scope link 
+10.157.28.103 dev cali7358fa5f4fa scope link 
+10.157.28.104 dev cali1191fd38b83 scope link 
+10.157.28.106 dev cali46c9d9ad507 scope link 
+10.157.28.107 dev cali7d888e85ad4 scope link 
+------------End of ip----------------
+
+-----------------run iptables-save------------------
+# Generated by iptables-save v1.8.5 on Sat Dec 13 19:48:36 2025
+*nat
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:KUBE-KUBELET-CANARY - [0:0]
+:KUBE-SERVICES - [0:0]
+:KUBE-POSTROUTING - [0:0]
+:KUBE-NODE-PORT - [0:0]
+:KUBE-LOAD-BALANCER - [0:0]
+:KUBE-MARK-MASQ - [0:0]
+-A PREROUTING -m comment --comment "kubernetes service portals" -j KUBE-SERVICES
+-A POSTROUTING -m comment --comment "kubernetes postrouting rules" -j KUBE-POSTROUTING
+-A OUTPUT -m comment --comment "kubernetes service portals" -j KUBE-SERVICES
+-A KUBE-SERVICES -s 127.0.0.0/8 -j RETURN
+-A KUBE-SERVICES ! -s 10.0.0.0/8 -m comment --comment "Kubernetes service cluster ip + port for masquerade purpose" -m set --match-set KUBE-CLUSTER-IP dst,dst -j KUBE-MARK-MASQ
+-A KUBE-SERVICES -m addrtype --dst-type LOCAL -j KUBE-NODE-PORT
+-A KUBE-SERVICES -m set --match-set KUBE-CLUSTER-IP dst,dst -j ACCEPT
+-A KUBE-POSTROUTING -m comment --comment "Kubernetes endpoints dst ip:port, source ip for solving hairpin purpose" -m set --match-set KUBE-LOOP-BACK dst,dst,src -j MASQUERADE
+-A KUBE-POSTROUTING -j RETURN
+-A KUBE-POSTROUTING -j MARK --set-xmark 0x4000/0x0
+-A KUBE-POSTROUTING -m comment --comment "kubernetes service traffic requiring SNAT" -j MASQUERADE --random-fully
+-A KUBE-LOAD-BALANCER -j KUBE-MARK-MASQ
+-A KUBE-MARK-MASQ -j MARK --set-xmark 0x4000/0x4000
+COMMIT
+# Completed on Sat Dec 13 19:48:36 2025
+# Generated by iptables-save v1.8.5 on Sat Dec 13 19:48:36 2025
+*mangle
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:KUBE-IPTABLES-HINT - [0:0]
+:KUBE-KUBELET-CANARY - [0:0]
+COMMIT
+# Completed on Sat Dec 13 19:48:36 2025
+# Generated by iptables-save v1.8.5 on Sat Dec 13 19:48:36 2025
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:KUBE-FIREWALL - [0:0]
+:KUBE-KUBELET-CANARY - [0:0]
+:KUBE-FORWARD - [0:0]
+:KUBE-NODE-PORT - [0:0]
+:KUBE-PROXY-FIREWALL - [0:0]
+:KUBE-SOURCE-RANGES-FIREWALL - [0:0]
+:KUBE-IPVS-FILTER - [0:0]
+:KUBE-IPVS-OUT-FILTER - [0:0]
+-A INPUT -d 169.254.20.10/32 -p udp -m udp --dport 53 -m comment --comment "NodeLocal DNS Cache: allow DNS traffic" -j ACCEPT
+-A INPUT -d 169.254.20.10/32 -p tcp -m tcp --dport 53 -m comment --comment "NodeLocal DNS Cache: allow DNS traffic" -j ACCEPT
+-A INPUT -m comment --comment "kubernetes ipvs access filter" -j KUBE-IPVS-FILTER
+-A INPUT -m comment --comment "kube-proxy firewall rules" -j KUBE-PROXY-FIREWALL
+-A INPUT -m comment --comment "kubernetes health check rules" -j KUBE-NODE-PORT
+-A INPUT -j KUBE-FIREWALL
+-A FORWARD -m comment --comment "kube-proxy firewall rules" -j KUBE-PROXY-FIREWALL
+-A FORWARD -m comment --comment "kubernetes forwarding rules" -j KUBE-FORWARD
+-A OUTPUT -s 169.254.20.10/32 -p udp -m udp --sport 53 -m comment --comment "NodeLocal DNS Cache: allow DNS traffic" -j ACCEPT
+-A OUTPUT -s 169.254.20.10/32 -p tcp -m tcp --sport 53 -m comment --comment "NodeLocal DNS Cache: allow DNS traffic" -j ACCEPT
+-A OUTPUT -m comment --comment "kubernetes ipvs access filter" -j KUBE-IPVS-OUT-FILTER
+-A OUTPUT -j KUBE-FIREWALL
+-A KUBE-FIREWALL ! -s 127.0.0.0/8 -d 127.0.0.0/8 -m comment --comment "block incoming localnet connections" -m conntrack ! --ctstate RELATED,ESTABLISHED,DNAT -j DROP
+-A KUBE-FORWARD -m comment --comment "kubernetes forwarding rules" -j ACCEPT
+-A KUBE-FORWARD -m comment --comment "kubernetes forwarding conntrack rule" -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A KUBE-NODE-PORT -m comment --comment "Kubernetes health check node port" -m set --match-set KUBE-HEALTH-CHECK-NODE-PORT dst -j ACCEPT
+-A KUBE-SOURCE-RANGES-FIREWALL -j DROP
+-A KUBE-IPVS-FILTER -m set --match-set KUBE-LOAD-BALANCER dst,dst -j RETURN
+-A KUBE-IPVS-FILTER -m set --match-set KUBE-CLUSTER-IP dst,dst -j RETURN
+-A KUBE-IPVS-FILTER -m set --match-set KUBE-EXTERNAL-IP dst,dst -j RETURN
+-A KUBE-IPVS-FILTER -m set --match-set KUBE-EXTERNAL-IP-LOCAL dst,dst -j RETURN
+-A KUBE-IPVS-FILTER -m set --match-set KUBE-HEALTH-CHECK-NODE-PORT dst -j RETURN
+-A KUBE-IPVS-FILTER -m conntrack --ctstate NEW -m set --match-set KUBE-IPVS-IPS dst -j REJECT --reject-with icmp-port-unreachable
+COMMIT
+# Completed on Sat Dec 13 19:48:36 2025
+# Generated by iptables-save v1.8.5 on Sat Dec 13 19:48:36 2025
+*raw
+:PREROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A PREROUTING -d 169.254.20.10/32 -p udp -m udp --dport 53 -m comment --comment "NodeLocal DNS Cache: skip conntrack" -j NOTRACK
+-A PREROUTING -d 169.254.20.10/32 -p tcp -m tcp --dport 53 -m comment --comment "NodeLocal DNS Cache: skip conntrack" -j NOTRACK
+-A OUTPUT -s 169.254.20.10/32 -p tcp -m tcp --sport 8080 -m comment --comment "NodeLocal DNS Cache: skip conntrack" -j NOTRACK
+-A OUTPUT -d 169.254.20.10/32 -p tcp -m tcp --dport 8080 -m comment --comment "NodeLocal DNS Cache: skip conntrack" -j NOTRACK
+-A OUTPUT -d 169.254.20.10/32 -p udp -m udp --dport 53 -m comment --comment "NodeLocal DNS Cache: skip conntrack" -j NOTRACK
+-A OUTPUT -d 169.254.20.10/32 -p tcp -m tcp --dport 53 -m comment --comment "NodeLocal DNS Cache: skip conntrack" -j NOTRACK
+-A OUTPUT -s 169.254.20.10/32 -p udp -m udp --sport 53 -m comment --comment "NodeLocal DNS Cache: skip conntrack" -j NOTRACK
+-A OUTPUT -s 169.254.20.10/32 -p tcp -m tcp --sport 53 -m comment --comment "NodeLocal DNS Cache: skip conntrack" -j NOTRACK
+COMMIT
+# Completed on Sat Dec 13 19:48:36 2025
+------------End of iptables-save----------------
+
+-----------------run cat /proc/net/nf_conntrack------------------
+ipv4     2 tcp      6 86399 ESTABLISHED src=10.157.28.103 dst=192.168.0.1 sport=54396 dport=443 src=10.157.28.93 dst=10.157.28.103 sport=6443 dport=54396 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 74 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54572 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54572 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=44004 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=44004 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 15 src=10.157.28.94 dst=100.100.2.136 sport=36296 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=36296 mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=59410 dport=8181 src=10.157.28.96 dst=10.157.28.94 sport=8181 dport=59410 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 49 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=47554 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=47554 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 3 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44726 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44726 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 14 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54456 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54456 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 117 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44760 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44760 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51640 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51640 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86382 ESTABLISHED src=100.104.86.28 dst=10.157.28.94 sport=36788 dport=22 src=10.157.28.94 dst=100.104.86.28 sport=22 dport=36788 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 83 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=59564 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=59564 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.100 dst=100.100.54.131 sport=55640 dport=80 src=100.100.54.131 dst=10.157.28.100 sport=80 dport=55640 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 17 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54480 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54480 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 63 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44130 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44130 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86399 ESTABLISHED src=10.157.28.100 dst=100.103.89.115 sport=48826 dport=80 src=100.103.89.115 dst=10.157.28.100 sport=80 dport=48826 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 43 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=47488 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=47488 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 37 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58270 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58270 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 60 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=35160 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=35160 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 104 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59920 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59920 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=56678 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=56678 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 47 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43276 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43276 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 15 src=10.157.28.94 dst=100.100.2.136 sport=40967 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=40967 mark=0 zone=0 use=2
+ipv4     2 tcp      6 114 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=39022 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=39022 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 23 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=44768 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=44768 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54600 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54600 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=40202 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=40202 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86399 ESTABLISHED src=192.168.0.1 dst=192.168.0.1 sport=54264 dport=443 src=10.157.28.93 dst=10.157.28.94 sport=6443 dport=30574 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59956 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59956 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 110 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=42122 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=42122 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.100 dst=100.100.142.1 sport=33472 dport=80 src=100.100.142.1 dst=10.157.28.100 sport=80 dport=33472 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 61 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44107 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44107 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 119 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55310 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55310 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.100 dst=100.103.26.207 sport=41242 dport=80 src=100.103.26.207 dst=10.157.28.100 sport=80 dport=41242 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 60 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36708 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36708 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=56970 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=56970 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=39426 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=39426 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 52 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=57832 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=57832 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 82 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=59540 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=59540 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 4 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44744 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44744 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=33028 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=33028 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 18 src=10.157.28.94 dst=100.100.2.136 sport=33176 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=33176 mark=0 zone=0 use=2
+ipv4     2 tcp      6 117 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55268 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55268 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=34446 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=34446 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 4 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=36012 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=36012 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 46 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=43678 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=43678 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 103 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51554 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51554 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 63 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=35204 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=35204 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 45 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43248 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43248 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86397 ESTABLISHED src=10.157.28.104 dst=192.168.0.1 sport=56636 dport=443 src=10.20.44.201 dst=10.157.28.104 sport=6443 dport=56636 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 83 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47090 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47090 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=43616 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=43616 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 47 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=51976 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=51976 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 18 src=10.157.28.94 dst=100.100.2.136 sport=37439 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=37439 mark=0 zone=0 use=2
+ipv4     2 tcp      6 34 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58240 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58240 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=48160 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=48160 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45474 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45474 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 91 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45452 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45452 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86387 ESTABLISHED src=10.157.28.93 dst=10.157.28.104 sport=51810 dport=443 src=10.157.28.104 dst=10.157.28.93 sport=443 dport=51810 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 46 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=53300 dport=8181 src=10.157.28.96 dst=10.157.28.94 sport=8181 dport=53300 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34810 dport=80 src=100.100.45.106 dst=10.157.28.94 sport=80 dport=34810 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 32 TIME_WAIT src=10.157.28.94 dst=100.100.45.186 sport=50794 dport=80 src=100.100.45.186 dst=10.157.28.94 sport=80 dport=50794 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 81 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47080 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47080 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86400 ESTABLISHED src=10.157.28.104 dst=192.168.0.1 sport=56624 dport=443 src=10.20.44.201 dst=10.157.28.104 sport=6443 dport=56624 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 48 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=43943 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=43943 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 27 src=10.157.28.94 dst=100.100.2.136 sport=49886 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=49886 mark=0 zone=0 use=2
+ipv4     2 tcp      6 85 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47102 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47102 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86399 ESTABLISHED src=10.157.28.94 dst=10.157.28.93 sport=34694 dport=6443 src=10.157.28.93 dst=10.157.28.94 sport=6443 dport=34694 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 1 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44698 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44698 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.100 dst=100.100.54.131 sport=45126 dport=80 src=100.100.54.131 dst=10.157.28.100 sport=80 dport=45126 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 83 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=48074 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=48074 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 53 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55126 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55126 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=59604 dport=8181 src=10.157.28.96 dst=10.157.28.94 sport=8181 dport=59604 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86396 ESTABLISHED src=10.157.28.100 dst=100.100.142.1 sport=55312 dport=80 src=100.100.142.1 dst=10.157.28.100 sport=80 dport=55312 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=55652 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=55652 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 77 TIME_WAIT src=10.157.28.94 dst=100.100.154.78 sport=54602 dport=80 src=100.100.154.78 dst=10.157.28.94 sport=80 dport=54602 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=33030 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=33030 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=56694 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=56694 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86399 ESTABLISHED src=10.157.28.100 dst=100.100.142.1 sport=55322 dport=80 src=100.100.142.1 dst=10.157.28.100 sport=80 dport=55322 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 2 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=58998 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=58998 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.100 dst=100.115.4.217 sport=53836 dport=80 src=100.115.4.217 dst=10.157.28.100 sport=80 dport=53836 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 59 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55184 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55184 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=50908 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=50908 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=48166 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=48166 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 25 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=44784 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=44784 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 118 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=42134 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=42134 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 53 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55776 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55776 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 300 ESTABLISHED src=100.104.86.13 dst=10.157.28.94 sport=41289 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=41289 [ASSURED] mark=0 zone=0 use=3
+ipv4     2 tcp      6 66 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=34884 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=34884 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 20 src=10.157.28.94 dst=100.100.2.136 sport=44329 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=44329 mark=0 zone=0 use=2
+ipv4     2 udp      17 14 src=10.157.28.94 dst=100.100.2.136 sport=44326 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=44326 mark=0 zone=0 use=2
+ipv4     2 udp      17 27 src=10.157.28.94 dst=100.100.2.136 sport=33733 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=33733 mark=0 zone=0 use=2
+ipv4     2 tcp      6 77 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54614 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54614 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 18 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54488 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54488 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=45942 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=45942 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 13 src=10.157.28.94 dst=100.100.2.136 sport=43070 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=43070 mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51598 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51598 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 101 TIME_WAIT src=10.157.28.100 dst=100.100.54.131 sport=33504 dport=80 src=100.100.54.131 dst=10.157.28.100 sport=80 dport=33504 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 66 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=60550 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=60550 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 92 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=60646 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=60646 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86387 ESTABLISHED src=10.157.28.104 dst=192.168.0.1 sport=48878 dport=443 src=10.157.28.93 dst=10.157.28.104 sport=6443 dport=48878 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 57 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55158 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55158 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 41 TIME_WAIT src=10.157.28.100 dst=100.100.54.131 sport=37386 dport=80 src=100.100.54.131 dst=10.157.28.100 sport=80 dport=37386 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 103 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44585 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44585 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 3 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44724 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44724 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34926 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34926 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 119 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=42172 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=42172 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 95 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45470 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45470 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86377 ESTABLISHED src=10.157.28.102 dst=192.168.0.1 sport=45302 dport=443 src=10.157.28.93 dst=10.157.28.102 sport=6443 dport=45302 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44651 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44651 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44624 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44624 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 67 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=34964 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=34964 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 110 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55250 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55250 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 46 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=46570 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=46570 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=58658 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=58658 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 51 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55108 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55108 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 CLOSE src=10.157.28.94 dst=10.157.28.101 sport=32774 dport=8443 src=10.157.28.101 dst=10.157.28.94 sport=8443 dport=32774 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 53 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54124 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54124 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86398 ESTABLISHED src=10.157.28.96 dst=192.168.0.1 sport=57668 dport=443 src=10.157.28.93 dst=10.157.28.96 sport=6443 dport=57668 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86373 ESTABLISHED src=10.157.28.95 dst=192.168.0.1 sport=34866 dport=443 src=10.157.28.93 dst=10.157.28.95 sport=6443 dport=34866 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 28 src=10.157.28.94 dst=100.100.2.136 sport=45187 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=45187 mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=44792 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=44792 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 14 src=10.157.28.94 dst=100.100.2.136 sport=46430 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=46430 mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 CLOSE src=127.0.0.1 dst=127.0.0.1 sport=33490 dport=9099 src=127.0.0.1 dst=127.0.0.1 sport=9099 dport=33490 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 4 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44740 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44740 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 48 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54616 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54616 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 5 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52308 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52308 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 22 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=44762 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=44762 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86373 ESTABLISHED src=10.157.28.104 dst=192.168.0.1 sport=56652 dport=443 src=10.20.44.201 dst=10.157.28.104 sport=6443 dport=56652 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 27 src=10.157.28.94 dst=100.100.2.136 sport=60322 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=60322 mark=0 zone=0 use=2
+ipv4     2 tcp      6 37 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58268 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58268 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 19 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54494 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54494 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 87 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=35184 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=35184 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 73 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54556 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54556 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 54 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54152 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54152 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 82 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=35178 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=35178 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 49 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54624 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54624 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 110 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55256 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55256 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 9 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52362 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52362 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=56298 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=56298 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 28 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=44814 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=44814 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 2 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52270 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52270 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86396 ESTABLISHED src=10.157.28.100 dst=100.100.142.1 sport=55314 dport=80 src=100.100.142.1 dst=10.157.28.100 sport=80 dport=55314 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86396 ESTABLISHED src=10.157.28.104 dst=192.168.0.1 sport=56632 dport=443 src=10.157.28.93 dst=10.157.28.104 sport=6443 dport=56632 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=52544 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=52544 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=39592 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=39592 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 72 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=53710 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=53710 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=37620 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=37620 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 82 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=59546 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=59546 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 71 TIME_WAIT src=10.157.28.100 dst=100.115.4.217 sport=52846 dport=80 src=100.115.4.217 dst=10.157.28.100 sport=80 dport=52846 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86372 ESTABLISHED src=10.157.28.104 dst=192.168.0.1 sport=56616 dport=443 src=10.157.28.93 dst=10.157.28.104 sport=6443 dport=56616 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 45 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=47524 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=47524 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 20 src=10.157.28.94 dst=100.100.2.136 sport=51448 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=51448 mark=0 zone=0 use=2
+ipv4     2 tcp      6 66 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=56560 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=56560 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 51 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55752 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55752 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 82 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44340 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44340 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 0 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=35960 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=35960 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 27 src=10.157.28.94 dst=100.100.2.136 sport=37242 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=37242 mark=0 zone=0 use=2
+ipv4     2 udp      17 14 src=10.157.28.94 dst=100.100.2.136 sport=45858 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=45858 mark=0 zone=0 use=2
+ipv4     2 udp      17 15 src=10.157.28.94 dst=100.100.2.136 sport=38359 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=38359 mark=0 zone=0 use=2
+ipv4     2 tcp      6 20 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=44738 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=44738 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 109 TIME_WAIT src=10.157.28.94 dst=10.157.28.100 sport=56436 dport=7953 src=10.157.28.100 dst=10.157.28.94 sport=7953 dport=56436 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 67 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36784 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36784 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 78 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54630 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54630 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 66 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=52660 dport=8181 src=10.157.28.96 dst=10.157.28.94 sport=8181 dport=52660 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 46 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=40800 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=40800 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=36656 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=36656 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 2 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44708 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44708 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 75 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54588 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54588 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 67 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36790 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36790 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 105 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51594 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51594 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 97 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=60648 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=60648 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 63 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=60518 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=60518 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 44 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=47500 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=47500 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=52862 dport=8181 src=10.157.28.96 dst=10.157.28.94 sport=8181 dport=52862 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 60 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=35148 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=35148 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 2 TIME_WAIT src=10.157.28.94 dst=100.100.45.186 sport=35604 dport=80 src=100.100.45.186 dst=10.157.28.94 sport=80 dport=35604 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=52808 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=52808 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 0 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44684 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44684 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 44 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54578 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54578 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 22 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=38888 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=38888 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 103 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34838 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34838 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 118 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=42150 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=42150 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=42954 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=42954 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 49 TIME_WAIT src=10.157.28.94 dst=10.157.28.100 sport=52824 dport=7953 src=10.157.28.100 dst=10.157.28.94 sport=7953 dport=52824 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 62 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=60512 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=60512 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 31 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58206 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58206 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 11 TIME_WAIT src=10.157.28.100 dst=100.100.54.131 sport=59944 dport=80 src=100.100.54.131 dst=10.157.28.100 sport=80 dport=59944 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 15 src=10.157.28.94 dst=100.100.2.136 sport=49960 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=49960 mark=0 zone=0 use=2
+ipv4     2 tcp      6 44 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43234 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43234 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 65 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36760 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36760 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 84 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=59580 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=59580 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=35850 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=35850 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 68 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36794 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36794 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=38094 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=38094 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=57876 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=57876 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 13 src=10.157.28.94 dst=100.100.2.136 sport=38818 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=38818 mark=0 zone=0 use=2
+ipv4     2 tcp      6 53 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54134 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54134 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 71 TIME_WAIT src=10.157.28.100 dst=100.100.142.1 sport=50852 dport=80 src=100.100.142.1 dst=10.157.28.100 sport=80 dport=50852 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86382 ESTABLISHED src=10.157.28.98 dst=100.103.89.112 sport=58980 dport=80 src=100.103.89.112 dst=10.157.28.98 sport=80 dport=58980 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 82 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=48032 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=48032 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 90 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45442 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45442 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 63 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36744 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36744 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 20 src=10.157.28.94 dst=100.100.2.136 sport=35489 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=35489 mark=0 zone=0 use=2
+ipv4     2 udp      17 29 src=10.157.28.94 dst=100.100.2.136 sport=37354 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=37354 mark=0 zone=0 use=2
+ipv4     2 tcp      6 3 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=36000 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=36000 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52314 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52314 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 3 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44716 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44716 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=39590 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=39590 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 11 TIME_WAIT src=10.157.28.100 dst=100.115.4.217 sport=60442 dport=80 src=100.115.4.217 dst=10.157.28.100 sport=80 dport=60442 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 44 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=43901 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=43901 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 17 TIME_WAIT src=10.157.28.94 dst=100.100.45.186 sport=44874 dport=80 src=100.100.45.186 dst=10.157.28.94 sport=80 dport=44874 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 18 src=10.157.28.94 dst=100.100.2.136 sport=43760 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=43760 mark=0 zone=0 use=2
+ipv4     2 tcp      6 57 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=57836 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=57836 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58266 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58266 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 45 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54598 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54598 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 1 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=43402 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=43402 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 48 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54608 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54608 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 69 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36802 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36802 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 61 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=60492 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=60492 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 1 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=35978 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=35978 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51634 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51634 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86387 ESTABLISHED src=10.157.28.104 dst=192.168.0.1 sport=56694 dport=443 src=10.157.28.93 dst=10.157.28.104 sport=6443 dport=56694 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51610 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51610 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=42914 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=42914 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=33552 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=33552 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 101 TIME_WAIT src=10.157.28.100 dst=100.100.142.1 sport=35688 dport=80 src=100.100.142.1 dst=10.157.28.100 sport=80 dport=35688 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 103 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34824 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34824 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 43 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=47494 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=47494 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 62 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36736 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36736 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 63 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=35184 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=35184 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86391 ESTABLISHED src=10.157.28.104 dst=192.168.0.1 sport=56680 dport=443 src=10.20.44.201 dst=10.157.28.104 sport=6443 dport=56680 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 107 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59950 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59950 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 110 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44675 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44675 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 66 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=58294 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=58294 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 54 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55136 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55136 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86380 ESTABLISHED src=10.157.28.104 dst=192.168.0.1 sport=56664 dport=443 src=10.157.28.93 dst=10.157.28.104 sport=6443 dport=56664 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 18 src=10.157.28.94 dst=100.100.2.136 sport=44285 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=44285 mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=39050 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=39050 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=53420 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=53420 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 66 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36768 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36768 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 64 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=36756 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=36756 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 101 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59900 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59900 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86399 ESTABLISHED src=10.157.28.94 dst=100.100.30.25 sport=39284 dport=80 src=100.100.30.25 dst=10.157.28.94 sport=80 dport=39284 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 101 TIME_WAIT src=10.157.28.100 dst=100.115.4.217 sport=58002 dport=80 src=100.115.4.217 dst=10.157.28.100 sport=80 dport=58002 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86373 ESTABLISHED src=100.104.113.194 dst=10.157.28.94 sport=48150 dport=22 src=10.157.28.94 dst=100.104.113.194 sport=22 dport=48150 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 40 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43186 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43186 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 87 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47120 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47120 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86370 ESTABLISHED src=10.20.44.201 dst=10.157.28.104 sport=42614 dport=443 src=10.157.28.104 dst=10.20.44.201 sport=443 dport=42614 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=40690 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=40690 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 117 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=42128 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=42128 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 117 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=39062 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=39062 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.100 dst=100.115.4.217 sport=46832 dport=80 src=100.115.4.217 dst=10.157.28.100 sport=80 dport=46832 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 54 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54146 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54146 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 30 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58194 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58194 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 60 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=60490 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=60490 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 89 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47154 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47154 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 50 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55100 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55100 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 83 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44360 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44360 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 18 src=10.157.28.94 dst=100.100.2.136 sport=41019 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=41019 mark=0 zone=0 use=2
+ipv4     2 tcp      6 1 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=35980 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=35980 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=43610 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=43610 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 45 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=47514 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=47514 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=43250 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=43250 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 72 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54542 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54542 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 54 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44023 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44023 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 11 TIME_WAIT src=10.157.28.100 dst=100.103.26.207 sport=52266 dport=80 src=100.103.26.207 dst=10.157.28.100 sport=80 dport=52266 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 102 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59908 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59908 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=44198 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=44198 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 41 TIME_WAIT src=10.157.28.100 dst=100.100.142.1 sport=35468 dport=80 src=100.100.142.1 dst=10.157.28.100 sport=80 dport=35468 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 60 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44105 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44105 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=46272 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=46272 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 84 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47096 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47096 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 62 TIME_WAIT src=10.157.28.94 dst=100.100.154.78 sport=48704 dport=80 src=100.100.154.78 dst=10.157.28.94 sport=80 dport=48704 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 117 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=39058 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=39058 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=48586 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=48586 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=34456 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=34456 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 2 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=35992 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=35992 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 7 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=59014 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=59014 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 98 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45494 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45494 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 46 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=35616 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=35616 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 2887 CLOSE_WAIT src=10.157.28.100 dst=100.100.142.7 sport=59266 dport=80 src=100.100.142.7 dst=10.157.28.100 sport=80 dport=59266 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 71 TIME_WAIT src=10.157.28.100 dst=100.103.26.207 sport=49980 dport=80 src=100.103.26.207 dst=10.157.28.100 sport=80 dport=49980 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 118 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=39064 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=39064 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 107 TIME_WAIT src=10.157.28.94 dst=100.100.45.186 sport=59784 dport=80 src=100.100.45.186 dst=10.157.28.94 sport=80 dport=59784 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 1 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52262 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52262 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 2 src=10.157.28.94 dst=100.100.2.136 sport=50659 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=50659 mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.100 dst=100.103.26.207 sport=42928 dport=80 src=100.103.26.207 dst=10.157.28.100 sport=80 dport=42928 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=45342 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=45342 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 82 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47086 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47086 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=46408 dport=8181 src=10.157.28.96 dst=10.157.28.94 sport=8181 dport=46408 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 47 TIME_WAIT src=10.157.28.94 dst=100.100.154.78 sport=32914 dport=80 src=100.100.154.78 dst=10.157.28.94 sport=80 dport=32914 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 53 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44009 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44009 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=55614 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=55614 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 CLOSE src=10.157.28.94 dst=10.157.28.101 sport=32776 dport=8443 src=10.157.28.101 dst=10.157.28.94 sport=8443 dport=32776 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 44 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54582 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54582 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 84 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=48078 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=48078 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 3 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=43433 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=43433 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34934 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34934 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 17 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=41346 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=41346 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=57090 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=57090 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 1 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44690 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44690 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 66 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=34882 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=34882 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 66 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=60540 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=60540 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 16 src=10.157.28.94 dst=100.100.2.136 sport=51856 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=51856 mark=0 zone=0 use=2
+ipv4     2 tcp      6 27 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=38900 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=38900 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 49 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=47562 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=47562 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.100 dst=100.115.4.217 sport=50412 dport=80 src=100.115.4.217 dst=10.157.28.100 sport=80 dport=50412 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 51 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54096 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54096 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 51 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54112 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54112 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 12 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=41332 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=41332 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 100 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59894 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59894 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 61 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=35168 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=35168 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 92 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45460 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45460 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=37624 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=37624 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=53862 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=53862 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=46278 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=46278 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 47 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43272 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43272 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=43252 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=43252 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=60144 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=60144 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 16 src=10.157.28.94 dst=100.100.2.136 sport=34289 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=34289 mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=10.157.28.100 dst=100.115.4.217 sport=37178 dport=80 src=100.115.4.217 dst=10.157.28.100 sport=80 dport=37178 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=51114 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=51114 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=41840 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=41840 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=44184 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=44184 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 55 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55798 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55798 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 7 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52320 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52320 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 4 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=36028 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=36028 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=10.157.28.100 dst=100.103.26.207 sport=38682 dport=80 src=100.103.26.207 dst=10.157.28.100 sport=80 dport=38682 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 43 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=43891 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=43891 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 55 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54156 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54156 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 18 src=10.157.28.94 dst=100.100.2.136 sport=36744 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=36744 mark=0 zone=0 use=2
+ipv4     2 tcp      6 117 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55264 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55264 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 118 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44784 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44784 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34908 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34908 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47110 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47110 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=54196 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=54196 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 107 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=57990 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=57990 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 55 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55804 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55804 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 38 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58282 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58282 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.100 dst=100.103.26.207 sport=59766 dport=80 src=100.103.26.207 dst=10.157.28.100 sport=80 dport=59766 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 0 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44686 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44686 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 71 TIME_WAIT src=10.157.28.100 dst=100.100.54.131 sport=52658 dport=80 src=100.100.54.131 dst=10.157.28.100 sport=80 dport=52658 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 62 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=34962 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=34962 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.100 dst=100.100.142.1 sport=39880 dport=80 src=100.100.142.1 dst=10.157.28.100 sport=80 dport=39880 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 104 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51566 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51566 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 32 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=51154 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=51154 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=40208 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=40208 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 119 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=39074 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=39074 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 77 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54628 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54628 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 42 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43202 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43202 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 28 src=10.157.28.94 dst=100.100.2.136 sport=50289 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=50289 mark=0 zone=0 use=2
+ipv4     2 tcp      6 24 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=44774 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=44774 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 111 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=38990 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=38990 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 16 src=10.157.28.94 dst=100.100.2.136 sport=55667 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=55667 mark=0 zone=0 use=2
+ipv4     2 tcp      6 86384 ESTABLISHED src=10.157.28.106 dst=192.168.0.1 sport=46996 dport=443 src=10.157.28.93 dst=10.157.28.106 sport=6443 dport=46996 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=33746 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=33746 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34912 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34912 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 52 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55114 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55114 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 27 src=10.157.28.94 dst=100.100.2.136 sport=34652 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=34652 mark=0 zone=0 use=2
+ipv4     2 tcp      6 54 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55792 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55792 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 103 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59910 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59910 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 44 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=47508 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=47508 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.100 dst=100.100.54.131 sport=40226 dport=80 src=100.100.54.131 dst=10.157.28.100 sport=80 dport=40226 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 112 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=39002 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=39002 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=48982 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=48982 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 27 src=10.157.28.94 dst=100.100.2.136 sport=53419 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=53419 mark=0 zone=0 use=2
+ipv4     2 tcp      6 71 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54540 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54540 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=33694 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=33694 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 48 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43292 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43292 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 105 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51592 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51592 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 27 src=10.157.28.94 dst=100.100.2.136 sport=35821 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=35821 mark=0 zone=0 use=2
+ipv4     2 tcp      6 43 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54552 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54552 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 61 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=60504 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=60504 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 66 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=41744 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=41744 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 117 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=40140 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=40140 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 49 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54640 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54640 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 37 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=51162 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=51162 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55156 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55156 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 93 TIME_WAIT src=10.157.28.94 dst=100.100.45.186 sport=38010 dport=80 src=100.100.45.186 dst=10.157.28.94 sport=80 dport=38010 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 45 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=43914 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=43914 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 103 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51538 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51538 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 51 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=43968 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=43968 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 97 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45486 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45486 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=38630 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=38630 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=45994 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=45994 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 118 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55296 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55296 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 80 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47074 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47074 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=49570 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=49570 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=34462 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=34462 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 16 src=10.157.28.94 dst=100.100.2.136 sport=47957 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=47957 mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=39860 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=39860 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 54 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55796 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55796 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 83 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=46934 dport=80 src=100.100.45.106 dst=10.157.28.94 sport=80 dport=46934 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 104 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51580 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51580 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 63 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=35186 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=35186 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59946 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59946 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 118 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55282 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55282 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 0 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=35964 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=35964 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 83 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=59562 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=59562 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 4 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=43442 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=43442 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 14 src=10.157.28.94 dst=100.100.2.136 sport=58829 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=58829 mark=0 zone=0 use=2
+ipv4     2 tcp      6 27 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=44794 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=44794 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=35706 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=35706 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 20 src=10.157.28.94 dst=100.100.2.136 sport=44725 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=44725 mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=38424 dport=8080 src=10.157.28.96 dst=10.157.28.94 sport=8080 dport=38424 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 39 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58296 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58296 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 110 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=38982 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=38982 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 113 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=39014 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=39014 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86399 ESTABLISHED src=10.157.28.99 dst=192.168.0.1 sport=51500 dport=443 src=10.157.28.93 dst=10.157.28.99 sport=6443 dport=51500 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 45 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54590 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54590 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 101 TIME_WAIT src=10.157.28.100 dst=100.103.26.207 sport=59728 dport=80 src=100.103.26.207 dst=10.157.28.100 sport=80 dport=59728 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 32 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58216 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58216 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 8 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52346 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52346 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 84 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=48082 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=48082 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 17 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54468 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54468 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=49078 dport=8181 src=10.157.28.96 dst=10.157.28.94 sport=8181 dport=49078 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 33 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58232 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58232 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 2882 CLOSE_WAIT src=10.157.28.100 dst=100.100.142.5 sport=42794 dport=80 src=100.100.142.5 dst=10.157.28.100 sport=80 dport=42794 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34950 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34950 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 87 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47128 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47128 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 55 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44034 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44034 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 41 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43196 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43196 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 17 src=10.157.28.94 dst=100.100.2.136 sport=56517 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=56517 mark=0 zone=0 use=2
+ipv4     2 tcp      6 110 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=42106 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=42106 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 29 src=10.157.28.94 dst=100.100.2.136 sport=58970 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=58970 mark=0 zone=0 use=2
+ipv4     2 tcp      6 57 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55164 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55164 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 107 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59948 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59948 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 60 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=60474 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=60474 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 11 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54446 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54446 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 49 TIME_WAIT src=10.157.28.94 dst=10.157.28.100 sport=52822 dport=7953 src=10.157.28.100 dst=10.157.28.94 sport=7953 dport=52822 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 63 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=35202 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=35202 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 117 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=42132 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=42132 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 18 src=10.157.28.94 dst=100.100.2.136 sport=59034 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=59034 mark=0 zone=0 use=2
+ipv4     2 tcp      6 119 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44794 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44794 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 41 TIME_WAIT src=10.157.28.100 dst=100.115.4.217 sport=60426 dport=80 src=100.115.4.217 dst=10.157.28.100 sport=80 dport=60426 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 43 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=54568 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=54568 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 82 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=48048 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=48048 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 13 src=10.157.28.94 dst=100.100.2.136 sport=50114 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=50114 mark=0 zone=0 use=2
+ipv4     2 tcp      6 41 TIME_WAIT src=10.157.28.100 dst=100.103.26.207 sport=55802 dport=80 src=100.103.26.207 dst=10.157.28.100 sport=80 dport=55802 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 70 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54538 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54538 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 112 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=40138 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=40138 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 46 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43260 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43260 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 2 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44706 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44706 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 4 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52298 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52298 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 12 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54448 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54448 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=52780 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=52780 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=50738 dport=8181 src=10.157.28.96 dst=10.157.28.94 sport=8181 dport=50738 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34942 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34942 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 3 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=36008 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=36008 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=54110 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=54110 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=48984 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=48984 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86371 ESTABLISHED src=10.157.28.98 dst=192.168.0.1 sport=53676 dport=443 src=10.157.28.93 dst=10.157.28.98 sport=6443 dport=53676 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 29 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=44816 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=44816 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 56 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=41254 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=41254 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=46334 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=46334 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 109 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44655 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44655 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 15 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54458 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54458 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=58656 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=58656 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=39856 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=39856 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=51116 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=51116 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=55648 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=55648 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 48 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=47534 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=47534 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 119 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=55324 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=55324 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 105 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=59936 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=59936 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 29 src=10.157.28.94 dst=100.100.2.136 sport=43794 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=43794 mark=0 zone=0 use=2
+ipv4     2 tcp      6 84 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=59596 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=59596 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 79 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54636 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54636 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 25 src=10.157.28.94 dst=100.100.3.3 sport=33728 dport=123 src=100.100.3.3 dst=10.157.28.94 sport=123 dport=33728 mark=0 zone=0 use=2
+ipv4     2 tcp      6 43 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43218 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43218 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 2 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=35996 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=35996 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 35 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=58250 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=58250 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=49556 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=49556 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.99 sport=40704 dport=10254 src=10.157.28.99 dst=10.157.28.94 sport=10254 dport=40704 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 55 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55146 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55146 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86398 ESTABLISHED src=10.157.28.104 dst=10.157.28.94 sport=59850 dport=10250 src=10.157.28.94 dst=10.157.28.104 sport=10250 dport=59850 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 6 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=36658 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=36658 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 88 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=47144 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=47144 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=50398 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=50398 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 49 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=43304 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=43304 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 0 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=43389 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=43389 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 104 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34868 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34868 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=54104 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=54104 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=35254 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=35254 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 104 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34852 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34852 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 96 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=45944 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=45944 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 36 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=43990 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=43990 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 10 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54432 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54432 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 99 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45498 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45498 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 76 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=33748 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=33748 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 108 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=51620 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=51620 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 109 TIME_WAIT src=10.157.28.94 dst=10.157.28.100 sport=56434 dport=7953 src=10.157.28.100 dst=10.157.28.94 sport=7953 dport=56434 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 93 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45466 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45466 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86398 ESTABLISHED src=10.157.28.93 dst=10.157.28.104 sport=51780 dport=443 src=10.157.28.104 dst=10.157.28.93 sport=443 dport=51780 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=54460 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=54460 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 46 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=35600 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=35600 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 105 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34892 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34892 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 86387 ESTABLISHED src=10.20.44.201 dst=10.157.28.104 sport=42626 dport=443 src=10.157.28.104 dst=10.20.44.201 sport=443 dport=42626 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 3 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=44730 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=44730 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=55612 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=55612 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 84 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44372 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44372 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 16 TIME_WAIT src=10.157.28.94 dst=10.157.28.104 sport=46336 dport=443 src=10.157.28.104 dst=10.157.28.94 sport=443 dport=46336 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 106 TIME_WAIT src=10.157.28.94 dst=10.157.28.96 sport=40252 dport=8181 src=10.157.28.96 dst=10.157.28.94 sport=8181 dport=40252 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 45 TIME_WAIT src=10.157.28.94 dst=100.100.2.148 sport=39196 dport=80 src=100.100.2.148 dst=10.157.28.94 sport=80 dport=39196 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 udp      17 28 src=10.157.28.94 dst=100.100.2.136 sport=45736 dport=53 src=100.100.2.136 dst=10.157.28.94 sport=53 dport=45736 mark=0 zone=0 use=2
+ipv4     2 tcp      6 105 TIME_WAIT src=10.157.28.94 dst=100.100.45.106 sport=34878 dport=443 src=100.100.45.106 dst=10.157.28.94 sport=443 dport=34878 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 104 TIME_WAIT src=100.104.86.13 dst=10.157.28.94 sport=44604 dport=22 src=10.157.28.94 dst=100.104.86.13 sport=22 dport=44604 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 46 TIME_WAIT src=10.157.28.94 dst=10.157.28.103 sport=58252 dport=8081 src=10.157.28.103 dst=10.157.28.94 sport=8081 dport=58252 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 94 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=45468 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=45468 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 26 TIME_WAIT src=10.157.28.94 dst=10.157.28.107 sport=51850 dport=8080 src=10.157.28.107 dst=10.157.28.94 sport=8080 dport=51850 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 0 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52250 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52250 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 7 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52330 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52330 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 3 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=52284 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=52284 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 116 TIME_WAIT src=10.157.28.94 dst=10.157.28.98 sport=60134 dport=8888 src=10.157.28.98 dst=10.157.28.94 sport=8888 dport=60134 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 61 TIME_WAIT src=10.157.28.94 dst=100.100.100.200 sport=35180 dport=80 src=100.100.100.200 dst=10.157.28.94 sport=80 dport=35180 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 58 TIME_WAIT src=169.254.20.10 dst=169.254.20.10 sport=55172 dport=8081 src=169.254.20.10 dst=169.254.20.10 sport=8081 dport=55172 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 102 TIME_WAIT src=10.157.28.94 dst=10.157.28.94 sport=57984 dport=11260 src=10.157.28.94 dst=10.157.28.94 sport=11260 dport=57984 [ASSURED] mark=0 zone=0 use=2
+------------End of cat----------------
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 169.254.20.10:39002     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:36744     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:35160      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:39014     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:35180      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:42158      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:22         100.104.86.28:36788     ESTABLISHED
+tcp        0      0 169.254.20.10:59936     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60474      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:54600     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:47904      10.20.44.201:6443       ESTABLISHED
+tcp        0      0 10.157.28.94:34694      10.157.28.93:6443       ESTABLISHED
+tcp        0      0 169.254.20.10:47074     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:45474     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:42106      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:47080     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34950      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:60518      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:34908      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:51116      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:42128      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:36736     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51580      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:54602      100.100.154.78:80       TIME_WAIT  
+tcp        0   6726 10.157.28.94:39284      100.100.30.25:80        ESTABLISHED
+tcp        0      0 10.157.28.94:48704      100.100.154.78:80       TIME_WAIT  
+tcp        0      0 169.254.20.10:38990     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:39590      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:55310      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:59894     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:39064     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51634      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:59580      100.100.100.200:80      TIME_WAIT  
+tcp        0  63212 10.157.28.94:22         100.104.86.13:41289     ESTABLISHED
+tcp        0      0 10.157.28.94:35204      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:48082      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:42172      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:59596      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:54636     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60490      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:34868      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:54588     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47144     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:59900     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47086     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:42122      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:55282      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:34934      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:55268      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:59950     TIME_WAIT  
+tcp        0      0 169.254.20.10:59956     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:55296      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:47096     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:36756     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:48032      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:43252      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:51592      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:34912      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:60504      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:60540      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:42134      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:45466     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47120     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:39062     TIME_WAIT  
+tcp        0      0 169.254.20.10:54542     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:45442     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:55184     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:59564      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:48058      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:51538      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:55250      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:39050     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:33748      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:51620      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:51598      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:34926      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:51596      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:55324      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:59908     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:35186      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:42132      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 192.168.0.1:54264       192.168.0.1:443         ESTABLISHED
+tcp        0      0 10.157.28.94:34942      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:47090     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:45480     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34838      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:45486     TIME_WAIT  
+tcp        0      0 169.254.20.10:38982     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51640      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:54540     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:35148      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:36790     TIME_WAIT  
+tcp        0      0 169.254.20.10:36760     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:36802     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:54556     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60512      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:45494     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:54614     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51566      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:36794     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:45498     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:59540      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:54538     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:22         100.104.113.194:48150   ESTABLISHED
+tcp        0      0 169.254.20.10:36722     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34964      10.157.28.94:11260      TIME_WAIT  
+tcp        0      0 10.157.28.94:35184      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:58658      10.157.28.99:10254      TIME_WAIT  
+tcp        0      0 10.157.28.94:35202      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:48048      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:45468     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:43250      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:46934      100.100.45.106:80       TIME_WAIT  
+tcp        0      0 10.157.28.94:35168      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:45452     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60492      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:36784     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:42150      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:39592      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:59784      100.100.45.186:80       TIME_WAIT  
+tcp        0      0 169.254.20.10:59948     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47154     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34878      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:59562      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:34824      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:38630      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:33694      10.157.28.103:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:39022     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47110     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:59910     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60550      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 169.254.20.10:39074     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:39034     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34892      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:54572     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:59972     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:55256      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:47102     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51554      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:39058     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:59546      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:36768     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34852      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:59946     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:59920     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51594      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:51114      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 169.254.20.10:45460     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51610      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:54628     TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:47128     TIME_WAIT  
+tcp        0      0 10.157.28.94:48078      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:55264      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:38616      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:33746      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 169.254.20.10:36708     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:54630     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:48074      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:45470     169.254.20.10:8081      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:40140      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:34962      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:35184      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:40138      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:53710      TIME_WAIT  
+tcp6       0      0 10.157.28.94:10250      10.157.28.104:59850     ESTABLISHED
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:57984      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:60648      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:60646      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:35178      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:57990      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:34964      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:53720      TIME_WAIT  
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 10.157.28.94:68         10.157.255.253:67       ESTABLISHED
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.1:20256         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:20257         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:10248         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:10249         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:9099          0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:9101          0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN     
+tcp        0      0 169.254.20.10:8081      0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:38865         0.0.0.0:*               LISTEN     
+tcp        0      0 169.254.20.10:53        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9253                 :::*                    LISTEN     
+tcp6       0      0 :::9353                 :::*                    LISTEN     
+tcp6       0      0 :::10250                :::*                    LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+tcp6       0      0 :::111                  :::*                    LISTEN     
+tcp6       0      0 :::10256                :::*                    LISTEN     
+tcp6       0      0 :::22                   :::*                    LISTEN     
+tcp6       0      0 :::11260                :::*                    LISTEN     
+udp        0      0 127.0.0.1:323           0.0.0.0:*                          
+udp        0      0 169.254.20.10:53        0.0.0.0:*                          
+udp        0      0 0.0.0.0:111             0.0.0.0:*                          
+udp6       0      0 ::1:323                 :::*                               
+udp6       0      0 :::111                  :::*                               
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ACC ]     STREAM     LISTENING     146713   /run/user/0/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     13041    /run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     146718   /run/user/0/bus
+unix  2      [ ACC ]     STREAM     LISTENING     25581    /var/lib/kubelet/pod-resources/4227196319
+unix  2      [ ACC ]     STREAM     LISTENING     86474    /run/containerd/s/ce8367922dbd8466994f7cce00d33e87c44db0816f3422b296ccca430ae73ac1
+unix  2      [ ACC ]     STREAM     LISTENING     28707    /var/lib/kubelet/device-plugins/kubelet.sock
+unix  2      [ ACC ]     STREAM     LISTENING     73263    /run/containerd/s/ee8f37587ca99624afbbbd187fa3c49dfc6aed1dd8d248e4ab3cd3ec74fad507
+unix  2      [ ACC ]     STREAM     LISTENING     14573    /run/systemd/journal/stdout
+unix  2      [ ACC ]     STREAM     LISTENING     28324    /run/containerd/s/58bd7906b849d205248d360701000ed478802d0b8fea6c913a23c3fbfa4514ca
+unix  2      [ ACC ]     STREAM     LISTENING     25264    /run/containerd/debug.sock
+unix  2      [ ACC ]     STREAM     LISTENING     25265    /run/containerd/containerd.sock.ttrpc
+unix  2      [ ACC ]     STREAM     LISTENING     25266    /run/containerd/containerd.sock
+unix  2      [ ACC ]     STREAM     LISTENING     25267    /var/run/nri/nri.sock
+unix  2      [ ACC ]     STREAM     LISTENING     28365    /run/containerd/s/5c237559d3bee2144846a6cec8618655ce9e9b70e3bd08dc665d4f2391b4a3fd
+unix  2      [ ACC ]     STREAM     LISTENING     77594    /run/containerd/s/2fae459b6d3e5f765b6bae59918c27d4a8a475455c1cb25b24216bf36dfed055
+unix  2      [ ACC ]     STREAM     LISTENING     29131    /run/containerd/s/a85184abb7db325d3e447862ce5681e290529932180fa7f358734bfa1271db6f
+unix  2      [ ACC ]     STREAM     LISTENING     71564    /var/run/eni/eni.socket
+unix  2      [ ACC ]     STREAM     LISTENING     72514    /var/run/eni/eni_debug.socket
+unix  2      [ ACC ]     STREAM     LISTENING     34196    /run/csi-tool/connector/connector.sock
+unix  2      [ ACC ]     STREAM     LISTENING     35828    /var/lib/gssproxy/default.sock
+unix  2      [ ACC ]     STREAM     LISTENING     72977    /usr/local/aegis/Aegis-<Guid(5A2C30A2-A87D-490A-9281-6765EDAD7CBA)>
+unix  2      [ ACC ]     STREAM     LISTENING     26391    /run/containerd/s/8af2448b767a73028c94f2f6313dc09e8e5e1f2c39cb6b069e20de3363f67bfa
+unix  2      [ ACC ]     STREAM     LISTENING     79618    /run/containerd/s/80522adde262100ecb2916edb4d7422dea2028b637eaab75f52b48c11729daf0
+unix  2      [ ACC ]     STREAM     LISTENING     24223    /tmp/aliyun_assist_service.sock
+unix  2      [ ACC ]     STREAM     LISTENING     26402    /run/containerd/s/377a85500cda3c27e8c65413d2821dd3ee288d50fa1af5c9e2eff8270ab27fdc
+unix  2      [ ACC ]     STREAM     LISTENING     78677    /run/containerd/s/b7bffed8154504b38a03af2571e3dd732ea0565becbbac1a7aa2343c93c1ca3f
+unix  2      [ ACC ]     STREAM     LISTENING     29301    /run/containerd/s/ea96c68e5d6389c08e12508aff56d9bd0812574132b9e3b2a197f75c4b4b501b
+unix  2      [ ACC ]     STREAM     LISTENING     73574    /run/containerd/s/31810abaf1fa69735011f67c6f4a16d7be5d6d0cbd719326a6093c56ec6a34a2
+unix  2      [ ACC ]     STREAM     LISTENING     12279    /run/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     113034   /run/containerd/s/830accfde6e6070fc0ec1aa3830103a3c7a4da369370dc62de01e9196fb4b7d3
+unix  2      [ ACC ]     STREAM     LISTENING     17421    /run/rpcbind.sock
+unix  2      [ ACC ]     SEQPACKET  LISTENING     15775    /run/systemd/coredump
+unix  2      [ ACC ]     SEQPACKET  LISTENING     15786    /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     27488    /run/irqbalance/irqbalance2206.sock
+unix  2      [ ACC ]     STREAM     LISTENING     80158    /run/containerd/s/fb57d5d256646107ca1d3949d36409683dd22cc0649c18a3c8d87e81651e4ea1
+unix  2      [ ACC ]     STREAM     LISTENING     68989    /csi/ossplugin.csi.alibabacloud.com/csi.sock
+unix  2      [ ACC ]     STREAM     LISTENING     35829    /run/gssproxy.sock
+unix  2      [ ACC ]     STREAM     LISTENING     81456    /run/containerd/s/164eceab2e60c188bd78daada798de5f2acd5a510f7d3fb2fc6278a5accbe8a0
+unix  2      [ ACC ]     STREAM     LISTENING     29579    /usr/local/cloudmonitor/local_data/argus.sock
+unix  2      [ ACC ]     STREAM     LISTENING     64313    /csi/nasplugin.csi.alibabacloud.com/csi.sock
+unix  2      [ ACC ]     STREAM     LISTENING     68996    /csi/diskplugin.csi.alibabacloud.com/csi.sock
+unix  2      [ ACC ]     STREAM     LISTENING     64341    /registration/diskplugin.csi.alibabacloud.com-reg.sock
+unix  2      [ ACC ]     STREAM     LISTENING     69003    /registration/nasplugin.csi.alibabacloud.com-reg.sock
+unix  2      [ ACC ]     STREAM     LISTENING     64353    /registration/ossplugin.csi.alibabacloud.com-reg.sock
+unix  2      [ ACC ]     STREAM     LISTENING     76790    /run/containerd/s/dfbb92948e1150fb7e630da5eee3db5f0ea617fa10dabc0532bc6daa67dc3557
+unix  2      [ ACC ]     STREAM     LISTENING     77904    /run/containerd/s/20db6138a76e98acf1bd26baca17154445094843b50772c2e6fedb7e93a789bb
+Active Bluetooth connections (only servers)
+Proto  Destination       Source            State         PSM DCID   SCID      IMTU    OMTU Security
+Proto  Destination       Source            State     Channel

@@ -1,0 +1,2343 @@
+
+-----------------run uptime------------------
+ 19:48:36 up 14 min,  1 user,  load average: 0.00, 0.17, 0.34
+------------End of uptime----------------
+
+-----------------run top -b -n 1------------------
+top - 19:48:36 up 14 min,  1 user,  load average: 0.00, 0.17, 0.34
+Tasks: 187 total,   1 running, 186 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.6 us,  1.6 sy,  0.0 ni, 96.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3563.0 total,    634.8 free,   1106.1 used,   2090.3 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   2456.9 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   1919 root      20   0 3410680 115896  28916 S   6.7   3.2   0:41.38 containerd
+   5753 root      20   0  208160  36760  25364 S   6.7   1.0   0:05.67 AliYunDunMonito
+      1 root      20   0  170548  12360   8152 S   0.0   0.3   0:04.38 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-kblockd
+      7 root      20   0       0      0      0 I   0.0   0.0   0:00.43 kworker/u8:0-events_unbound
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_percpu_wq
+      9 root      20   0       0      0      0 I   0.0   0.0   0:00.67 kworker/u8:1-events_unbound
+     10 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_tasks_rude_
+     11 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_tasks_trace
+     12 root      20   0       0      0      0 S   0.0   0.0   0:00.06 ksoftirqd/0
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.15 rcu_sched
+     14 root      rt   0       0      0      0 S   0.0   0.0   0:00.00 migration/0
+     15 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     16 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1
+     17 root      rt   0       0      0      0 S   0.0   0.0   0:00.04 migration/1
+     18 root      20   0       0      0      0 S   0.0   0.0   0:00.03 ksoftirqd/1
+     20 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-events_highpri
+     21 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/2
+     22 root      rt   0       0      0      0 S   0.0   0.0   0:00.05 migration/2
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.03 ksoftirqd/2
+     25 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/2:0H-events_highpri
+     26 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/3
+     27 root      rt   0       0      0      0 S   0.0   0.0   0:00.05 migration/3
+     28 root      20   0       0      0      0 S   0.0   0.0   0:00.04 ksoftirqd/3
+     29 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/3:0-cgroup_destroy
+     30 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/3:0H-events_highpri
+     32 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs
+     33 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 netns
+     34 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kauditd
+     37 root      20   0       0      0      0 S   0.0   0.0   0:00.00 khungtaskd
+     38 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper
+     39 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 writeback
+     40 root      20   0       0      0      0 S   0.0   0.0   0:00.34 kcompactd0
+     41 root      25   5       0      0      0 S   0.0   0.0   0:00.00 ksmd
+     42 root      39  19       0      0      0 S   0.0   0.0   0:00.15 khugepaged
+     43 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 memcg_wmark
+     44 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 memcg_pgcache_l
+     58 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 cryptd
+     93 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kintegrityd
+     94 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kblockd
+     95 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 blkcg_punt_bio
+     96 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 tpm_dev_wq
+     97 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 md
+     98 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 edac-poller
+     99 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 devfreq_wq
+    100 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 watchdogd
+    102 root       0 -20       0      0      0 I   0.0   0.0   0:00.12 kworker/2:1H-kblockd
+    136 root      20   0       0      0      0 S   0.0   0.0   0:02.43 kswapd0
+    137 root      39  19       0      0      0 S   0.0   0.0   0:00.00 zombie_memcg_re
+    138 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kidled
+    140 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kthrotld
+    141 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 acpi_thermal_pm
+    142 root       0 -20       0      0      0 I   0.0   0.0   0:00.02 kworker/0:1H-kblockd
+    143 root       0 -20       0      0      0 I   0.0   0.0   0:00.06 kworker/3:1H-kblockd
+    144 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kmpath_rdacd
+    145 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kaluad
+    146 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 ipv6_addrconf
+    147 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kstrp
+    164 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 zswap-shrink
+    169 root      20   0       0      0      0 S   0.0   0.0   0:00.00 load_calc
+    170 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/u9:0
+    203 root       0 -20       0      0      0 I   0.0   0.0   0:00.02 kworker/1:1H-kblockd
+    215 root      20   0       0      0      0 I   0.0   0.0   0:00.21 kworker/1:2-mm_percpu_wq
+    337 root      20   0       0      0      0 I   0.0   0.0   0:00.02 kworker/3:4-mm_percpu_wq
+    361 root      20   0       0      0      0 S   0.0   0.0   0:00.06 jbd2/vda3-8
+    362 root      20   0       0      0      0 S   0.0   0.0   0:00.00 jbd2-ckpt/vda3-
+    363 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 ext4-rsv-conver
+    459 root      20   0   86312  37064  35056 S   0.0   1.0   0:01.26 systemd-journal
+    490 root      20   0   32128   8872   6988 S   0.0   0.2   0:00.18 systemd-udevd
+    527 rpc       20   0   12424   5712   4968 S   0.0   0.2   0:00.01 rpcbind
+    537 dbus      20   0   10000   5808   4660 S   0.0   0.2   0:00.76 dbus-daemon
+    538 root      20   0       0      0      0 I   0.0   0.0   0:00.78 kworker/u8:3-flush-253:16
+    540 root      20   0   18412   7912   6940 S   0.0   0.2   0:00.18 systemd-logind
+    542 daemon    20   0  311600   7224   5788 S   0.0   0.2   0:16.82 rngd
+    545 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rpciod
+    546 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 xprtiod
+    601 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 nfit
+    635 root      20   0  472860  16800  13740 S   0.0   0.5   0:00.11 NetworkManager
+    639 root      20   0  474940  22084   8552 S   0.0   0.6   0:00.96 tuned
+    883 polkitd   20   0 1658644  14088   9504 S   0.0   0.4   0:00.09 polkitd
+   1025 root      20   0  686776  16896  10808 S   0.0   0.5   0:00.76 aliyun-service
+   1034 root      20   0    3808   2416   2212 S   0.0   0.1   0:00.00 atd
+   1068 root      20   0  221228   1572   1460 S   0.0   0.0   0:00.00 agetty
+   1069 root      20   0  220860   1868   1752 S   0.0   0.1   0:00.00 agetty
+   1186 root      20   0   19476   3644   2912 S   0.0   0.1   0:00.13 assist_daemon
+   1665 chrony    20   0   84712   2396   1808 S   0.0   0.1   0:00.03 chronyd
+   1729 root      20   0  198364  17068  15780 S   0.0   0.5   0:01.01 rsyslogd
+   1744 root      20   0       0      0      0 S   0.0   0.0   0:00.14 jbd2/vdb-8
+   1745 root      20   0       0      0      0 S   0.0   0.0   0:00.00 jbd2-ckpt/vdb-8
+   1746 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 ext4-rsv-conver
+   1767 root      10 -10   34248   7412   4804 S   0.0   0.2   0:01.15 AliYunDunUpdate
+   2113 root      20   0 2324688  99672  49552 S   0.0   2.7   0:12.05 kubelet
+   2206 root      20   0   80072   3212   2924 S   0.0   0.1   0:00.02 irqbalance
+   2361 root      20   0 1233760  11328   4932 S   0.0   0.3   0:00.35 containerd-shim
+   2392 root      20   0 1233760  13556   5888 S   0.0   0.4   0:00.16 containerd-shim
+   2409 65535     20   0    1028      4      0 S   0.0   0.0   0:00.00 pause
+   2421 root      20   0 1233504  12212   5400 S   0.0   0.3   0:00.73 containerd-shim
+   2449 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   2474 root      20   0 1233504  10908   5820 S   0.0   0.3   0:00.12 containerd-shim
+   2483 65535     20   0    1028      4      0 S   0.0   0.0   0:00.00 pause
+   2491 root      20   0 1233504  12900   5756 S   0.0   0.4   0:00.18 containerd-shim
+   2544 root      20   0 1233504   9780   5056 S   0.0   0.3   0:00.11 containerd-shim
+   2546 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   2578 65535     20   0    1028      4      0 S   0.0   0.0   0:00.00 pause
+   2620 65535     20   0    1028      4      0 S   0.0   0.0   0:00.00 pause
+   2755 root      20   0  124080   4856   4488 S   0.0   0.1   0:00.00 argusagent
+   2756 root      20   0 2557572  24752  21828 S   0.0   0.7   0:04.92 argusagent
+   2858 root      20   0  712100   4492      0 S   0.0   0.1   0:00.00 node_exporter
+   2986 root      20   0 1226316   2264      4 S   0.0   0.1   0:00.00 csiplugin-conne
+   3187 root      20   0 1271520  22236  10252 S   0.0   0.6   0:00.78 kube-proxy
+   3262 65532     20   0  736564  11124   2036 S   0.0   0.3   0:00.50 kube-rbac-proxy
+   3534 root      20   0  269436   3208   2520 S   0.0   0.1   0:00.00 gssproxy
+   3852 root      20   0 1246852   8376   3428 S   0.0   0.2   0:00.03 csi-node-driver
+   4098 root      20   0 1247108   8548   3652 S   0.0   0.2   0:00.04 csi-node-driver
+   4148 root      20   0 1246852   9192   2172 S   0.0   0.3   0:00.03 csi-node-driver
+   4234 root      20   0 1273200  22732  11360 S   0.0   0.6   0:00.82 node-problem-de
+   4242 root      20   0 1262820  18128  10040 S   0.0   0.5   0:01.43 node-cache
+   4491 root      20   0 1311932  30248  15524 S   0.0   0.8   0:00.16 plugin.csi.alib
+   4576 root      20   0    3932   2352   2056 S   0.0   0.1   0:00.00 run-npd-gpu.sh
+   4590 root      20   0    2492    632    540 S   0.0   0.0   0:00.00 sleep
+   4642 root      20   0       0      0      0 I   0.0   0.0   0:00.01 kworker/0:13-mm_percpu_wq
+   4644 root      20   0       0      0      0 I   0.0   0.0   0:00.01 kworker/0:15-cgroup_destroy
+   4686 root      20   0       0      0      0 I   0.0   0.0   0:00.02 kworker/2:9-mm_percpu_wq
+   4687 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/2:10-events
+   4711 root      20   0 1333820  44012  28792 S   0.0   1.2   0:00.35 terwayd
+   4741 root      20   0 1270356  27900  19140 S   0.0   0.8   0:00.07 terway-cli
+   4905 root      20   0       0      0      0 I   0.0   0.0   0:00.56 kworker/u8:7-flush-253:0
+   4991 root      20   0  131296  45948  12472 S   0.0   1.3   0:02.32 AliYunDun
+   5048 root      20   0 1233248  10260   5824 S   0.0   0.3   0:00.11 containerd-shim
+   5071 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   5095 root      20   0 1233504  10096   5192 S   0.0   0.3   0:00.10 containerd-shim
+   5118 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   5141 root      20   0 1233504  12324   5772 S   0.0   0.3   0:00.10 containerd-shim
+   5165 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   5230 root      20   0 1233504   9908   5552 S   0.0   0.3   0:00.11 containerd-shim
+   5254 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   5303 root      20   0 1233504  11040   5964 S   0.0   0.3   0:00.11 containerd-shim
+   5326 65535     20   0    1028      4      0 S   0.0   0.0   0:00.00 pause
+   5344 root      20   0 1233504  10008   5332 S   0.0   0.3   0:00.11 containerd-shim
+   5368 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   5389 root      20   0 1233504   9684   5424 S   0.0   0.3   0:00.10 containerd-shim
+   5413 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   5534 root      20   0 1233504  10408   5472 S   0.0   0.3   0:00.10 containerd-shim
+   5562 root      20   0 1233504  11608   5372 S   0.0   0.3   0:00.10 containerd-shim
+   5607 65535     20   0    1028      4      0 S   0.0   0.0   0:00.02 pause
+   5619 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   5735 root      20   0 1233504  11256   6216 S   0.0   0.3   0:00.10 containerd-shim
+   5777 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   5808 nobody    20   0 1299664  37676  29516 S   0.0   1.0   0:00.18 alicloud-monito
+   5854 nobody    20   0  733432  21648  12812 S   0.0   0.6   0:00.51 node-local-dns-
+   6103 1200      20   0 1278996  44968  33668 S   0.0   1.2   0:00.52 o11y-addon-cont
+   6134 root      20   0 1295288  35200  24800 S   0.0   1.0   0:00.14 operator
+   6251 root      20   0  222984   3512   2664 S   0.0   0.1   0:00.00 crond
+   6279 root      20   0 1341804  82044  59316 S   0.0   2.2   0:00.83 cmd
+   6329 root      20   0 1291564  45832  33548 S   0.0   1.3   0:00.39 alibaba-cloud-p
+   6361 1200      20   0 1265624  37360  28100 S   0.0   1.0   0:00.21 kube-state-metr
+   6369 root      20   0 1300008  54404  38396 S   0.0   1.5   0:00.74 coredns
+   6440 root      20   0  746120  52788  30756 S   0.0   1.4   0:01.89 metrics-server
+   6622 1000      20   0  756588  33988  25196 S   0.0   0.9   0:00.47 kube-eventer
+   9403 root      20   0 1233248  10444   6392 S   0.0   0.3   0:00.10 containerd-shim
+   9426 65535     20   0    1028      4      0 S   0.0   0.0   0:00.01 pause
+   9794 root      20   0    4032   3328   2860 S   0.0   0.1   0:00.08 run_loongcollec
+   9866 root      20   0  124828  15964   2632 S   0.0   0.4   0:00.00 loongcollector
+   9868 root      20   0 1186004 142236  92752 S   0.0   3.9   0:01.68 loongcollector
+  12254 root      20   0   20960  10564   8420 S   0.0   0.3   0:00.04 systemd
+  12256 root      20   0  174144   4516      4 S   0.0   0.1   0:00.00 (sd-pam)
+  12297 root      20   0   13708   8032   7072 S   0.0   0.2   0:00.01 sshd
+  12319 root      20   0   16760  10688   9300 S   0.0   0.3   0:00.00 sshd
+  12334 root      20   0   16760   5328   3940 S   0.0   0.1   0:00.00 sshd
+  13135 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0-events
+  13394 root      20   0   16760  10720   9336 S   0.0   0.3   0:00.00 sshd
+  13410 root      20   0   16760   5932   4480 S   0.0   0.2   0:00.00 sshd
+  13484 root      20   0   16760  10756   9372 S   0.0   0.3   0:00.00 sshd
+  13499 root      20   0   16760   5360   3976 S   0.0   0.1   0:00.02 sshd
+  13500 root      20   0  224156   5944   3568 S   0.0   0.2   0:00.03 bash
+  15399 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/3:1-mm_percpu_wq
+  15678 root      20   0       0      0      0 I   0.0   0.0   0:00.01 kworker/u8:2-flush-253:0
+  15982 root      20   0  222624   3872   3140 S   0.0   0.1   0:00.00 bash
+  16035 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/2:0
+  16174 root      20   0    2396    508    440 S   0.0   0.0   0:00.00 sleep
+  16175 root      20   0  222624   2312   1576 S   0.0   0.1   0:00.00 bash
+  16176 root      20   0  220748    836    760 S   0.0   0.0   0:00.00 tee
+  16177 root      20   0  220932    848    752 S   0.0   0.0   0:00.00 timeout
+  16178 root      20   0  228088   4996   4264 R   0.0   0.1   0:00.00 top
+------------End of top----------------
+
+-----------------run ps -ef------------------
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 19:33 ?        00:00:04 /usr/lib/systemd/systemd --switched-root --system --deserialize 18
+root           2       0  0 19:33 ?        00:00:00 [kthreadd]
+root           3       2  0 19:33 ?        00:00:00 [rcu_gp]
+root           4       2  0 19:33 ?        00:00:00 [rcu_par_gp]
+root           6       2  0 19:33 ?        00:00:00 [kworker/0:0H-kblockd]
+root           7       2  0 19:33 ?        00:00:00 [kworker/u8:0-events_unbound]
+root           8       2  0 19:33 ?        00:00:00 [mm_percpu_wq]
+root           9       2  0 19:33 ?        00:00:00 [kworker/u8:1-events_unbound]
+root          10       2  0 19:33 ?        00:00:00 [rcu_tasks_rude_]
+root          11       2  0 19:33 ?        00:00:00 [rcu_tasks_trace]
+root          12       2  0 19:33 ?        00:00:00 [ksoftirqd/0]
+root          13       2  0 19:33 ?        00:00:00 [rcu_sched]
+root          14       2  0 19:33 ?        00:00:00 [migration/0]
+root          15       2  0 19:33 ?        00:00:00 [cpuhp/0]
+root          16       2  0 19:33 ?        00:00:00 [cpuhp/1]
+root          17       2  0 19:33 ?        00:00:00 [migration/1]
+root          18       2  0 19:33 ?        00:00:00 [ksoftirqd/1]
+root          20       2  0 19:33 ?        00:00:00 [kworker/1:0H-events_highpri]
+root          21       2  0 19:33 ?        00:00:00 [cpuhp/2]
+root          22       2  0 19:33 ?        00:00:00 [migration/2]
+root          23       2  0 19:33 ?        00:00:00 [ksoftirqd/2]
+root          25       2  0 19:33 ?        00:00:00 [kworker/2:0H-events_highpri]
+root          26       2  0 19:33 ?        00:00:00 [cpuhp/3]
+root          27       2  0 19:33 ?        00:00:00 [migration/3]
+root          28       2  0 19:33 ?        00:00:00 [ksoftirqd/3]
+root          29       2  0 19:33 ?        00:00:00 [kworker/3:0-cgroup_destroy]
+root          30       2  0 19:33 ?        00:00:00 [kworker/3:0H-events_highpri]
+root          32       2  0 19:33 ?        00:00:00 [kdevtmpfs]
+root          33       2  0 19:33 ?        00:00:00 [netns]
+root          34       2  0 19:33 ?        00:00:00 [kauditd]
+root          37       2  0 19:33 ?        00:00:00 [khungtaskd]
+root          38       2  0 19:33 ?        00:00:00 [oom_reaper]
+root          39       2  0 19:33 ?        00:00:00 [writeback]
+root          40       2  0 19:33 ?        00:00:00 [kcompactd0]
+root          41       2  0 19:33 ?        00:00:00 [ksmd]
+root          42       2  0 19:33 ?        00:00:00 [khugepaged]
+root          43       2  0 19:33 ?        00:00:00 [memcg_wmark]
+root          44       2  0 19:33 ?        00:00:00 [memcg_pgcache_l]
+root          58       2  0 19:33 ?        00:00:00 [cryptd]
+root          93       2  0 19:33 ?        00:00:00 [kintegrityd]
+root          94       2  0 19:33 ?        00:00:00 [kblockd]
+root          95       2  0 19:33 ?        00:00:00 [blkcg_punt_bio]
+root          96       2  0 19:33 ?        00:00:00 [tpm_dev_wq]
+root          97       2  0 19:33 ?        00:00:00 [md]
+root          98       2  0 19:33 ?        00:00:00 [edac-poller]
+root          99       2  0 19:33 ?        00:00:00 [devfreq_wq]
+root         100       2  0 19:33 ?        00:00:00 [watchdogd]
+root         102       2  0 19:33 ?        00:00:00 [kworker/2:1H-kblockd]
+root         136       2  0 19:33 ?        00:00:02 [kswapd0]
+root         137       2  0 19:33 ?        00:00:00 [zombie_memcg_re]
+root         138       2  0 19:33 ?        00:00:00 [kidled]
+root         140       2  0 19:33 ?        00:00:00 [kthrotld]
+root         141       2  0 19:33 ?        00:00:00 [acpi_thermal_pm]
+root         142       2  0 19:33 ?        00:00:00 [kworker/0:1H-kblockd]
+root         143       2  0 19:33 ?        00:00:00 [kworker/3:1H-kblockd]
+root         144       2  0 19:33 ?        00:00:00 [kmpath_rdacd]
+root         145       2  0 19:33 ?        00:00:00 [kaluad]
+root         146       2  0 19:33 ?        00:00:00 [ipv6_addrconf]
+root         147       2  0 19:33 ?        00:00:00 [kstrp]
+root         164       2  0 19:33 ?        00:00:00 [zswap-shrink]
+root         169       2  0 19:33 ?        00:00:00 [load_calc]
+root         170       2  0 19:33 ?        00:00:00 [kworker/u9:0]
+root         203       2  0 19:33 ?        00:00:00 [kworker/1:1H-kblockd]
+root         215       2  0 19:33 ?        00:00:00 [kworker/1:2-events]
+root         337       2  0 19:33 ?        00:00:00 [kworker/3:4-mm_percpu_wq]
+root         361       2  0 19:33 ?        00:00:00 [jbd2/vda3-8]
+root         362       2  0 19:33 ?        00:00:00 [jbd2-ckpt/vda3-]
+root         363       2  0 19:33 ?        00:00:00 [ext4-rsv-conver]
+root         459       1  0 19:33 ?        00:00:01 /usr/lib/systemd/systemd-journald
+root         490       1  0 19:33 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+rpc          527       1  0 19:33 ?        00:00:00 /usr/bin/rpcbind -w -f
+dbus         537       1  0 19:33 ?        00:00:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         538       2  0 19:33 ?        00:00:00 [kworker/u8:3-flush-253:16]
+root         540       1  0 19:33 ?        00:00:00 /usr/lib/systemd/systemd-logind
+daemon       542       1  1 19:33 ?        00:00:16 /usr/sbin/rngd -f --fill-watermark=0 -x pkcs11 -x nist -x qrypt -D daemon:daemon
+root         545       2  0 19:33 ?        00:00:00 [rpciod]
+root         546       2  0 19:33 ?        00:00:00 [xprtiod]
+root         601       2  0 19:33 ?        00:00:00 [nfit]
+root         635       1  0 19:33 ?        00:00:00 /usr/sbin/NetworkManager --no-daemon
+root         639       1  0 19:33 ?        00:00:00 /usr/libexec/platform-python -Es /usr/sbin/tuned -l -P
+polkitd      883       1  0 19:34 ?        00:00:00 /usr/lib/polkit-1/polkitd --no-debug
+root        1025       1  0 19:34 ?        00:00:00 /usr/local/share/aliyun-assist/2.2.4.941/aliyun-service
+root        1034       1  0 19:34 ?        00:00:00 /usr/sbin/atd -f
+root        1068       1  0 19:34 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root        1069       1  0 19:34 ttyS0    00:00:00 /sbin/agetty -o -p -- \u --keep-baud 115200,38400,9600 ttyS0 vt220
+root        1186       1  0 19:34 ?        00:00:00 /usr/local/share/assist-daemon/assist_daemon
+chrony      1665       1  0 19:34 ?        00:00:00 /usr/sbin/chronyd
+root        1729       1  0 19:34 ?        00:00:01 /usr/sbin/rsyslogd -n
+root        1744       2  0 19:34 ?        00:00:00 [jbd2/vdb-8]
+root        1745       2  0 19:34 ?        00:00:00 [jbd2-ckpt/vdb-8]
+root        1746       2  0 19:34 ?        00:00:00 [ext4-rsv-conver]
+root        1767       1  0 19:34 ?        00:00:01 /usr/local/aegis/aegis_update/AliYunDunUpdate
+root        1919       1  4 19:34 ?        00:00:41 /usr/bin/containerd
+root        2113       1  1 19:34 ?        00:00:12 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --pod-manifest-path=/etc/kubernetes/manifests --v=3 --authorization-mode=Webhook --authentication-token-webhook=true --anonymous-auth=false --client-ca-file=/etc/kubernetes/pki/ca.crt --container-runtime-endpoint=/var/run/containerd/containerd.sock --cgroup-driver=systemd --node-labels=alibabacloud.com/nodepool-id=npf19e387bbe25431ba8b03075da98b985,ack.aliyun.com=ca72b74945d55404f84c94fbd27b6a286 --rotate-certificates=true --cert-dir=/var/lib/kubelet/pki --node-ip=0.0.0.0 --config=/var/lib/kubelet/ack-managed-config.yaml --hostname-override=cn-hangzhou.10.157.28.94 --cluster-dns=192.168.0.10 --cloud-provider=external --provider-id=cn-hangzhou.i-bp14v1xuplgec3nip1vh --enable-controller-attach-detach=true
+root        2206       1  0 19:34 ?        00:00:00 /usr/sbin/irqbalance --foreground
+root        2361       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id a111981a019affec1aca3a0a0da22f9ccb779fe9616358bafbe682485dc48b6c -address /run/containerd/containerd.sock
+root        2392       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 83b6f02a299f0c87606e0491177320e26b8a7be865c239a8849c317b8b6b472e -address /run/containerd/containerd.sock
+65535       2409    2361  0 19:34 ?        00:00:00 /pause
+root        2421       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 82e4ac515945072b66f536449aca4005f4600373e69e32edc31d25831dfd4646 -address /run/containerd/containerd.sock
+65535       2449    2392  0 19:34 ?        00:00:00 /pause
+root        2474       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 40efe4df209b4b8be37177b572656c1d7122ddebd7eb7c1c647a1373c3c05808 -address /run/containerd/containerd.sock
+65535       2483    2421  0 19:34 ?        00:00:00 /pause
+root        2491       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 1cd1c627b99829c5bc118d1c07cfed73c08b441d39324ce7d0d096808b2cd5e1 -address /run/containerd/containerd.sock
+root        2544       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 089c7307a2bbe506d92c1018f357028faf02a043b083806b0eb6ed594db2b63a -address /run/containerd/containerd.sock
+65535       2546    2474  0 19:34 ?        00:00:00 /pause
+65535       2578    2491  0 19:34 ?        00:00:00 /pause
+65535       2620    2544  0 19:34 ?        00:00:00 /pause
+root        2755       1  0 19:34 ?        00:00:00 /usr/local/cloudmonitor/bin/argusagent -d
+root        2756    2755  0 19:34 ?        00:00:04 /usr/local/cloudmonitor/bin/argusagent
+root        2858    2392  0 19:34 ?        00:00:00 /bin/node_exporter --web.listen-address=127.0.0.1:9101 --path.procfs=/host/proc --path.sysfs=/host/sys --path.rootfs=/host/root --collector.processes --collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+)($|/) --collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$ --no-collector.ipvs
+root        2986       1  0 19:34 ?        00:00:00 /etc/csi-tool/csiplugin-connector
+root        3187    2544  0 19:34 ?        00:00:00 /usr/local/bin/kube-proxy --config=/var/lib/kube-proxy/config.conf --hostname-override=cn-hangzhou.10.157.28.94
+65532       3262    2392  0 19:34 ?        00:00:00 /usr/local/bin/kube-rbac-proxy --secure-listen-address=:9100 --upstream=http://127.0.0.1:9101/ --tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256
+root        3534       1  0 19:34 ?        00:00:00 /usr/sbin/gssproxy -D
+root        3852    2361  0 19:34 ?        00:00:00 /csi-node-driver-registrar --v=5 --csi-address=/csi/csi.sock --logging-format=text --kubelet-registration-path=/var/lib/kubelet/csi-plugins/diskplugin.csi.alibabacloud.com/csi.sock
+root        4098    2361  0 19:34 ?        00:00:00 /csi-node-driver-registrar --v=5 --csi-address=/csi/csi.sock --logging-format=text --kubelet-registration-path=/var/lib/kubelet/csi-plugins/nasplugin.csi.alibabacloud.com/csi.sock
+root        4148    2361  0 19:34 ?        00:00:00 /csi-node-driver-registrar --v=5 --csi-address=/csi/csi.sock --logging-format=text --kubelet-registration-path=/var/lib/kubelet/csi-plugins/ossplugin.csi.alibabacloud.com/csi.sock
+root        4234    2421  0 19:34 ?        00:00:00 /node-problem-detector --logtostderr --v=3 --system-log-monitors=/config/kernel-monitor.json,/config/docker-monitor.json --port=20256 --prometheus-port=20257 --custom-plugin-monitors=/config/ntp-problem-monitor.json --custom-plugin-monitors=/config/network-problem-monitor.json --custom-plugin-monitors=/config/inodes-problem-monitor.json --custom-plugin-monitors=/config/pid-pressure-problem-monitor.json --custom-plugin-monitors=/config/docker-offline-monitor.json --custom-plugin-monitors=/config/instance_expired_checker.json --custom-plugin-monitors=/config/systemd-check-monitor.json
+root        4242    2474  0 19:34 ?        00:00:01 /node-cache -localip 169.254.20.10 -conf /etc/coredns/Corefile -upstreamsvc kube-dns -setupiptables=true -skipteardown=true
+root        4491    2361  0 19:34 ?        00:00:00 /usr/bin/plugin.csi.alibabacloud.com --endpoint=unix://csi/driverplugin.csi.alibabacloud.com-replace/csi.sock --v=2 --logging-format=text --driver=disk,nas,oss --run-controller-service=false --run-node-service=true
+root        4576    2421  0 19:34 ?        00:00:00 /bin/bash /usr/bin/run-npd-gpu.sh diag --MaxEventEmitCount=1 --EnabledIsolateGPU=true --DiagnoseIntervalSeconds=30 --SocketFile=/var/run/npd-gpu/serve.sock --LogLevel=0 --LogLevelDir=/etc/ack-gpud --SqliteDBPath=/etc/ack-gpud/state.sqlite3 --CheckingItemDir=/usr/local/npd-gpu/assets --nvsmi.NvsmiTimeout=20 --LspciBinaryTimeout=10 --dmesg.TailMode --dmesg.ResetDmesgBySystemReboot --dmesg.MatchLastLines=30000 --dmesg.MatchLatestSeconds=120 --dmesg.RecordExpiredSeconds=2592000 --diagnoser=dmesg,nvml
+root        4590    4576  0 19:34 ?        00:00:00 sleep inf
+root        4642       2  0 19:34 ?        00:00:00 [kworker/0:13-mm_percpu_wq]
+root        4644       2  0 19:34 ?        00:00:00 [kworker/0:15-cgroup_destroy]
+root        4686       2  0 19:34 ?        00:00:00 [kworker/2:9-mm_percpu_wq]
+root        4687       2  0 19:34 ?        00:00:00 [kworker/2:10-events]
+root        4711    2491  0 19:34 ?        00:00:00 /usr/bin/terwayd -log-level info -daemon-mode ENIMultiIP -config /etc/eni/eni_conf --feature-gates=,
+root        4741    2491  0 19:34 ?        00:00:00 terway-cli policy
+root        4905       2  0 19:34 ?        00:00:00 [kworker/u8:7-flush-253:0]
+root        4991       1  0 19:34 ?        00:00:02 /usr/local/aegis/aegis_client/aegis_12_61/AliYunDun
+root        5048       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id bd9d821d6eb9d36a5014fa7c13ebff7c6f4448d07dcbe14f0e77e5da70bc1368 -address /run/containerd/containerd.sock
+65535       5071    5048  0 19:34 ?        00:00:00 /pause
+root        5095       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 30cf8f5e1e837c7c2f7ed2b4c3c2fa058cffd08fbb6fcac29258be541a0c7e0b -address /run/containerd/containerd.sock
+65535       5118    5095  0 19:34 ?        00:00:00 /pause
+root        5141       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 23b12fe5bf41fcfff71ca456146809b9e0b1d6b0a05ca1fcbb3bc52996eeb0b7 -address /run/containerd/containerd.sock
+65535       5165    5141  0 19:34 ?        00:00:00 /pause
+root        5230       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id b033512b7c2f1a14534f92ebf58a392733f57cb8930bd5506a810093182453b8 -address /run/containerd/containerd.sock
+65535       5254    5230  0 19:34 ?        00:00:00 /pause
+root        5303       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 37a359f0fdcd8e7af5b3c0984367c825ac53d8a97c7689571a82a365f566ad3b -address /run/containerd/containerd.sock
+65535       5326    5303  0 19:34 ?        00:00:00 /pause
+root        5344       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 0b3904bfd6a41b6b8e70b5f16a4234369f1060be7ee40fb610838a0ca4968931 -address /run/containerd/containerd.sock
+65535       5368    5344  0 19:34 ?        00:00:00 /pause
+root        5389       1  0 19:34 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 7b5845a65d020087aed5f807257bce80a6238feb4166eb7cc8eac34f46887962 -address /run/containerd/containerd.sock
+65535       5413    5389  0 19:34 ?        00:00:00 /pause
+root        5534       1  0 19:35 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 58f8f7f1d292830adff08a7fc138a2a23f30df04a70ba6be22fc4053d4eac3a6 -address /run/containerd/containerd.sock
+root        5562       1  0 19:35 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id cb28e83578e6f3ccb110c4dff847e4dbfe7a7f89ab96e174f3b5aa8bf62c63de -address /run/containerd/containerd.sock
+65535       5607    5534  0 19:35 ?        00:00:00 /pause
+65535       5619    5562  0 19:35 ?        00:00:00 /pause
+root        5735       1  0 19:35 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id c953e7bb00101244e702121eb488d6ee5e29bf51203fea9aff0e84ca282a8a24 -address /run/containerd/containerd.sock
+root        5753       1  0 19:35 ?        00:00:05 /usr/local/aegis/aegis_client/aegis_12_61/AliYunDunMonitor
+65535       5777    5735  0 19:35 ?        00:00:00 /pause
+nobody      5808    5095  0 19:35 ?        00:00:00 /alicloud-monitor-controller agent --regionId=cn-hangzhou --clusterId=ca72b74945d55404f84c94fbd27b6a286 --aliUid=1045178262043886 --logtostderr --v=2
+nobody      5854    5230  0 19:35 ?        00:00:00 /node-local-dns-admission-controller --include-kube-dns --ndots=3 --attempts=2 --timeout=1 --nameserver 169.254.20.10 --cluster-domain cluster.local --logtostderr -v=4 2>&1
+1200        6103    5389  0 19:35 ?        00:00:00 /bin/o11y-addon-controller --leader-elect --feature-flags=controller;tokenRotation --prometheus-instance-id=ca72b74945d55404f84c94fbd27b6a286
+root        6134    5303  0 19:35 ?        00:00:00 /bin/operator
+root        6251       1  0 19:35 ?        00:00:00 /usr/sbin/crond -n
+root        6279    5048  0 19:35 ?        00:00:00 /one-operator/cmd
+root        6329    5735  0 19:35 ?        00:00:00 /root/alibaba-cloud-price-exporter --listen-address=:9091 --ali-user-id=1045178262043886 --cluster-id=ca72b74945d55404f84c94fbd27b6a286 --region-id=cn-hangzhou --cluster-type=ManagedKubernetes --cluster-profile=Default
+1200        6361    5562  0 19:35 ?        00:00:00 /kube-state-metrics --port=8080 --telemetry-port=8081 --metric-labels-allowlist=pods=[*],deployments=[*],nodes=[*] --resources=certificatesigningrequests,configmaps,cronjobs,daemonsets,deployments,endpoints,horizontalpodautoscalers,ingresses,jobs,leases,limitranges,mutatingwebhookconfigurations,namespaces,networkpolicies,nodes,persistentvolumeclaims,persistentvolumes,poddisruptionbudgets,pods,replicasets,replicationcontrollers,resourcequotas,services,statefulsets,storageclasses,validatingwebhookconfigurations,volumeattachments
+root        6369    5344  0 19:35 ?        00:00:00 /coredns -conf /etc/coredns/Corefile
+root        6440    5141  0 19:35 ?        00:00:01 /metrics-server --source=kubernetes.hybrid:'' --kubelet-port=10250 --kubelet-certificate-authority=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt --deprecated-kubelet-completely-insecure=false
+1000        6622    5534  0 19:35 ?        00:00:00 /kube-eventer --source=kubernetes:https://kubernetes.default --sink=sls:https://sls.aliyuncs.com?internal=true&logStore=k8s-event&project=k8s-log-ca72b74945d55404f84c94fbd27b6a286&topic=&label=clusterId,ca72b74945d55404f84c94fbd27b6a286&label=clusterName,cluster-UWZyex
+root        9403       1  0 19:35 ?        00:00:00 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id d1ac83f86877fe20cf38d56ed56869cfb246fe43e7f3b6ed31bf554d97c6d956 -address /run/containerd/containerd.sock
+65535       9426    9403  0 19:35 ?        00:00:00 /pause
+root        9794    9403  0 19:35 ?        00:00:00 /bin/bash /usr/local/ilogtail/run_loongcollector.sh
+root        9866    9794  0 19:35 ?        00:00:00 /usr/local/ilogtail/loongcollector -enable_host_id=false
+root        9868    9866  0 19:35 ?        00:00:01 /usr/local/ilogtail/loongcollector -enable_host_id=false
+root       12254       1  0 19:40 ?        00:00:00 /usr/lib/systemd/systemd --user
+root       12256   12254  0 19:40 ?        00:00:00 (sd-pam)
+root       12297       1  0 19:40 ?        00:00:00 /usr/sbin/sshd -D -oCiphers=aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes256-cbc,aes128-gcm@openssh.com,aes128-ctr,aes128-cbc -oMACs=hmac-sha2-256-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha1,umac-128@openssh.com,hmac-sha2-512 -oGSSAPIKexAlgorithms=gss-curve25519-sha256-,gss-nistp256-sha256-,gss-group14-sha256-,gss-group16-sha512-,gss-gex-sha1-,gss-group14-sha1- -oKexAlgorithms=curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1 -oHostKeyAlgorithms=ecdsa-sha2-nistp256,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp521-cert-v01@openssh.com,ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,rsa-sha2-256,rsa-sha2-256-cert-v01@openssh.com,rsa-sha2-512,rsa-sha2-512-cert-v01@openssh.com,ssh-rsa,ssh-rsa-cert-v01@openssh.com -oPubkeyAcceptedKeyTypes=ecdsa-sha2-nistp256,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp521-cert-v01@openssh.com,ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,rsa-sha2-256,rsa-sha2-256-cert-v01@openssh.com,rsa-sha2-512,rsa-sha2-512-cert-v01@openssh.com,ssh-rsa,ssh-rsa-cert-v01@openssh.com -oCASignatureAlgorithms=ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519,rsa-sha2-256,rsa-sha2-512,ssh-rsa
+root       12319   12297  0 19:40 ?        00:00:00 sshd: root [priv]
+root       12334   12319  0 19:40 ?        00:00:00 sshd: root@notty
+root       13135       2  0 19:42 ?        00:00:00 [kworker/1:0-events]
+root       13394   12297  0 19:43 ?        00:00:00 sshd: root [priv]
+root       13410   13394  0 19:43 ?        00:00:00 sshd: root@notty
+root       13484   12297  0 19:43 ?        00:00:00 sshd: root [priv]
+root       13499   13484  0 19:43 ?        00:00:00 sshd: root@pts/0
+root       13500   13499  0 19:43 pts/0    00:00:00 -bash
+root       15399       2  0 19:47 ?        00:00:00 [kworker/3:1-mm_percpu_wq]
+root       15678       2  0 19:47 ?        00:00:00 [kworker/u8:2-flush-253:0]
+root       15982   13500  0 19:48 pts/0    00:00:00 bash ./diagnose_k8s.sh
+root       16035       2  0 19:48 ?        00:00:00 [kworker/2:0]
+root       16174    9794  0 19:48 ?        00:00:00 sleep 3
+root       16179   15982  0 19:48 pts/0    00:00:00 bash ./diagnose_k8s.sh
+root       16180   15982  0 19:48 pts/0    00:00:00 tee -a /tmp/diagnose_1765626516/system_status
+root       16181   16179  0 19:48 pts/0    00:00:00 timeout 10s ps -ef
+root       16182   16181  0 19:48 pts/0    00:00:00 ps -ef
+------------End of ps----------------
+
+-----------------run netstat -nt------------------
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 169.254.20.10:39002     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:36744     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:35160      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:39014     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:35180      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:42158      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:22         100.104.86.28:36788     ESTABLISHED
+tcp        0      0 169.254.20.10:59936     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60474      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:54600     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:47904      10.20.44.201:6443       ESTABLISHED
+tcp        0      0 10.157.28.94:34694      10.157.28.93:6443       ESTABLISHED
+tcp        0      0 169.254.20.10:47074     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:45474     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:42106      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:47080     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34950      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:60518      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:34908      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:51116      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:42128      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:36736     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51580      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:54602      100.100.154.78:80       TIME_WAIT  
+tcp        0      0 10.157.28.94:39284      100.100.30.25:80        ESTABLISHED
+tcp        0      0 10.157.28.94:48704      100.100.154.78:80       TIME_WAIT  
+tcp        0      0 169.254.20.10:38990     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:39590      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:55310      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:59894     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:39064     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51634      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:59580      100.100.100.200:80      TIME_WAIT  
+tcp        0  11508 10.157.28.94:22         100.104.86.13:41289     ESTABLISHED
+tcp        0      0 10.157.28.94:35204      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:48082      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:42172      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:59596      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:54636     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60490      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:34868      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:54588     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47144     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:59900     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47086     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:42122      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:55282      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:34934      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:55268      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:59950     TIME_WAIT  
+tcp        0      0 169.254.20.10:59956     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:55296      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:47096     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:36756     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:48032      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:43252      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:51592      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:34912      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:60504      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:60540      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:42134      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:45466     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47120     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:39062     TIME_WAIT  
+tcp        0      0 169.254.20.10:54542     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:45442     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:55184     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:59564      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:48058      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:51538      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:55250      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:39050     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:33748      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:51620      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:51598      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:34926      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:51596      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:55324      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:59908     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:35186      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:42132      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 192.168.0.1:54264       192.168.0.1:443         ESTABLISHED
+tcp        0      0 10.157.28.94:34942      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:47090     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:45480     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34838      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:45486     TIME_WAIT  
+tcp        0      0 169.254.20.10:38982     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51640      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:54540     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:35148      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:36790     TIME_WAIT  
+tcp        0      0 169.254.20.10:36760     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:36802     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:54556     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60512      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:45494     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:54614     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51566      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:36794     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:45498     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:59540      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:54538     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:22         100.104.113.194:48150   ESTABLISHED
+tcp        0      0 169.254.20.10:36722     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34964      10.157.28.94:11260      TIME_WAIT  
+tcp        0      0 10.157.28.94:35184      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:58658      10.157.28.99:10254      TIME_WAIT  
+tcp        0      0 10.157.28.94:35202      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:48048      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:45468     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:43250      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:46934      100.100.45.106:80       TIME_WAIT  
+tcp        0      0 10.157.28.94:35168      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:45452     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60492      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:36784     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:42150      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:39592      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:59784      100.100.45.186:80       TIME_WAIT  
+tcp        0      0 169.254.20.10:59948     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47154     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34878      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:59562      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:34824      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:38630      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:33694      10.157.28.103:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:39022     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:47110     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:59910     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:60550      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 169.254.20.10:39074     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:39034     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34892      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:54572     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:59972     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:55256      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:47102     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51554      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:39058     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:59546      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:36768     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:34852      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:59946     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:59920     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51594      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:51114      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 169.254.20.10:45460     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:51610      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:54628     TIME_WAIT  
+tcp        0      0 169.254.20.10:8081      169.254.20.10:47128     TIME_WAIT  
+tcp        0      0 10.157.28.94:48078      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 10.157.28.94:55264      100.100.100.200:80      TIME_WAIT  
+tcp        0      0 10.157.28.94:38616      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 10.157.28.94:33746      10.157.28.104:443       TIME_WAIT  
+tcp        0      0 169.254.20.10:36708     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 169.254.20.10:54630     169.254.20.10:8081      TIME_WAIT  
+tcp        0      0 10.157.28.94:48074      100.100.45.106:443      TIME_WAIT  
+tcp        0      0 169.254.20.10:45470     169.254.20.10:8081      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:40140      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:34962      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:35184      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:40138      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:53710      TIME_WAIT  
+tcp6       0      0 10.157.28.94:10250      10.157.28.104:59850     ESTABLISHED
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:57984      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:60648      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:60646      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:35178      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:57990      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:34964      TIME_WAIT  
+tcp6       0      0 10.157.28.94:11260      10.157.28.94:53720      TIME_WAIT  
+------------End of netstat----------------
+
+-----------------run netstat -nu------------------
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 10.157.28.94:68         10.157.255.253:67       ESTABLISHED
+------------End of netstat----------------
+
+-----------------run netstat -ln------------------
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.1:20256         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:20257         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:10248         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:10249         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:9099          0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:9101          0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN     
+tcp        0      0 169.254.20.10:8081      0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:38865         0.0.0.0:*               LISTEN     
+tcp        0      0 169.254.20.10:53        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9253                 :::*                    LISTEN     
+tcp6       0      0 :::9353                 :::*                    LISTEN     
+tcp6       0      0 :::10250                :::*                    LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+tcp6       0      0 :::111                  :::*                    LISTEN     
+tcp6       0      0 :::10256                :::*                    LISTEN     
+tcp6       0      0 :::22                   :::*                    LISTEN     
+tcp6       0      0 :::11260                :::*                    LISTEN     
+udp        0      0 127.0.0.1:323           0.0.0.0:*                          
+udp        0      0 169.254.20.10:53        0.0.0.0:*                          
+udp        0      0 0.0.0.0:111             0.0.0.0:*                          
+udp6       0      0 ::1:323                 :::*                               
+udp6       0      0 :::111                  :::*                               
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ACC ]     STREAM     LISTENING     146713   /run/user/0/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     13041    /run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     146718   /run/user/0/bus
+unix  2      [ ACC ]     STREAM     LISTENING     25581    /var/lib/kubelet/pod-resources/4227196319
+unix  2      [ ACC ]     STREAM     LISTENING     86474    /run/containerd/s/ce8367922dbd8466994f7cce00d33e87c44db0816f3422b296ccca430ae73ac1
+unix  2      [ ACC ]     STREAM     LISTENING     28707    /var/lib/kubelet/device-plugins/kubelet.sock
+unix  2      [ ACC ]     STREAM     LISTENING     73263    /run/containerd/s/ee8f37587ca99624afbbbd187fa3c49dfc6aed1dd8d248e4ab3cd3ec74fad507
+unix  2      [ ACC ]     STREAM     LISTENING     14573    /run/systemd/journal/stdout
+unix  2      [ ACC ]     STREAM     LISTENING     28324    /run/containerd/s/58bd7906b849d205248d360701000ed478802d0b8fea6c913a23c3fbfa4514ca
+unix  2      [ ACC ]     STREAM     LISTENING     25264    /run/containerd/debug.sock
+unix  2      [ ACC ]     STREAM     LISTENING     25265    /run/containerd/containerd.sock.ttrpc
+unix  2      [ ACC ]     STREAM     LISTENING     25266    /run/containerd/containerd.sock
+unix  2      [ ACC ]     STREAM     LISTENING     25267    /var/run/nri/nri.sock
+unix  2      [ ACC ]     STREAM     LISTENING     28365    /run/containerd/s/5c237559d3bee2144846a6cec8618655ce9e9b70e3bd08dc665d4f2391b4a3fd
+unix  2      [ ACC ]     STREAM     LISTENING     77594    /run/containerd/s/2fae459b6d3e5f765b6bae59918c27d4a8a475455c1cb25b24216bf36dfed055
+unix  2      [ ACC ]     STREAM     LISTENING     29131    /run/containerd/s/a85184abb7db325d3e447862ce5681e290529932180fa7f358734bfa1271db6f
+unix  2      [ ACC ]     STREAM     LISTENING     71564    /var/run/eni/eni.socket
+unix  2      [ ACC ]     STREAM     LISTENING     72514    /var/run/eni/eni_debug.socket
+unix  2      [ ACC ]     STREAM     LISTENING     34196    /run/csi-tool/connector/connector.sock
+unix  2      [ ACC ]     STREAM     LISTENING     35828    /var/lib/gssproxy/default.sock
+unix  2      [ ACC ]     STREAM     LISTENING     72977    /usr/local/aegis/Aegis-<Guid(5A2C30A2-A87D-490A-9281-6765EDAD7CBA)>
+unix  2      [ ACC ]     STREAM     LISTENING     26391    /run/containerd/s/8af2448b767a73028c94f2f6313dc09e8e5e1f2c39cb6b069e20de3363f67bfa
+unix  2      [ ACC ]     STREAM     LISTENING     79618    /run/containerd/s/80522adde262100ecb2916edb4d7422dea2028b637eaab75f52b48c11729daf0
+unix  2      [ ACC ]     STREAM     LISTENING     24223    /tmp/aliyun_assist_service.sock
+unix  2      [ ACC ]     STREAM     LISTENING     26402    /run/containerd/s/377a85500cda3c27e8c65413d2821dd3ee288d50fa1af5c9e2eff8270ab27fdc
+unix  2      [ ACC ]     STREAM     LISTENING     78677    /run/containerd/s/b7bffed8154504b38a03af2571e3dd732ea0565becbbac1a7aa2343c93c1ca3f
+unix  2      [ ACC ]     STREAM     LISTENING     29301    /run/containerd/s/ea96c68e5d6389c08e12508aff56d9bd0812574132b9e3b2a197f75c4b4b501b
+unix  2      [ ACC ]     STREAM     LISTENING     73574    /run/containerd/s/31810abaf1fa69735011f67c6f4a16d7be5d6d0cbd719326a6093c56ec6a34a2
+unix  2      [ ACC ]     STREAM     LISTENING     12279    /run/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     113034   /run/containerd/s/830accfde6e6070fc0ec1aa3830103a3c7a4da369370dc62de01e9196fb4b7d3
+unix  2      [ ACC ]     STREAM     LISTENING     17421    /run/rpcbind.sock
+unix  2      [ ACC ]     SEQPACKET  LISTENING     15775    /run/systemd/coredump
+unix  2      [ ACC ]     SEQPACKET  LISTENING     15786    /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     27488    /run/irqbalance/irqbalance2206.sock
+unix  2      [ ACC ]     STREAM     LISTENING     80158    /run/containerd/s/fb57d5d256646107ca1d3949d36409683dd22cc0649c18a3c8d87e81651e4ea1
+unix  2      [ ACC ]     STREAM     LISTENING     68989    /csi/ossplugin.csi.alibabacloud.com/csi.sock
+unix  2      [ ACC ]     STREAM     LISTENING     35829    /run/gssproxy.sock
+unix  2      [ ACC ]     STREAM     LISTENING     81456    /run/containerd/s/164eceab2e60c188bd78daada798de5f2acd5a510f7d3fb2fc6278a5accbe8a0
+unix  2      [ ACC ]     STREAM     LISTENING     29579    /usr/local/cloudmonitor/local_data/argus.sock
+unix  2      [ ACC ]     STREAM     LISTENING     64313    /csi/nasplugin.csi.alibabacloud.com/csi.sock
+unix  2      [ ACC ]     STREAM     LISTENING     68996    /csi/diskplugin.csi.alibabacloud.com/csi.sock
+unix  2      [ ACC ]     STREAM     LISTENING     64341    /registration/diskplugin.csi.alibabacloud.com-reg.sock
+unix  2      [ ACC ]     STREAM     LISTENING     69003    /registration/nasplugin.csi.alibabacloud.com-reg.sock
+unix  2      [ ACC ]     STREAM     LISTENING     64353    /registration/ossplugin.csi.alibabacloud.com-reg.sock
+unix  2      [ ACC ]     STREAM     LISTENING     76790    /run/containerd/s/dfbb92948e1150fb7e630da5eee3db5f0ea617fa10dabc0532bc6daa67dc3557
+unix  2      [ ACC ]     STREAM     LISTENING     77904    /run/containerd/s/20db6138a76e98acf1bd26baca17154445094843b50772c2e6fedb7e93a789bb
+Active Bluetooth connections (only servers)
+Proto  Destination       Source            State         PSM DCID   SCID      IMTU    OMTU Security
+Proto  Destination       Source            State     Channel
+------------End of netstat----------------
+
+-----------------run sar -A------------------
+Linux 5.10.134-19.1.al8.x86_64 (iZbp14v1xuplgec3nip1vhZ) 	12/13/2025 	_x86_64_	(4 CPU)
+
+19:34:40     LINUX RESTART	(4 CPU)
+------------End of sar----------------
+
+-----------------run df -h------------------
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        1.8G     0  1.8G   0% /dev
+tmpfs           1.8G     0  1.8G   0% /dev/shm
+tmpfs           1.8G  3.7M  1.8G   1% /run
+/dev/vda3        40G  5.0G   33G  14% /
+/dev/vda2       200M  5.8M  194M   3% /boot/efi
+/dev/vdb        116G  5.2G  105G   5% /var/lib/container
+tmpfs           2.7G  4.0K  2.7G   1% /var/lib/kubelet/pods/dc590078-5f5e-4307-8f09-a49d83b5c9e0/volumes/kubernetes.io~secret/addon-token
+tmpfs           1.3G   12K  1.3G   1% /var/lib/kubelet/pods/bf0e3948-f37d-4073-a826-6548a826158f/volumes/kubernetes.io~projected/kube-api-access-5flfz
+tmpfs           2.7G   12K  2.7G   1% /var/lib/kubelet/pods/f6557d61-7791-41b8-80cc-af992c5b87f7/volumes/kubernetes.io~projected/kube-api-access-52hxm
+tmpfs           2.7G   12K  2.7G   1% /var/lib/kubelet/pods/dc590078-5f5e-4307-8f09-a49d83b5c9e0/volumes/kubernetes.io~projected/kube-api-access-t685s
+tmpfs           2.7G   12K  2.7G   1% /var/lib/kubelet/pods/1aa8894d-7d97-45a1-87f8-df50344f13ac/volumes/kubernetes.io~projected/kube-api-access-wzz9s
+tmpfs           1.2G   12K  1.2G   1% /var/lib/kubelet/pods/1932f1e6-951a-43af-854c-176e343823ed/volumes/kubernetes.io~projected/kube-api-access-z6cc2
+tmpfs           2.7G   12K  2.7G   1% /var/lib/kubelet/pods/f7677fbb-df7d-4b75-a29b-b1b476f0f838/volumes/kubernetes.io~projected/kube-api-access-kv8hg
+tmpfs           2.0G   12K  2.0G   1% /var/lib/kubelet/pods/dac5d38e-1e43-4c42-8021-51116e41110e/volumes/kubernetes.io~projected/kube-api-access-bqhjr
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/a111981a019affec1aca3a0a0da22f9ccb779fe9616358bafbe682485dc48b6c/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/83b6f02a299f0c87606e0491177320e26b8a7be865c239a8849c317b8b6b472e/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/83b6f02a299f0c87606e0491177320e26b8a7be865c239a8849c317b8b6b472e/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/82e4ac515945072b66f536449aca4005f4600373e69e32edc31d25831dfd4646/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/82e4ac515945072b66f536449aca4005f4600373e69e32edc31d25831dfd4646/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/40efe4df209b4b8be37177b572656c1d7122ddebd7eb7c1c647a1373c3c05808/shm
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/1cd1c627b99829c5bc118d1c07cfed73c08b441d39324ce7d0d096808b2cd5e1/shm
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/089c7307a2bbe506d92c1018f357028faf02a043b083806b0eb6ed594db2b63a/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/40efe4df209b4b8be37177b572656c1d7122ddebd7eb7c1c647a1373c3c05808/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/1cd1c627b99829c5bc118d1c07cfed73c08b441d39324ce7d0d096808b2cd5e1/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/089c7307a2bbe506d92c1018f357028faf02a043b083806b0eb6ed594db2b63a/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/61d51ea2ed85e60bf6a60b941d02b32cbcf5a120fae8cffe7b6aab69d3e7a468/rootfs
+tmpfs           1.0G   12K  1.0G   1% /var/lib/kubelet/pods/73285263-3cd8-4aba-8c97-6de0f5fcf133/volumes/kubernetes.io~projected/kube-api-access-xfvj2
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/caa31617851b0bdc1d79fa4cce9182eaceade86517b609c8bf9b2aa6c516e33f/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/3ba6462c14fc071e4bebe6b4632b0e834a432eb9235833d6c0ad797f9dfdb1d5/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/266780757f8c58671aaed8b7d9032b1140b4bce5df0cb59b5a5c3c07aa98961d/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/6f91917ad8d57725c89fa77e3419e334248acec7b150f67cb867e78daf10bd95/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/df55d23019d27f801ac8ead69363c32ff7ff04747464f47af7f2775f8def3a4b/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/762132d5d1b70dae6ac4e826d0c0997081311b39e7b84b3375beef3fd9c2b7a7/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/d63bb23d83aaf776611ac5d888d0002e9d37a582dc6f10f1be216dd5544452bf/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/7291eac6d7b257d8348a34b5927d158c79e4e284e8fdfd1fdc81d864d0df5a46/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/2f2570ef57493d120a6a6cfafef0cf40eee6af1071d9663aa6591868821ea7a4/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/732a76563f50db24ad9b9a438c15abd06f4c1db9eacb5ff5bd608cd4dbbf9556/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/0f56f7034487ff29feedceb8fabe3f3f85e91bfe0d4451291f71a4767b692a62/rootfs
+tmpfs           1.0G  4.0K  1.0G   1% /var/lib/kubelet/pods/4e7414bb-78c2-4350-b228-7152e44138c2/volumes/kubernetes.io~secret/eventer-token
+tmpfs           500M  4.0K  500M   1% /var/lib/kubelet/pods/9b81bfdc-0bf6-4b68-a84b-370f8b9e79ef/volumes/kubernetes.io~secret/arms-token
+tmpfs           2.7G  4.0K  2.7G   1% /var/lib/kubelet/pods/c7e24703-1159-4bc1-9e5f-30737ec92919/volumes/kubernetes.io~secret/addon-token
+tmpfs           1.0G  8.0K  1.0G   1% /var/lib/kubelet/pods/58666ed1-11d4-410e-8a37-dd1388db59bb/volumes/kubernetes.io~secret/certs
+tmpfs           500M  4.0K  500M   1% /var/lib/kubelet/pods/9b81bfdc-0bf6-4b68-a84b-370f8b9e79ef/volumes/kubernetes.io~secret/log-token
+tmpfs           512M  4.0K  512M   1% /var/lib/kubelet/pods/4720b3f4-a437-43e6-b008-727dd0b08d16/volumes/kubernetes.io~secret/addon-token
+tmpfs           2.0G  4.0K  2.0G   1% /var/lib/kubelet/pods/5088a4ca-8df4-4c2f-ae2a-cfe242ae5f25/volumes/kubernetes.io~secret/addon-token
+tmpfs           500M  4.0K  500M   1% /var/lib/kubelet/pods/9b81bfdc-0bf6-4b68-a84b-370f8b9e79ef/volumes/kubernetes.io~secret/cms-token
+tmpfs           2.0G   12K  2.0G   1% /var/lib/kubelet/pods/5088a4ca-8df4-4c2f-ae2a-cfe242ae5f25/volumes/kubernetes.io~secret/cert
+tmpfs           2.0G   12K  2.0G   1% /var/lib/kubelet/pods/5088a4ca-8df4-4c2f-ae2a-cfe242ae5f25/volumes/kubernetes.io~projected/kube-api-access-mdhlj
+tmpfs           1.0G   12K  1.0G   1% /var/lib/kubelet/pods/4e7414bb-78c2-4350-b228-7152e44138c2/volumes/kubernetes.io~projected/kube-api-access-msc58
+tmpfs           2.5G   12K  2.5G   1% /var/lib/kubelet/pods/28844924-b375-49ca-86a6-dc1b27c798a9/volumes/kubernetes.io~projected/kube-api-access-ssx6x
+tmpfs           500M   12K  500M   1% /var/lib/kubelet/pods/9b81bfdc-0bf6-4b68-a84b-370f8b9e79ef/volumes/kubernetes.io~projected/kube-api-access-b5twg
+tmpfs           2.7G   12K  2.7G   1% /var/lib/kubelet/pods/c7e24703-1159-4bc1-9e5f-30737ec92919/volumes/kubernetes.io~projected/kube-api-access-zglpj
+tmpfs           2.0G   12K  2.0G   1% /var/lib/kubelet/pods/d54db794-041c-4e82-9c43-a9dbd7e18307/volumes/kubernetes.io~projected/kube-api-access-j2rnl
+tmpfs           1.0G   12K  1.0G   1% /var/lib/kubelet/pods/58666ed1-11d4-410e-8a37-dd1388db59bb/volumes/kubernetes.io~projected/kube-api-access-qfl8s
+tmpfs           512M   12K  512M   1% /var/lib/kubelet/pods/4720b3f4-a437-43e6-b008-727dd0b08d16/volumes/kubernetes.io~projected/kube-api-access-b5nsq
+tmpfs           256M   12K  256M   1% /var/lib/kubelet/pods/132d685c-6eb5-47ce-9e3e-967b9df77cfe/volumes/kubernetes.io~projected/kube-api-access-gvlh9
+tmpfs           2.0G  4.0K  2.0G   1% /var/lib/kubelet/pods/dac5d38e-1e43-4c42-8021-51116e41110e/volumes/kubernetes.io~secret/addon-token
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/bd9d821d6eb9d36a5014fa7c13ebff7c6f4448d07dcbe14f0e77e5da70bc1368/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/bd9d821d6eb9d36a5014fa7c13ebff7c6f4448d07dcbe14f0e77e5da70bc1368/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/30cf8f5e1e837c7c2f7ed2b4c3c2fa058cffd08fbb6fcac29258be541a0c7e0b/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/30cf8f5e1e837c7c2f7ed2b4c3c2fa058cffd08fbb6fcac29258be541a0c7e0b/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/23b12fe5bf41fcfff71ca456146809b9e0b1d6b0a05ca1fcbb3bc52996eeb0b7/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/23b12fe5bf41fcfff71ca456146809b9e0b1d6b0a05ca1fcbb3bc52996eeb0b7/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/b033512b7c2f1a14534f92ebf58a392733f57cb8930bd5506a810093182453b8/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/b033512b7c2f1a14534f92ebf58a392733f57cb8930bd5506a810093182453b8/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/37a359f0fdcd8e7af5b3c0984367c825ac53d8a97c7689571a82a365f566ad3b/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/37a359f0fdcd8e7af5b3c0984367c825ac53d8a97c7689571a82a365f566ad3b/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/0b3904bfd6a41b6b8e70b5f16a4234369f1060be7ee40fb610838a0ca4968931/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/0b3904bfd6a41b6b8e70b5f16a4234369f1060be7ee40fb610838a0ca4968931/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/7b5845a65d020087aed5f807257bce80a6238feb4166eb7cc8eac34f46887962/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/7b5845a65d020087aed5f807257bce80a6238feb4166eb7cc8eac34f46887962/rootfs
+tmpfs           1.0G  4.0K  1.0G   1% /var/lib/kubelet/pods/73285263-3cd8-4aba-8c97-6de0f5fcf133/volumes/kubernetes.io~secret/cost-token
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/58f8f7f1d292830adff08a7fc138a2a23f30df04a70ba6be22fc4053d4eac3a6/shm
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/cb28e83578e6f3ccb110c4dff847e4dbfe7a7f89ab96e174f3b5aa8bf62c63de/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/58f8f7f1d292830adff08a7fc138a2a23f30df04a70ba6be22fc4053d4eac3a6/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/cb28e83578e6f3ccb110c4dff847e4dbfe7a7f89ab96e174f3b5aa8bf62c63de/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/c953e7bb00101244e702121eb488d6ee5e29bf51203fea9aff0e84ca282a8a24/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/c953e7bb00101244e702121eb488d6ee5e29bf51203fea9aff0e84ca282a8a24/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/7289477f44b56cb7512a4ac8011e545570f5806d98cd2846ffa6f5d935c211ba/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/62588fb83308c8aa7d3bafa3c3730be8c5481bf711c04daab63ea4cd14033964/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/a8f17b75227d9ef1e45e18f71e899d9efa5cee7c51f6f00ad9c5104999b4f0c1/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/a6a68b711c08023e473a5e195b5aad0268e8b3bf4a7e3db64a89ea0b30cfe06b/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/0313095e30bb55f7018e170416e86120b2091b62e1bf9d5f1af9a924c9913ff1/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/d53115b538cd9aa837947bc8eba9519a460f54b4736e9128459de6359e3950ae/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/cff488039999b55189ae7a343e0aa51a064173dd0bdf397121a2c88c1c78b619/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/1312732bf9b432dd8a4e52a9c7e9f75b4717af4de54bd419fedb66aebe729ab9/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/60739ed3b60de0ab6a11986fa511b0794fcfbc3297c8d282e4d8cd13fcd4673c/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/ca58880d135d9f72bc4e840fd65cdc85590d5ee5c83e6fcd5953ff67d1eb88b4/rootfs
+shm              64M     0   64M   0% /run/containerd/io.containerd.grpc.v1.cri/sandboxes/d1ac83f86877fe20cf38d56ed56869cfb246fe43e7f3b6ed31bf554d97c6d956/shm
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/d1ac83f86877fe20cf38d56ed56869cfb246fe43e7f3b6ed31bf554d97c6d956/rootfs
+overlay         116G  5.2G  105G   5% /run/containerd/io.containerd.runtime.v2.task/k8s.io/d371dd43bf79ca710995f3f8fa22f296d3a57a9e222a96e5d8f3817152dad879/rootfs
+tmpfs           357M     0  357M   0% /run/user/0
+------------End of df----------------
+
+-----------------run cat /proc/mounts------------------
+sysfs /sys sysfs rw,nosuid,nodev,noexec,relatime 0 0
+proc /proc proc rw,nosuid,nodev,noexec,relatime 0 0
+devtmpfs /dev devtmpfs rw,nosuid,size=1803524k,nr_inodes=450881,mode=755 0 0
+securityfs /sys/kernel/security securityfs rw,nosuid,nodev,noexec,relatime 0 0
+tmpfs /dev/shm tmpfs rw,nosuid,nodev 0 0
+devpts /dev/pts devpts rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000 0 0
+tmpfs /run tmpfs rw,nosuid,nodev,mode=755 0 0
+cgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime 0 0
+efivarfs /sys/firmware/efi/efivars efivarfs rw,nosuid,nodev,noexec,relatime 0 0
+none /sys/fs/bpf bpf rw,nosuid,nodev,noexec,relatime,mode=700 0 0
+none /sys/kernel/tracing tracefs rw,relatime 0 0
+configfs /sys/kernel/config configfs rw,relatime 0 0
+/dev/vda3 / ext4 rw,relatime 0 0
+systemd-1 /proc/sys/fs/binfmt_misc autofs rw,relatime,fd=31,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=17416 0 0
+hugetlbfs /dev/hugepages hugetlbfs rw,relatime,pagesize=2M 0 0
+debugfs /sys/kernel/debug debugfs rw,relatime 0 0
+mqueue /dev/mqueue mqueue rw,relatime 0 0
+/dev/vda2 /boot/efi vfat rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=winnt,errors=remount-ro 0 0
+sunrpc /var/lib/nfs/rpc_pipefs rpc_pipefs rw,relatime 0 0
+tracefs /sys/kernel/debug/tracing tracefs rw,relatime 0 0
+/dev/vdb /var/lib/container ext4 rw,relatime 0 0
+/dev/vdb /var/lib/kubelet ext4 rw,relatime 0 0
+/dev/vdb /var/lib/containerd ext4 rw,relatime 0 0
+/dev/vdb /var/log/pods ext4 rw,relatime 0 0
+tmpfs /var/lib/kubelet/pods/dc590078-5f5e-4307-8f09-a49d83b5c9e0/volumes/kubernetes.io~secret/addon-token tmpfs rw,relatime,size=2821076k 0 0
+tmpfs /var/lib/kubelet/pods/bf0e3948-f37d-4073-a826-6548a826158f/volumes/kubernetes.io~projected/kube-api-access-5flfz tmpfs rw,relatime,size=1355776k 0 0
+tmpfs /var/lib/kubelet/pods/f6557d61-7791-41b8-80cc-af992c5b87f7/volumes/kubernetes.io~projected/kube-api-access-52hxm tmpfs rw,relatime,size=2821076k 0 0
+tmpfs /var/lib/kubelet/pods/dc590078-5f5e-4307-8f09-a49d83b5c9e0/volumes/kubernetes.io~projected/kube-api-access-t685s tmpfs rw,relatime,size=2821076k 0 0
+tmpfs /var/lib/kubelet/pods/1aa8894d-7d97-45a1-87f8-df50344f13ac/volumes/kubernetes.io~projected/kube-api-access-wzz9s tmpfs rw,relatime,size=2821076k 0 0
+tmpfs /var/lib/kubelet/pods/1932f1e6-951a-43af-854c-176e343823ed/volumes/kubernetes.io~projected/kube-api-access-z6cc2 tmpfs rw,relatime,size=1179648k 0 0
+tmpfs /var/lib/kubelet/pods/f7677fbb-df7d-4b75-a29b-b1b476f0f838/volumes/kubernetes.io~projected/kube-api-access-kv8hg tmpfs rw,relatime,size=2821076k 0 0
+tmpfs /var/lib/kubelet/pods/dac5d38e-1e43-4c42-8021-51116e41110e/volumes/kubernetes.io~projected/kube-api-access-bqhjr tmpfs rw,relatime,size=2097152k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/a111981a019affec1aca3a0a0da22f9ccb779fe9616358bafbe682485dc48b6c/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/3/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/3/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/83b6f02a299f0c87606e0491177320e26b8a7be865c239a8849c317b8b6b472e/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/83b6f02a299f0c87606e0491177320e26b8a7be865c239a8849c317b8b6b472e/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/5/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/5/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/82e4ac515945072b66f536449aca4005f4600373e69e32edc31d25831dfd4646/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/82e4ac515945072b66f536449aca4005f4600373e69e32edc31d25831dfd4646/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/4/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/4/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/40efe4df209b4b8be37177b572656c1d7122ddebd7eb7c1c647a1373c3c05808/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/1cd1c627b99829c5bc118d1c07cfed73c08b441d39324ce7d0d096808b2cd5e1/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/089c7307a2bbe506d92c1018f357028faf02a043b083806b0eb6ed594db2b63a/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/40efe4df209b4b8be37177b572656c1d7122ddebd7eb7c1c647a1373c3c05808/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/6/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/6/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/1cd1c627b99829c5bc118d1c07cfed73c08b441d39324ce7d0d096808b2cd5e1/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/7/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/7/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/089c7307a2bbe506d92c1018f357028faf02a043b083806b0eb6ed594db2b63a/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/8/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/8/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/61d51ea2ed85e60bf6a60b941d02b32cbcf5a120fae8cffe7b6aab69d3e7a468/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/10/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/19/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/19/work,index=off 0 0
+tmpfs /var/lib/kubelet/pods/73285263-3cd8-4aba-8c97-6de0f5fcf133/volumes/kubernetes.io~projected/kube-api-access-xfvj2 tmpfs rw,relatime,size=1048576k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/caa31617851b0bdc1d79fa4cce9182eaceade86517b609c8bf9b2aa6c516e33f/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/26/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/18/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/45/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/45/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/3ba6462c14fc071e4bebe6b4632b0e834a432eb9235833d6c0ad797f9dfdb1d5/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/31/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/25/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/49/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/49/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/266780757f8c58671aaed8b7d9032b1140b4bce5df0cb59b5a5c3c07aa98961d/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/48/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/47/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/46/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/43/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/42/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/41/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/40/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/39/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/38/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/35/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/34/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/30/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/51/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/51/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/6f91917ad8d57725c89fa77e3419e334248acec7b150f67cb867e78daf10bd95/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/48/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/47/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/46/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/43/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/42/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/41/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/40/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/39/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/38/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/35/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/34/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/30/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/55/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/55/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/df55d23019d27f801ac8ead69363c32ff7ff04747464f47af7f2775f8def3a4b/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/48/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/47/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/46/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/43/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/42/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/41/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/40/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/39/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/38/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/35/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/34/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/30/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/58/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/58/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/762132d5d1b70dae6ac4e826d0c0997081311b39e7b84b3375beef3fd9c2b7a7/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/67/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/64/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/57/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/53/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/44/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/72/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/72/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/d63bb23d83aaf776611ac5d888d0002e9d37a582dc6f10f1be216dd5544452bf/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/69/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/65/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/63/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/60/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/59/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/50/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/32/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/29/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/28/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/24/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/23/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/11/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/73/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/73/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/7291eac6d7b257d8348a34b5927d158c79e4e284e8fdfd1fdc81d864d0df5a46/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/89/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/87/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/86/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/85/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/83/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/82/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/81/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/80/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/79/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/78/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/77/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/76/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/75/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/74/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/70/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/66/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/62/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/93/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/93/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/2f2570ef57493d120a6a6cfafef0cf40eee6af1071d9663aa6591868821ea7a4/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/102/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/101/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/100/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/99/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/98/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/97/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/95/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/94/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/92/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/91/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/90/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/88/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/84/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/103/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/103/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/732a76563f50db24ad9b9a438c15abd06f4c1db9eacb5ff5bd608cd4dbbf9556/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/96/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/71/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/68/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/61/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/56/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/54/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/52/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/37/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/36/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/33/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/27/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/21/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/16/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/105/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/105/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/0f56f7034487ff29feedceb8fabe3f3f85e91bfe0d4451291f71a4767b692a62/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/96/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/71/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/68/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/61/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/56/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/54/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/52/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/37/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/36/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/33/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/27/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/21/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/16/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/106/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/106/work,index=off 0 0
+tmpfs /var/lib/kubelet/pods/4e7414bb-78c2-4350-b228-7152e44138c2/volumes/kubernetes.io~secret/eventer-token tmpfs rw,relatime,size=1048576k 0 0
+tmpfs /var/lib/kubelet/pods/9b81bfdc-0bf6-4b68-a84b-370f8b9e79ef/volumes/kubernetes.io~secret/arms-token tmpfs rw,relatime,size=512000k 0 0
+tmpfs /var/lib/kubelet/pods/c7e24703-1159-4bc1-9e5f-30737ec92919/volumes/kubernetes.io~secret/addon-token tmpfs rw,relatime,size=2821076k 0 0
+tmpfs /var/lib/kubelet/pods/58666ed1-11d4-410e-8a37-dd1388db59bb/volumes/kubernetes.io~secret/certs tmpfs rw,relatime,size=1048576k 0 0
+tmpfs /var/lib/kubelet/pods/9b81bfdc-0bf6-4b68-a84b-370f8b9e79ef/volumes/kubernetes.io~secret/log-token tmpfs rw,relatime,size=512000k 0 0
+tmpfs /var/lib/kubelet/pods/4720b3f4-a437-43e6-b008-727dd0b08d16/volumes/kubernetes.io~secret/addon-token tmpfs rw,relatime,size=524288k 0 0
+tmpfs /var/lib/kubelet/pods/5088a4ca-8df4-4c2f-ae2a-cfe242ae5f25/volumes/kubernetes.io~secret/addon-token tmpfs rw,relatime,size=2097152k 0 0
+tmpfs /var/lib/kubelet/pods/9b81bfdc-0bf6-4b68-a84b-370f8b9e79ef/volumes/kubernetes.io~secret/cms-token tmpfs rw,relatime,size=512000k 0 0
+tmpfs /var/lib/kubelet/pods/5088a4ca-8df4-4c2f-ae2a-cfe242ae5f25/volumes/kubernetes.io~secret/cert tmpfs rw,relatime,size=2097152k 0 0
+tmpfs /var/lib/kubelet/pods/5088a4ca-8df4-4c2f-ae2a-cfe242ae5f25/volumes/kubernetes.io~projected/kube-api-access-mdhlj tmpfs rw,relatime,size=2097152k 0 0
+tmpfs /var/lib/kubelet/pods/4e7414bb-78c2-4350-b228-7152e44138c2/volumes/kubernetes.io~projected/kube-api-access-msc58 tmpfs rw,relatime,size=1048576k 0 0
+tmpfs /var/lib/kubelet/pods/28844924-b375-49ca-86a6-dc1b27c798a9/volumes/kubernetes.io~projected/kube-api-access-ssx6x tmpfs rw,relatime,size=2621440k 0 0
+tmpfs /var/lib/kubelet/pods/9b81bfdc-0bf6-4b68-a84b-370f8b9e79ef/volumes/kubernetes.io~projected/kube-api-access-b5twg tmpfs rw,relatime,size=512000k 0 0
+tmpfs /var/lib/kubelet/pods/c7e24703-1159-4bc1-9e5f-30737ec92919/volumes/kubernetes.io~projected/kube-api-access-zglpj tmpfs rw,relatime,size=2821076k 0 0
+tmpfs /var/lib/kubelet/pods/d54db794-041c-4e82-9c43-a9dbd7e18307/volumes/kubernetes.io~projected/kube-api-access-j2rnl tmpfs rw,relatime,size=2097152k 0 0
+tmpfs /var/lib/kubelet/pods/58666ed1-11d4-410e-8a37-dd1388db59bb/volumes/kubernetes.io~projected/kube-api-access-qfl8s tmpfs rw,relatime,size=1048576k 0 0
+tmpfs /var/lib/kubelet/pods/4720b3f4-a437-43e6-b008-727dd0b08d16/volumes/kubernetes.io~projected/kube-api-access-b5nsq tmpfs rw,relatime,size=524288k 0 0
+tmpfs /var/lib/kubelet/pods/132d685c-6eb5-47ce-9e3e-967b9df77cfe/volumes/kubernetes.io~projected/kube-api-access-gvlh9 tmpfs rw,relatime,size=262144k 0 0
+nsfs /run/netns/cni-a9cb1292-f4a6-9658-17c7-c4b05b2ec173 nsfs rw 0 0
+nsfs /run/netns/cni-8b2f216e-a8f8-c2d4-4919-d393539c7474 nsfs rw 0 0
+nsfs /run/netns/cni-6e56c722-56ba-a6c3-f4f9-6c9d04cd0778 nsfs rw 0 0
+nsfs /run/netns/cni-a353ea4c-5b9a-c6fd-2218-39c51bcedadc nsfs rw 0 0
+nsfs /run/netns/cni-359a3e23-6f5c-d4d0-0109-49ef272559a9 nsfs rw 0 0
+nsfs /run/netns/cni-076ff3bc-e52a-9884-f234-0208ed9594f0 nsfs rw 0 0
+nsfs /run/netns/cni-a35c36b6-8d33-cd78-6571-bf7fdf64caa1 nsfs rw 0 0
+nsfs /run/netns/cni-786471a4-ee9c-eb32-6aa8-bd9660ff428f nsfs rw 0 0
+nsfs /run/netns/cni-d6995970-8eab-b992-8d24-4a0da028283f nsfs rw 0 0
+tmpfs /var/lib/kubelet/pods/dac5d38e-1e43-4c42-8021-51116e41110e/volumes/kubernetes.io~secret/addon-token tmpfs rw,relatime,size=2097152k 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/bd9d821d6eb9d36a5014fa7c13ebff7c6f4448d07dcbe14f0e77e5da70bc1368/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/bd9d821d6eb9d36a5014fa7c13ebff7c6f4448d07dcbe14f0e77e5da70bc1368/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/107/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/107/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/30cf8f5e1e837c7c2f7ed2b4c3c2fa058cffd08fbb6fcac29258be541a0c7e0b/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/30cf8f5e1e837c7c2f7ed2b4c3c2fa058cffd08fbb6fcac29258be541a0c7e0b/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/108/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/108/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/23b12fe5bf41fcfff71ca456146809b9e0b1d6b0a05ca1fcbb3bc52996eeb0b7/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/23b12fe5bf41fcfff71ca456146809b9e0b1d6b0a05ca1fcbb3bc52996eeb0b7/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/109/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/109/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/b033512b7c2f1a14534f92ebf58a392733f57cb8930bd5506a810093182453b8/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/b033512b7c2f1a14534f92ebf58a392733f57cb8930bd5506a810093182453b8/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/112/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/112/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/37a359f0fdcd8e7af5b3c0984367c825ac53d8a97c7689571a82a365f566ad3b/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/37a359f0fdcd8e7af5b3c0984367c825ac53d8a97c7689571a82a365f566ad3b/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/113/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/113/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/0b3904bfd6a41b6b8e70b5f16a4234369f1060be7ee40fb610838a0ca4968931/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/0b3904bfd6a41b6b8e70b5f16a4234369f1060be7ee40fb610838a0ca4968931/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/114/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/114/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/7b5845a65d020087aed5f807257bce80a6238feb4166eb7cc8eac34f46887962/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/7b5845a65d020087aed5f807257bce80a6238feb4166eb7cc8eac34f46887962/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/115/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/115/work,index=off 0 0
+tmpfs /var/lib/kubelet/pods/73285263-3cd8-4aba-8c97-6de0f5fcf133/volumes/kubernetes.io~secret/cost-token tmpfs rw,relatime,size=1048576k 0 0
+nsfs /run/netns/cni-779d4d66-4ce0-8650-3337-05e9c9f37642 nsfs rw 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/58f8f7f1d292830adff08a7fc138a2a23f30df04a70ba6be22fc4053d4eac3a6/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/cb28e83578e6f3ccb110c4dff847e4dbfe7a7f89ab96e174f3b5aa8bf62c63de/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/58f8f7f1d292830adff08a7fc138a2a23f30df04a70ba6be22fc4053d4eac3a6/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/129/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/129/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/cb28e83578e6f3ccb110c4dff847e4dbfe7a7f89ab96e174f3b5aa8bf62c63de/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/131/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/131/work,index=off 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/c953e7bb00101244e702121eb488d6ee5e29bf51203fea9aff0e84ca282a8a24/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/c953e7bb00101244e702121eb488d6ee5e29bf51203fea9aff0e84ca282a8a24/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/138/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/138/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/7289477f44b56cb7512a4ac8011e545570f5806d98cd2846ffa6f5d935c211ba/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/126/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/124/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/122/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/116/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/141/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/141/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/62588fb83308c8aa7d3bafa3c3730be8c5481bf711c04daab63ea4cd14033964/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/133/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/117/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/142/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/142/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/a8f17b75227d9ef1e45e18f71e899d9efa5cee7c51f6f00ad9c5104999b4f0c1/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/140/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/125/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/122/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/116/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/154/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/154/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/a6a68b711c08023e473a5e195b5aad0268e8b3bf4a7e3db64a89ea0b30cfe06b/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/120/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/82/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/81/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/80/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/79/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/78/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/77/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/76/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/75/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/74/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/70/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/66/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/62/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/156/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/156/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/0313095e30bb55f7018e170416e86120b2091b62e1bf9d5f1af9a924c9913ff1/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/153/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/148/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/135/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/128/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/121/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/110/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/165/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/165/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/d53115b538cd9aa837947bc8eba9519a460f54b4736e9128459de6359e3950ae/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/162/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/158/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/151/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/122/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/116/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/168/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/168/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/cff488039999b55189ae7a343e0aa51a064173dd0bdf397121a2c88c1c78b619/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/146/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/134/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/123/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/170/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/170/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/1312732bf9b432dd8a4e52a9c7e9f75b4717af4de54bd419fedb66aebe729ab9/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/163/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/155/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/144/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/169/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/169/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/60739ed3b60de0ab6a11986fa511b0794fcfbc3297c8d282e4d8cd13fcd4673c/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/172/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/160/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/152/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/149/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/137/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/132/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/127/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/118/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/173/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/173/work,index=off 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/ca58880d135d9f72bc4e840fd65cdc85590d5ee5c83e6fcd5953ff67d1eb88b4/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/171/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/167/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/166/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/161/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/157/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/150/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/145/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/175/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/175/work,index=off 0 0
+nsfs /run/netns/cni-bb1e7d9a-7cda-882f-ef53-697108b1ded4 nsfs rw 0 0
+shm /run/containerd/io.containerd.grpc.v1.cri/sandboxes/d1ac83f86877fe20cf38d56ed56869cfb246fe43e7f3b6ed31bf554d97c6d956/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/d1ac83f86877fe20cf38d56ed56869cfb246fe43e7f3b6ed31bf554d97c6d956/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/176/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/176/work,index=off 0 0
+/dev/vdb /var/lib/kubelet/pods/dac5d38e-1e43-4c42-8021-51116e41110e/volume-subpaths/loongcollector-config/loongcollector/5 ext4 rw,relatime 0 0
+overlay /run/containerd/io.containerd.runtime.v2.task/k8s.io/d371dd43bf79ca710995f3f8fa22f296d3a57a9e222a96e5d8f3817152dad879/rootfs overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/192/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/191/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/189/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/188/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/187/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/186/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/185/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/184/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/183/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/182/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/181/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/180/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/177/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/193/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/193/work,index=off 0 0
+tmpfs /run/user/0 tmpfs rw,nosuid,nodev,relatime,size=364844k,mode=700 0 0
+binfmt_misc /proc/sys/fs/binfmt_misc binfmt_misc rw,relatime 0 0
+------------End of cat----------------
+
+-----------------run rpm -qa------------------
+libgcc-10.2.1-3.8.al8.x86_64
+tzdata-2024b-1.0.1.2.al8.noarch
+python3-pip-wheel-9.0.3-24.0.1.al8.noarch
+libreport-filesystem-2.9.5-15.3.al8.x86_64
+hwdata-0.314-8.22.0.1.2.al8.noarch
+alinux-release-3.2104.12-1.al8.x86_64
+setup-2.12.2-9.0.1.al8.noarch
+filesystem-3.8-6.0.1.al8.x86_64
+efi-filesystem-3-3.1.al8.noarch
+basesystem-11-5.1.al8.noarch
+dnf-data-4.7.0-20.0.1.1.al8.noarch
+xkeyboard-config-2.28-1.1.al8.noarch
+python2-setuptools-wheel-39.0.1-13.1.module+al8+9+77049424.noarch
+python2-pip-wheel-9.0.3-19.0.1.module+al8+9+77049424.noarch
+publicsuffix-list-dafsa-20180723-1.1.al8.noarch
+pkgconf-m4-1.4.2-1.2.al8.noarch
+ncurses-base-6.1-10.20180224.0.2.al8.noarch
+ncurses-libs-6.1-10.20180224.0.2.al8.x86_64
+bash-4.4.20-5.0.1.al8.x86_64
+zlib-1.2.11-20.9.al8.alnx.x86_64
+xz-libs-5.4.4-2.0.1.al8.x86_64
+libstdc++-10.2.1-3.8.al8.x86_64
+libxcrypt-4.1.1-6.1.al8.x86_64
+popt-1.18-1.1.al8.x86_64
+libgpg-error-1.42-5.0.1.al8.x86_64
+libzstd-1.5.1-2.0.2.al8.x86_64
+elfutils-libelf-0.190-2.0.2.al8.x86_64
+info-6.5-7.0.1.al8.x86_64
+readline-7.0-10.3.al8.x86_64
+libsepol-2.9-3.0.1.al8.x86_64
+libcom_err-1.46.0-1.0.3.al8.x86_64
+gmp-6.2.0-13.0.1.al8.x86_64
+grub2-common-2.02-165.0.2.al8.noarch
+libffi-3.1-24.0.4.al8.x86_64
+libmnl-1.0.4-6.2.al8.x86_64
+lua-libs-5.3.4-12.0.3.al8.x86_64
+nspr-4.35.0-1.0.3.al8.x86_64
+nss-util-3.101.0-11.0.1.al8.x86_64
+libcap-ng-0.7.11-1.al8.x86_64
+audit-libs-3.1.2-1.0.2.al8.x86_64
+mpfr-3.1.6-1.2.al8.x86_64
+libunistring-0.9.9-3.2.al8.x86_64
+libidn2-2.2.0-1.2.al8.x86_64
+gdbm-libs-1.18-2.0.1.al8.x86_64
+libnl3-3.7.0-1.al8.x86_64
+pcre2-10.32-3.0.2.al8.x86_64
+libselinux-2.9-9.1.al8.x86_64
+chkconfig-1.19.2-1.al8.x86_64
+findutils-4.6.0-23.0.1.al8.x86_64
+p11-kit-0.23.22-2.al8.x86_64
+libgcrypt-1.8.5-7.0.1.al8.x86_64
+file-libs-5.33-26.al8.x86_64
+file-5.33-26.al8.x86_64
+efivar-libs-37-4.2.al8.x86_64
+jansson-2.14-1.0.1.al8.x86_64
+json-c-0.13.1-3.0.1.al8.x86_64
+libattr-2.4.48-3.2.al8.x86_64
+libacl-2.2.53-3.0.1.al8.x86_64
+sed-4.5-5.0.2.al8.x86_64
+lz4-libs-1.9.4-1.al8.x86_64
+psmisc-23.1-5.1.al8.x86_64
+nettle-3.4.1-7.0.1.al8.x86_64
+libassuan-2.5.1-3.2.al8.x86_64
+libaio-0.3.112-1.3.al8.x86_64
+libgomp-10.2.1-3.8.al8.x86_64
+pcre-8.42-6.0.2.al8.x86_64
+grep-3.1-6.2.al8.x86_64
+slang-2.3.2-3.2.al8.x86_64
+newt-0.52.20-11.1.al8.x86_64
+xz-5.4.4-2.0.1.al8.x86_64
+groff-base-1.22.3-18.3.al8.x86_64
+libsemanage-2.9-10.0.1.al8.x86_64
+libnl3-cli-3.7.0-1.al8.x86_64
+gdbm-1.18-2.0.1.al8.x86_64
+libpsl-0.20.2-6.1.0.1.al8.x86_64
+libmpc-1.1.0-9.1.1.al8.x86_64
+ethtool-6.6-2.al8.x86_64
+libnftnl-1.2.2-3.0.1.al8.x86_64
+gdisk-1.0.7-5.al8.x86_64
+diffutils-3.6-6.2.al8.x86_64
+brotli-1.0.6-3.1.al8.x86_64
+cpio-2.12-11.0.2.al8.x86_64
+dmidecode-3.5-1.0.1.al8.x86_64
+keyutils-libs-1.5.10-9.al8.x86_64
+libatomic-10.2.1-3.8.al8.x86_64
+numactl-libs-2.0.18-2.0.3.al8.x86_64
+libedit-3.1-23.20170329cvs.2.al8.x86_64
+libnfnetlink-1.0.1-13.2.al8.x86_64
+libseccomp-2.5.2-1.0.9.al8.x86_64
+p11-kit-trust-0.23.22-2.al8.x86_64
+lzo-2.08-14.3.al8.x86_64
+ncurses-6.1-10.20180224.0.2.al8.x86_64
+pciutils-libs-3.8.0-1.0.2.al8.x86_64
+squashfs-tools-4.3-20.1.0.3.al8.x86_64
+libnetfilter_conntrack-1.0.6-5.2.al8.x86_64
+cpp-10.2.1-3.8.al8.x86_64
+libteam-1.31-4.0.1.al8.x86_64
+device-mapper-persistent-data-0.9.0-7.0.1.al8.x86_64
+acl-2.2.53-3.0.1.al8.x86_64
+bubblewrap-0.4.0-2.2.al8.x86_64
+libselinux-utils-2.9-9.1.al8.x86_64
+hardlink-1.3-6.2.al8.x86_64
+libbytesize-2.5-3.0.1.al8.x86_64
+libibverbs-48.0-1.0.1.al8.x86_64
+libpcap-1.9.1-5.2.al8.x86_64
+iptables-libs-1.8.5-11.0.1.al8.x86_64
+iptables-1.8.5-11.0.1.al8.x86_64
+iptables-ebtables-1.8.5-11.0.1.al8.x86_64
+nftables-1.0.4-4.al8.x86_64
+nss-softokn-freebl-3.101.0-11.0.1.al8.x86_64
+nss-softokn-3.101.0-11.0.1.al8.x86_64
+ipset-libs-7.1-1.2.al8.x86_64
+ipset-7.1-1.2.al8.x86_64
+grub2-pc-modules-2.02-165.0.2.al8.noarch
+isl-0.16.1-6.2.al8.x86_64
+libcomps-0.1.18-1.al8.x86_64
+libmetalink-0.1.3-7.2.al8.x86_64
+e2fsprogs-libs-1.46.0-1.0.3.al8.x86_64
+libss-1.46.0-1.0.3.al8.x86_64
+coreutils-common-8.30-15.0.3.al8.x86_64
+libbpf-0.6.0-1.2.al8.x86_64
+libksba-1.3.5-9.0.1.al8.x86_64
+libxkbcommon-1.0.3-4.al8.x86_64
+graphite2-1.3.14-9.0.1.al8.x86_64
+libasan-10.2.1-3.8.al8.x86_64
+libubsan-10.2.1-3.8.al8.x86_64
+mozjs60-60.9.0-4.1.al8.x86_64
+snappy-1.1.8-3.1.al8.x86_64
+libpng-1.6.34-5.2.al8.x86_64
+kernel-tools-libs-5.10.134-19.1.al8.x86_64
+less-530-3.0.1.al8.x86_64
+dosfstools-4.1-6.2.al8.x86_64
+gpm-libs-1.20.7-17.1.al8.x86_64
+hdparm-9.54-4.0.1.al8.x86_64
+libdaemon-0.14-15.2.al8.x86_64
+libestr-0.1.11-4.0.1.al8.x86_64
+libfastjson-0.99.9-5.al8.x86_64
+libmaxminddb-1.5.2-4.al8.x86_64
+ipcalc-0.2.4-4.1.al8.x86_64
+libndp-1.7-7.0.1.al8.x86_64
+libnghttp2-1.33.0-6.0.1.al8.1.x86_64
+libpipeline-1.5.0-2.2.al8.x86_64
+libpkgconf-1.4.2-1.2.al8.x86_64
+pkgconf-1.4.2-1.2.al8.x86_64
+pkgconf-pkg-config-1.4.2-1.2.al8.x86_64
+libsigsegv-2.11-5.3.al8.x86_64
+gawk-4.2.1-4.0.2.al8.x86_64
+libsmbios-2.4.1-2.2.al8.x86_64
+libverto-0.3.2-2.al8.x86_64
+libyaml-0.1.7-5.2.al8.x86_64
+lm_sensors-libs-3.6.0-10.al8.x86_64
+memstrack-0.2.5-2.0.1.al8.x86_64
+npth-1.5-4.2.al8.x86_64
+sg3_utils-libs-1.44-6.0.1.al8.x86_64
+linux-firmware-20241014-125.git06bad2f1.al8.noarch
+kernel-headers-5.10.134-19.1.al8.x86_64
+libxcrypt-devel-4.1.1-6.1.al8.x86_64
+kbd-misc-2.0.4-11.0.2.al8.noarch
+kbd-legacy-2.0.4-11.0.2.al8.noarch
+cyrus-sasl-lib-2.1.27-6.0.1.al8.x86_64
+platform-python-pip-9.0.3-24.0.1.al8.noarch
+grub2-tools-minimal-2.02-165.0.2.al8.x86_64
+openldap-2.4.46-20.al8.x86_64
+grubby-8.40-49.0.1.al8.x86_64
+libkcapi-1.4.0-2.0.1.1.al8.x86_64
+libkcapi-hmaccalc-1.4.0-2.0.1.1.al8.x86_64
+libdb-utils-5.3.28-42.0.3.al8.x86_64
+openssl-1.1.1k-14.0.2.al8.x86_64
+crypto-policies-scripts-20230731-1.git3177e06.al8.noarch
+crypto-policies-20230731-1.git3177e06.al8.noarch
+elfutils-default-yama-scope-0.190-2.0.2.al8.noarch
+gzip-1.9-14.0.1.al8.x86_64
+cracklib-2.9.6-15.2.al8.x86_64
+cracklib-dicts-2.9.6-15.2.al8.x86_64
+procps-ng-3.3.15-14.0.3.al8.x86_64
+libtirpc-1.3.3-9.0.1.al8.x86_64
+libnsl2-1.2.0-2.20180605git4a062cf.2.al8.x86_64
+kpartx-0.8.4-41.0.1.al8.x86_64
+device-mapper-1.02.181-14.0.1.al8.x86_64
+elfutils-debuginfod-client-0.190-2.0.2.al8.x86_64
+elfutils-libs-0.190-2.0.2.al8.x86_64
+openssl-pkcs11-0.4.10-3.0.1.al8.x86_64
+rpm-4.14.3-32.0.1.1.al8.x86_64
+gettext-libs-0.19.8.1-17.2.al8.x86_64
+libcroco-0.6.12-4.3.al8.1.x86_64
+gettext-0.19.8.1-17.2.al8.x86_64
+dbus-common-1.12.8-26.0.1.al8.noarch
+dbus-libs-1.12.8-26.0.1.al8.x86_64
+dbus-tools-1.12.8-26.0.1.al8.x86_64
+which-2.21-20.0.1.al8.x86_64
+coreutils-8.30-15.0.3.al8.x86_64
+systemd-libs-239-82.0.3.1.al8.3.x86_64
+device-mapper-libs-1.02.181-14.0.1.al8.x86_64
+shadow-utils-4.6-22.0.1.al8.x86_64
+ca-certificates-2024.2.69_v8.0.303-80.0.al8.noarch
+openssl-libs-1.1.1k-14.0.2.al8.x86_64
+kmod-libs-25-20.0.1.al8.x86_64
+libdb-5.3.28-42.0.3.al8.x86_64
+rpm-libs-4.14.3-32.0.1.1.al8.x86_64
+kmod-25-20.0.1.al8.x86_64
+cryptsetup-libs-2.3.7-7.0.1.al8.x86_64
+trousers-lib-0.3.15-2.0.1.al8.x86_64
+dbus-daemon-1.12.8-26.0.1.al8.x86_64
+libutempter-1.1.6-14.2.al8.x86_64
+kbd-2.0.4-11.0.2.al8.x86_64
+libpwquality-1.4.4-6.0.1.al8.x86_64
+systemd-pam-239-82.0.3.1.al8.3.x86_64
+dracut-049-233.git20240115.0.2.al8.x86_64
+os-prober-1.74-9.0.1.al8.x86_64
+grub2-tools-2.02-165.0.2.al8.x86_64
+dbus-1.12.8-26.0.1.al8.x86_64
+systemd-239-82.0.3.1.al8.3.x86_64
+systemd-udev-239-82.0.3.1.al8.3.x86_64
+trousers-0.3.15-2.0.1.al8.x86_64
+python3-six-1.11.0-8.1.al8.noarch
+kernel-core-5.10.134-19.1.al8.x86_64
+libmodulemd-2.13.0-1.0.1.al8.x86_64
+kernel-modules-5.10.134-19.1.al8.x86_64
+libsolv-0.7.20-6.al8.x86_64
+iproute-6.2.0-6.0.1.al8.x86_64
+device-mapper-event-libs-1.02.181-14.0.1.al8.x86_64
+parted-3.2-39.0.1.al8.x86_64
+libgudev-237-1.0.1.al8.x86_64
+polkit-libs-0.115-15.al8.2.x86_64
+polkit-0.115-15.al8.2.x86_64
+crontabs-1.11-17.20190603git.1.al8.noarch
+cronie-1.5.2-10.al8.x86_64
+cronie-anacron-1.5.2-10.al8.x86_64
+iputils-20180629-11.0.1.al8.x86_64
+NetworkManager-libnm-1.40.16-18.0.1.al8.x86_64
+NetworkManager-initscripts-updown-1.40.16-18.0.1.al8.noarch
+NetworkManager-1.40.16-18.0.1.al8.x86_64
+policycoreutils-2.9-26.al8.x86_64
+rpm-plugin-selinux-4.14.3-32.0.1.1.al8.x86_64
+selinux-policy-3.14.3-139.0.1.al8.1.noarch
+selinux-policy-targeted-3.14.3-139.0.1.al8.1.noarch
+python2-pip-9.0.3-19.0.1.module+al8+9+77049424.noarch
+python2-setuptools-39.0.1-13.1.module+al8+9+77049424.noarch
+python2-2.7.18-15.0.2.module+al8+9+77049424.x86_64
+python2-libs-2.7.18-15.0.2.module+al8+9+77049424.x86_64
+libevent-2.1.8-5.2.al8.x86_64
+perl-Digest-1.17-395.1.al8.noarch
+perl-Digest-MD5-2.55-396.2.al8.x86_64
+perl-Data-Dumper-2.167-399.2.al8.x86_64
+perl-libnet-3.11-3.1.al8.noarch
+perl-URI-1.73-3.1.al8.noarch
+perl-Pod-Escapes-1.07-395.1.al8.noarch
+perl-IO-Socket-IP-0.39-5.1.al8.noarch
+perl-Mozilla-CA-20160104-7.1.al8.noarch
+perl-Time-Local-1.280-1.1.al8.noarch
+perl-IO-Socket-SSL-2.066-4.1.al8.noarch
+perl-Net-SSLeay-1.88-2.al8.x86_64
+perl-Term-ANSIColor-4.06-396.1.al8.noarch
+perl-Term-Cap-1.17-395.1.al8.noarch
+perl-File-Temp-0.230.600-1.1.al8.noarch
+perl-Pod-Simple-3.35-395.1.al8.noarch
+perl-HTTP-Tiny-0.074-3.0.1.al8.noarch
+perl-podlators-4.11-1.1.al8.noarch
+perl-Pod-Perldoc-3.28-396.1.al8.noarch
+perl-Text-ParseWords-3.30-395.1.al8.noarch
+perl-Pod-Usage-1.69-395.1.al8.noarch
+perl-MIME-Base64-3.15-396.2.al8.x86_64
+perl-Storable-3.11-3.2.al8.x86_64
+perl-Getopt-Long-2.50-4.1.al8.noarch
+perl-Socket-2.027-3.2.al8.x86_64
+perl-Encode-2.97-3.2.al8.x86_64
+perl-Carp-1.42-396.1.al8.noarch
+perl-Exporter-5.72-396.1.al8.noarch
+perl-Scalar-List-Utils-1.49-2.2.al8.x86_64
+perl-parent-0.237-1.1.al8.noarch
+perl-Text-Tabs+Wrap-2013.0523-395.1.al8.noarch
+perl-Unicode-Normalize-1.25-396.2.al8.x86_64
+perl-File-Path-2.15-2.1.al8.noarch
+perl-PathTools-3.74-1.2.al8.x86_64
+perl-constant-1.33-396.1.al8.noarch
+perl-threads-2.21-2.2.al8.x86_64
+perl-threads-shared-1.58-2.2.al8.x86_64
+libusbx-1.0.23-4.1.al8.x86_64
+binutils-gold-2.35-12.3.al8.x86_64
+binutils-2.35-12.3.al8.x86_64
+logrotate-3.14.0-6.0.1.al8.x86_64
+shared-mime-info-2.1-5.0.1.al8.x86_64
+python3-decorator-4.2.1-2.1.al8.noarch
+libxmlb-0.1.15-1.2.al8.x86_64
+libgusb-0.3.0-1.2.al8.x86_64
+timedatex-0.5-3.2.al8.x86_64
+device-mapper-event-1.02.181-14.0.1.al8.x86_64
+lvm2-libs-2.03.14-14.0.1.al8.x86_64
+kernel-modules-extra-5.10.134-19.1.al8.x86_64
+kernel-modules-internal-5.10.134-19.1.al8.x86_64
+python3-dateutil-2.6.1-6.1.al8.noarch
+python3-linux-procfs-0.7.3-1.al8.noarch
+python3-pyudev-0.21.0-7.1.al8.noarch
+authselect-libs-1.2.6-2.al8.x86_64
+initscripts-10.00.18-1.al8.x86_64
+mdadm-4.2-16.0.1.al8.x86_64
+oddjob-0.34.7-3.0.1.al8.x86_64
+oddjob-mkhomedir-0.34.7-3.0.1.al8.x86_64
+authselect-1.2.6-2.al8.x86_64
+dracut-squash-049-233.git20240115.0.2.al8.x86_64
+virt-what-1.25-4.0.1.al8.x86_64
+libuser-0.62-26.0.1.al8.x86_64
+rpm-plugin-systemd-inhibit-4.14.3-32.0.1.1.al8.x86_64
+mokutil-0.3.0-12.0.1.al8.x86_64
+tpm2-tss-2.3.2-6.0.2.al8.x86_64
+ima-evm-utils-1.3.2-12.1.al8.x86_64
+xfsprogs-5.0.0-12.0.2.al8.x86_64
+e2fsprogs-1.46.0-1.0.3.al8.x86_64
+dhcp-libs-4.3.6-50.0.1.al8.x86_64
+libatasmart-0.19-14.2.al8.x86_64
+plymouth-core-libs-0.9.4-11.20200615git1e36e30.0.1.al8.x86_64
+plymouth-scripts-0.9.4-11.20200615git1e36e30.0.1.al8.x86_64
+plymouth-0.9.4-11.20200615git1e36e30.0.1.al8.x86_64
+python3-systemd-234-8.2.al8.x86_64
+nss-sysinit-3.101.0-11.0.1.al8.x86_64
+nss-3.101.0-11.0.1.al8.x86_64
+dbus-glib-0.110-2.2.al8.x86_64
+python3-dbus-1.2.4-15.2.al8.x86_64
+teamd-1.31-4.0.1.al8.x86_64
+gobject-introspection-1.68.0-11.0.1.al8.x86_64
+python3-gobject-base-noarch-3.40.1-6.0.1.al8.noarch
+python3-gobject-base-3.40.1-6.0.1.al8.x86_64
+harfbuzz-2.7.4-10.0.1.al8.x86_64
+grub2-tools-extra-2.02-165.0.2.al8.x86_64
+json-glib-1.4.4-1.2.al8.x86_64
+libgcab1-1.4-6.0.1.al8.x86_64
+libsecret-0.20.4-4.0.1.al8.x86_64
+pinentry-1.1.1-8.al8.x86_64
+gnupg2-2.2.20-3.al8.x86_64
+gpgme-1.13.1-12.0.2.al8.x86_64
+librepo-1.14.2-5.0.1.al8.x86_64
+libdnf-0.63.0-20.0.1.2.al8.x86_64
+python3-libdnf-0.63.0-20.0.1.2.al8.x86_64
+python3-hawkey-0.63.0-20.0.1.2.al8.x86_64
+python3-librepo-1.14.2-5.0.1.al8.x86_64
+python3-gpg-1.13.1-12.0.2.al8.x86_64
+volume_key-libs-0.3.11-6.al8.x86_64
+rpm-build-libs-4.14.3-32.0.1.1.al8.x86_64
+python3-rpm-4.14.3-32.0.1.1.al8.x86_64
+fwupd-1.7.8-2.0.1.al8.x86_64
+kernel-tools-5.10.134-19.1.al8.x86_64
+python3-hwdata-2.3.6-3.1.al8.noarch
+python3-libcomps-0.1.18-1.al8.x86_64
+python3-dnf-4.7.0-20.0.1.1.al8.noarch
+dnf-4.7.0-20.0.1.1.al8.noarch
+python3-dnf-plugins-core-4.0.21-25.1.al8.noarch
+dnf-plugins-core-4.0.21-25.1.al8.noarch
+python3-libselinux-2.9-9.1.al8.x86_64
+python3-slip-0.6.4-13.al8.noarch
+python3-slip-dbus-0.6.4-13.al8.noarch
+python3-dmidecode-3.12.3-2.al8.x86_64
+python3-netifaces-0.10.6-4.2.al8.x86_64
+python3-newt-0.52.20-11.1.al8.x86_64
+python3-nftables-1.0.4-4.al8.x86_64
+python3-firewall-0.9.11-9.0.1.al8.noarch
+python3-perf-5.10.134-19.1.al8.x86_64
+python3-ply-3.9-9.1.al8.noarch
+python3-pycparser-2.14-14.1.al8.noarch
+python3-cffi-1.11.5-6.0.1.al8.x86_64
+python3-pyOpenSSL-19.0.0-1.1.al8.noarch
+python3-rhnlib-2.8.6-8.1.al8.noarch
+python3-pip-9.0.3-24.0.1.al8.noarch
+python36-3.6.8-38.module+al8+10+4ba10e20.x86_64
+python3-rhn-client-tools-2.8.16-13.2.al8.x86_64
+rhn-client-tools-2.8.16-13.2.al8.x86_64
+python3-dnf-plugin-spacewalk-2.8.5-11.1.al8.noarch
+dnf-plugin-spacewalk-2.8.5-11.1.al8.noarch
+fontpackages-filesystem-1.44-22.1.al8.noarch
+dejavu-fonts-common-2.35-7.1.al8.noarch
+dejavu-sans-fonts-2.35-7.1.al8.noarch
+langpacks-core-font-en-3.0-16.al8.noarch
+langpacks-core-en-3.0-16.al8.noarch
+firewalld-filesystem-0.9.11-9.0.1.al8.noarch
+dhcp-common-4.3.6-50.0.1.al8.noarch
+dhcp-client-4.3.6-50.0.1.al8.x86_64
+dracut-network-049-233.git20240115.0.2.al8.x86_64
+kexec-tools-2.0.26-14.0.1.5.al8.2.x86_64
+firewalld-0.9.11-9.0.1.al8.noarch
+langpacks-en-3.0-16.al8.noarch
+python3-schedutils-0.6-6.2.al8.x86_64
+tuned-2.22.1-5.0.1.1.al8.noarch
+yum-4.7.0-20.0.1.1.al8.noarch
+shim-x64-15.8-2.0.1.1.al8.x86_64
+wget-1.19.5-12.0.1.al8.x86_64
+grub2-efi-x64-2.02-165.0.2.al8.x86_64
+grub2-pc-2.02-165.0.2.al8.x86_64
+NetworkManager-team-1.40.16-18.0.1.al8.x86_64
+passwd-0.80-4.0.1.al8.x86_64
+authselect-compat-1.2.6-2.al8.x86_64
+audit-3.1.2-1.0.2.al8.x86_64
+kernel-5.10.134-19.1.al8.x86_64
+lvm2-2.03.14-14.0.1.al8.x86_64
+chrony-4.5-2.0.1.al8.x86_64
+rsyslog-8.2102.0-15.1.al8.1.x86_64
+gcc-10.2.1-3.8.al8.x86_64
+kernel-devel-5.10.134-19.1.al8.x86_64
+perf-5.10.134-19.1.al8.x86_64
+rng-tools-6.16-1.0.1.al8.x86_64
+NetworkManager-tui-1.40.16-18.0.1.al8.x86_64
+kmod-ast-5.10.134~19-1.14.4~1.al8.x86_64
+alinux-base-setup-3.2-8.al8.x86_64
+net-tools-2.0-0.52.20160912git.1.al8.x86_64
+sysstat-11.7.3-13.0.1.al8.x86_64
+grub2-tools-efi-2.02-165.0.2.al8.x86_64
+dracut-config-rescue-049-233.git20240115.0.2.al8.x86_64
+prefixdevname-0.1.0-6.2.al8.x86_64
+man-db-2.7.6.1-18.0.2.al8.x86_64
+irqbalance-1.9.2-1.0.1.al8.x86_64
+python3-asn1crypto-0.24.0-3.1.al8.noarch
+sg3_utils-1.44-6.0.1.al8.x86_64
+biosdevname-0.7.3-2.3.al8.x86_64
+efibootmgr-16-1.3.al8.x86_64
+efivar-37-4.2.al8.x86_64
+bpftool-5.10.134-19.1.al8.x86_64
+lshw-B.02.19.2-6.0.3.al8.x86_64
+iprutils-2.4.19-1.1.al8.x86_64
+hostname-3.20-6.2.al8.x86_64
+libsysfs-2.1.0-25.0.1.al8.x86_64
+lsscsi-0.32-3.0.1.al8.x86_64
+telnet-0.17-76.1.al8.x86_64
+rootfiles-8.1-22.1.al8.noarch
+iwl7260-firmware-25.30.13.0-125.al8.1.noarch
+iwl6050-firmware-41.28.5.1-125.al8.1.noarch
+iwl6000g2a-firmware-18.168.6.1-125.al8.1.noarch
+iwl6000-firmware-9.221.4.1-125.al8.1.noarch
+iwl5150-firmware-8.24.2.2-125.al8.1.noarch
+iwl5000-firmware-8.83.5.1_1-125.al8.1.noarch
+iwl4965-firmware-228.61.2.24-125.al8.1.noarch
+iwl3945-firmware-15.32.2.9-125.al8.1.noarch
+iwl3160-firmware-25.30.13.0-125.al8.1.noarch
+iwl2030-firmware-18.168.6.1-125.al8.1.noarch
+iwl2000-firmware-18.168.6.1-125.al8.1.noarch
+iwl135-firmware-18.168.6.1-125.al8.1.noarch
+iwl105-firmware-18.168.6.1-125.al8.1.noarch
+iwl1000-firmware-39.31.5.1-125.al8.1.noarch
+iwl100-firmware-39.31.5.1-125.al8.1.noarch
+gpg-pubkey-cac33616-5fb603a2
+alinux-repos-3.2104.12-1.al8.x86_64
+libcurl-7.61.1-35.0.2.al8.3.x86_64
+curl-7.61.1-35.0.2.al8.3.x86_64
+strace-5.18-2.1.0.1.al8.x86_64
+avahi-libs-0.7-27.0.1.al8.1.x86_64
+time-1.9-3.3.al8.x86_64
+tar-1.30-9.0.2.al8.x86_64
+system-lsb-submod-security-4.1-47.0.7.al8.x86_64
+spax-1.5.3-13.3.al8.x86_64
+ncurses-compat-libs-6.1-10.20180224.0.2.al8.x86_64
+make-4.2.1-11.0.1.al8.x86_64
+m4-1.4.18-7.3.al8.x86_64
+libicu-60.3-2.2.al8.x86_64
+postfix-3.5.8-7.0.1.al8.x86_64
+at-3.1.20-12.0.1.al8.x86_64
+patch-2.7.6-11.1.al8.x86_64
+mailx-12.5-29.2.al8.x86_64
+ed-1.14.2-4.2.al8.x86_64
+bc-1.07.1-5.2.al8.x86_64
+system-lsb-core-4.1-47.0.7.al8.x86_64
+tcpdump-4.9.3-5.0.1.al8.x86_64
+cloud-utils-growpart-0.33-0.0.1.al8.noarch
+fuse-common-3.3.0-19.al8.x86_64
+libref_array-0.1.5-40.al8.x86_64
+libcollection-0.7.0-40.al8.x86_64
+libbasicobjects-0.1.1-40.al8.x86_64
+rpcbind-1.2.5-10.0.1.al8.x86_64
+quota-nls-4.09-2.0.1.al8.noarch
+quota-4.09-2.0.1.al8.x86_64
+libpath_utils-0.2.1-40.al8.x86_64
+libini_config-1.3.1-40.al8.x86_64
+libnfsidmap-2.3.3-59.0.4.al8.x86_64
+libev-4.33-5.0.2.al8.x86_64
+libverto-libev-0.3.2-2.al8.x86_64
+gssproxy-0.8.0-21.al8.x86_64
+keyutils-1.5.10-9.al8.x86_64
+python3-pyyaml-3.12-12.2.al8.x86_64
+pigz-2.4-4.1.al8.x86_64
+libnetfilter_queue-1.0.5-1.al8.x86_64
+libnetfilter_cttimeout-1.0.0-11.2.al8.x86_64
+libnetfilter_cthelper-1.0.0-15.1.al8.x86_64
+conntrack-tools-1.4.4-11.0.1.al8.x86_64
+drpm-0.4.1-3.1.al8.x86_64
+pciutils-3.8.0-1.0.2.al8.x86_64
+bash-completion-2.7-5.1.al8.noarch
+yum-utils-4.0.21-25.1.al8.noarch
+sshpass-1.09-4.0.1.al8.x86_64
+container-selinux-2.229.0-2.al8.noarch
+sysak-3.6.2-1.x86_64
+python-srpm-macros-3-45.al8.noarch
+python-rpm-macros-3-45.al8.noarch
+python3-rpm-macros-3-45.al8.noarch
+python3-rpm-generators-5-8.al8.noarch
+python36-devel-3.6.8-38.module+al8+10+4ba10e20.x86_64
+python3-pytz-2017.2-11.al8.noarch
+python3-babel-2.5.1-7.0.1.al8.noarch
+python3-pyserial-3.1.1-9.al8.noarch
+python3-idna-2.5-7.al8.noarch
+python3-pysocks-1.6.8-3.1.al8.noarch
+python3-urllib3-1.24.2-8.al8.noarch
+python3-markupsafe-0.23-19.2.al8.x86_64
+python3-jinja2-2.10.1-7.0.1.al8.noarch
+python3-jwt-1.6.1-2.1.al8.noarch
+python3-oauthlib-2.1.0-1.1.al8.noarch
+python3-jsonschema-2.6.0-4.1.al8.noarch
+python3-jsonpointer-1.10-11.1.al8.noarch
+python3-jsonpatch-1.21-2.1.al8.noarch
+python3-configobj-5.0.6-11.1.al8.noarch
+python3-chardet-3.0.4-7.1.al8.noarch
+cloud-init-23.2.2-1.0.2.al8.noarch
+aliyun_assist-2.2.4.941-1.i686
+aliyun-cli-3.0.282-1.al8.x86_64
+alinux-base-setup-container-optimized-3.2-8.al8.x86_64
+libtool-ltdl-2.4.6-25.3.al8.x86_64
+autoconf-2.69-29.0.1.1.al8.1.noarch
+perl-Thread-Queue-3.13-1.1.al8.noarch
+automake-1.16.2-8.0.2.al8.noarch
+libtool-ltdl-devel-2.4.6-25.3.al8.x86_64
+libuuid-2.32.1-46.0.4.1.al8.x86_64
+libblkid-2.32.1-46.0.4.1.al8.x86_64
+libfdisk-2.32.1-46.0.4.1.al8.x86_64
+libmount-2.32.1-46.0.4.1.al8.x86_64
+libsmartcols-2.32.1-46.0.4.1.al8.x86_64
+util-linux-2.32.1-46.0.4.1.al8.x86_64
+util-linux-user-2.32.1-46.0.4.1.al8.x86_64
+python3-dnf-plugin-post-transaction-actions-4.0.21-25.1.al8.noarch
+update-motd-1.1.2-2.6.al8.noarch
+dnf-plugin-releasever-adapter-1.0-3.al8.noarch
+python3-pycurl-7.43.0.2-4.1.al8.x86_64
+python3-tornado-6.0.2-1.0.1.al8.x86_64
+keentuned-3.2.0-4.al8.x86_64
+keentune-target-3.2.0-12.al8.noarch
+epel-aliyuncs-release-8-15.1.al8.noarch
+containerd.io-2.1.4-3.alios7.x86_64
+cri-tools-1.33.0-1.alios7.x86_64
+socat-1.7.4.1-2.0.1.al8.x86_64
+nfs-utils-2.3.3-64.0.1.al8.x86_64
+fuse-libs-2.9.7-19.1.al8.x86_64
+fuse-2.9.7-19.1.al8.x86_64
+glibc-all-langpacks-2.32-1.21.al8.x86_64
+glibc-common-2.32-1.21.al8.x86_64
+glibc-2.32-1.21.al8.x86_64
+krb5-libs-1.18.2-32.0.1.al8.x86_64
+perl-libs-5.26.3-423.0.1.al8.x86_64
+bzip2-libs-1.0.6-28.al8.x86_64
+pam-1.3.1-38.al8.x86_64
+expat-2.5.0-1.al8.x86_64
+libcap-2.48-6.0.2.al8.x86_64
+libxml2-2.9.7-21.0.1.1.al8.3.x86_64
+openssh-8.0p1-26.0.1.1.al8.x86_64
+sqlite-libs-3.26.0-20.al8.x86_64
+python3-setuptools-wheel-39.2.0-9.al8.noarch
+platform-python-setuptools-39.2.0-9.al8.noarch
+platform-python-3.6.8-71.0.1.1.al8.x86_64
+python3-libs-3.6.8-71.0.1.1.al8.x86_64
+unbound-libs-1.16.2-9.al8.x86_64
+perl-macros-5.26.3-423.0.1.al8.x86_64
+perl-Errno-1.28-423.0.1.al8.x86_64
+perl-IO-1.38-423.0.1.al8.x86_64
+perl-interpreter-5.26.3-423.0.1.al8.x86_64
+glibc-headers-x86-2.32-1.21.al8.noarch
+libsss_idmap-2.9.4-5.al8.3.x86_64
+libsss_nss_idmap-2.9.4-5.al8.3.x86_64
+libtasn1-4.13-5.0.1.al8.x86_64
+gnutls-3.6.16-8.0.2.al8.4.x86_64
+glib2-2.68.4-16.0.1.al8.2.x86_64
+libblockdev-utils-2.28-7.al8.x86_64
+libblockdev-2.28-7.al8.x86_64
+libblockdev-crypto-2.28-7.al8.x86_64
+libblockdev-fs-2.28-7.al8.x86_64
+libblockdev-loop-2.28-7.al8.x86_64
+libblockdev-mdraid-2.28-7.al8.x86_64
+libblockdev-part-2.28-7.al8.x86_64
+libblockdev-swap-2.28-7.al8.x86_64
+libudisks2-2.9.0-16.0.4.al8.1.x86_64
+cups-libs-2.2.6-64.0.1.al8.x86_64
+vim-minimal-8.0.1763-21.0.1.al8.x86_64
+vim-filesystem-8.0.1763-21.0.1.al8.noarch
+vim-common-8.0.1763-21.0.1.al8.x86_64
+libssh-config-0.9.6-16.0.1.al8.noarch
+libssh-0.9.6-16.0.1.al8.x86_64
+vim-enhanced-8.0.1763-21.0.1.al8.x86_64
+sudo-1.9.5p2-1.0.2.al8.1.x86_64
+cups-client-2.2.6-64.0.1.al8.x86_64
+udisks2-2.9.0-16.0.4.al8.1.x86_64
+sssd-client-2.9.4-5.al8.3.x86_64
+glibc-devel-2.32-1.21.al8.x86_64
+python3-unbound-1.16.2-9.al8.x86_64
+platform-python-devel-3.6.8-71.0.1.1.al8.x86_64
+python3-cryptography-3.2.1-8.al8.x86_64
+python3-libxml2-2.9.7-21.0.1.1.al8.3.x86_64
+python3-requests-2.20.0-6.al8.noarch
+python3-setuptools-39.2.0-9.al8.noarch
+sqlite-3.26.0-20.al8.x86_64
+openssh-clients-8.0p1-26.0.1.1.al8.x86_64
+openssh-server-8.0p1-26.0.1.1.al8.x86_64
+libarchive-3.5.3-6.al8.x86_64
+bind-export-libs-9.11.36-16.0.1.al8.6.x86_64
+nscd-2.32-1.21.al8.x86_64
+bzip2-1.0.6-28.al8.x86_64
+freetype-2.10.4-10.al8.x86_64
+emacs-filesystem-27.2-14.0.1.al8.2.noarch
+kpatch-dnf-0.9.7_0.4-2.0.1.al8.noarch
+kpatch-0.9.7-2.0.1.al8.noarch
+kernel-hotfix-22519882-5.10.134-19.1-1.0-20250804150241.al8.x86_64
+unzip-6.0-48.0.1.al8.x86_64
+------------End of rpm----------------
+
+-----------------run dbus-send --system --dest=org.freedesktop.systemd1 --type=method_call --reply-timeout=1 --print-reply /org/freedesktop/systemd1 org.freedesktop.DBus.Introspectable.Introspect------------------
+method return time=1765626517.173144 sender=:1.0 -> destination=:1.301 serial=22878 reply_serial=2
+   string "<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+ <interface name="org.freedesktop.DBus.Peer">
+  <method name="Ping"/>
+  <method name="GetMachineId">
+   <arg type="s" name="machine_uuid" direction="out"/>
+  </method>
+ </interface>
+ <interface name="org.freedesktop.DBus.Introspectable">
+  <method name="Introspect">
+   <arg name="data" type="s" direction="out"/>
+  </method>
+ </interface>
+ <interface name="org.freedesktop.DBus.Properties">
+  <method name="Get">
+   <arg name="interface" direction="in" type="s"/>
+   <arg name="property" direction="in" type="s"/>
+   <arg name="value" direction="out" type="v"/>
+  </method>
+  <method name="GetAll">
+   <arg name="interface" direction="in" type="s"/>
+   <arg name="properties" direction="out" type="a{sv}"/>
+  </method>
+  <method name="Set">
+   <arg name="interface" direction="in" type="s"/>
+   <arg name="property" direction="in" type="s"/>
+   <arg name="value" direction="in" type="v"/>
+  </method>
+  <signal name="PropertiesChanged">
+   <arg type="s" name="interface"/>
+   <arg type="a{sv}" name="changed_properties"/>
+   <arg type="as" name="invalidated_properties"/>
+  </signal>
+ </interface>
+ <interface name="org.freedesktop.systemd1.Manager">
+  <property name="Version" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="Features" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="Virtualization" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="Architecture" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="Tainted" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="FirmwareTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="FirmwareTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="LoaderTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="LoaderTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="KernelTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="KernelTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="InitRDTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="InitRDTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="UserspaceTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="UserspaceTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="FinishTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="FinishTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="SecurityStartTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="SecurityStartTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="SecurityFinishTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="SecurityFinishTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="GeneratorsStartTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="GeneratorsStartTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="GeneratorsFinishTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="GeneratorsFinishTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="UnitsLoadStartTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="UnitsLoadStartTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="UnitsLoadFinishTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="UnitsLoadFinishTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="UnitsLoadTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="UnitsLoadTimestampMonotonic" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="LogLevel" type="s" access="readwrite">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </property>
+  <property name="LogTarget" type="s" access="readwrite">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </property>
+  <property name="NNames" type="u" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="NFailedUnits" type="u" access="read">
+  </property>
+  <property name="NJobs" type="u" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="NInstalledJobs" type="u" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="NFailedJobs" type="u" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="Progress" type="d" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="Environment" type="as" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="ConfirmSpawn" type="b" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="ShowStatus" type="b" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="UnitPath" type="as" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultStandardOutput" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultStandardError" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="RuntimeWatchdogUSec" type="t" access="readwrite">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </property>
+  <property name="ShutdownWatchdogUSec" type="t" access="readwrite">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </property>
+  <property name="ServiceWatchdogs" type="b" access="readwrite">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </property>
+  <property name="ControlGroup" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="SystemState" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="ExitCode" type="y" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="DefaultTimerAccuracyUSec" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultTimeoutStartUSec" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultTimeoutStopUSec" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultDeviceTimeoutUSec" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultRestartUSec" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultStartLimitIntervalUSec" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultStartLimitBurst" type="u" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultCPUAccounting" type="b" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultBlockIOAccounting" type="b" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultMemoryAccounting" type="b" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultTasksAccounting" type="b" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitCPU" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitCPUSoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitFSIZE" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitFSIZESoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitDATA" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitDATASoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitSTACK" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitSTACKSoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitCORE" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitCORESoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitRSS" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitRSSSoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitNOFILE" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitNOFILESoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitAS" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitASSoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitNPROC" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitNPROCSoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitMEMLOCK" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitMEMLOCKSoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitLOCKS" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitLOCKSSoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitSIGPENDING" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitSIGPENDINGSoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitMSGQUEUE" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitMSGQUEUESoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitNICE" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitNICESoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitRTPRIO" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitRTPRIOSoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitRTTIME" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultLimitRTTIMESoft" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="DefaultTasksMax" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="TimerSlackNSec" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <method name="GetUnit">
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="GetUnitByPID">
+   <arg type="u" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="GetUnitByInvocationID">
+   <arg type="ay" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="GetUnitByControlGroup">
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="LoadUnit">
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="StartUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="StartUnitReplace">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="StopUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="ReloadUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="RestartUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="TryRestartUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="ReloadOrRestartUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="ReloadOrTryRestartUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="EnqueueUnitJob">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="u" direction="out"/>
+   <arg type="o" direction="out"/>
+   <arg type="s" direction="out"/>
+   <arg type="o" direction="out"/>
+   <arg type="s" direction="out"/>
+   <arg type="a(uosos)" direction="out"/>
+  </method>
+  <method name="KillUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="i" direction="in"/>
+  </method>
+  <method name="FreezeUnit">
+   <arg type="s" direction="in"/>
+  </method>
+  <method name="ThawUnit">
+   <arg type="s" direction="in"/>
+  </method>
+  <method name="ResetFailedUnit">
+   <arg type="s" direction="in"/>
+  </method>
+  <method name="SetUnitProperties">
+   <arg type="s" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="a(sv)" direction="in"/>
+  </method>
+  <method name="RefUnit">
+   <arg type="s" direction="in"/>
+  </method>
+  <method name="UnrefUnit">
+   <arg type="s" direction="in"/>
+  </method>
+  <method name="StartTransientUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="a(sv)" direction="in"/>
+   <arg type="a(sa(sv))" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="GetUnitProcesses">
+   <arg type="s" direction="in"/>
+   <arg type="a(sus)" direction="out"/>
+  </method>
+  <method name="AttachProcessesToUnit">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="au" direction="in"/>
+  </method>
+  <method name="GetJob">
+   <arg type="u" direction="in"/>
+   <arg type="o" direction="out"/>
+  </method>
+  <method name="GetJobAfter">
+   <arg type="u" direction="in"/>
+   <arg type="a(usssoo)" direction="out"/>
+  </method>
+  <method name="GetJobBefore">
+   <arg type="u" direction="in"/>
+   <arg type="a(usssoo)" direction="out"/>
+  </method>
+  <method name="CancelJob">
+   <arg type="u" direction="in"/>
+  </method>
+  <method name="ClearJobs">
+  </method>
+  <method name="ResetFailed">
+  </method>
+  <method name="ListUnits">
+   <arg type="a(ssssssouso)" direction="out"/>
+  </method>
+  <method name="ListUnitsFiltered">
+   <arg type="as" direction="in"/>
+   <arg type="a(ssssssouso)" direction="out"/>
+  </method>
+  <method name="ListUnitsByPatterns">
+   <arg type="as" direction="in"/>
+   <arg type="as" direction="in"/>
+   <arg type="a(ssssssouso)" direction="out"/>
+  </method>
+  <method name="ListUnitsByNames">
+   <arg type="as" direction="in"/>
+   <arg type="a(ssssssouso)" direction="out"/>
+  </method>
+  <method name="ListJobs">
+   <arg type="a(usssoo)" direction="out"/>
+  </method>
+  <method name="Subscribe">
+  </method>
+  <method name="Unsubscribe">
+  </method>
+  <method name="Dump">
+   <arg type="s" direction="out"/>
+  </method>
+  <method name="DumpByFileDescriptor">
+   <arg type="h" direction="out"/>
+  </method>
+  <method name="Reload">
+  </method>
+  <method name="Reexecute">
+  </method>
+  <method name="Exit">
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </method>
+  <method name="Reboot">
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </method>
+  <method name="PowerOff">
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </method>
+  <method name="Halt">
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </method>
+  <method name="KExec">
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </method>
+  <method name="SwitchRoot">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <annotation name="org.freedesktop.systemd1.Privileged" value="true"/>
+  </method>
+  <method name="SetEnvironment">
+   <arg type="as" direction="in"/>
+  </method>
+  <method name="UnsetEnvironment">
+   <arg type="as" direction="in"/>
+  </method>
+  <method name="UnsetAndSetEnvironment">
+   <arg type="as" direction="in"/>
+   <arg type="as" direction="in"/>
+  </method>
+  <method name="ListUnitFiles">
+   <arg type="a(ss)" direction="out"/>
+  </method>
+  <method name="ListUnitFilesByPatterns">
+   <arg type="as" direction="in"/>
+   <arg type="as" direction="in"/>
+   <arg type="a(ss)" direction="out"/>
+  </method>
+  <method name="GetUnitFileState">
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="out"/>
+  </method>
+  <method name="EnableUnitFiles">
+   <arg type="as" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="out"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="DisableUnitFiles">
+   <arg type="as" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="ReenableUnitFiles">
+   <arg type="as" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="out"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="LinkUnitFiles">
+   <arg type="as" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="PresetUnitFiles">
+   <arg type="as" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="out"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="PresetUnitFilesWithMode">
+   <arg type="as" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="out"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="MaskUnitFiles">
+   <arg type="as" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="UnmaskUnitFiles">
+   <arg type="as" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="RevertUnitFiles">
+   <arg type="as" direction="in"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="SetDefaultTarget">
+   <arg type="s" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="GetDefaultTarget">
+   <arg type="s" direction="out"/>
+  </method>
+  <method name="PresetAllUnitFiles">
+   <arg type="s" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="AddDependencyUnitFiles">
+   <arg type="as" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="s" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="a(sss)" direction="out"/>
+  </method>
+  <method name="GetUnitFileLinks">
+   <arg type="s" direction="in"/>
+   <arg type="b" direction="in"/>
+   <arg type="as" direction="out"/>
+  </method>
+  <method name="SetExitCode">
+   <arg type="y" direction="in"/>
+  </method>
+  <method name="LookupDynamicUserByName">
+   <arg type="s" direction="in"/>
+   <arg type="u" direction="out"/>
+  </method>
+  <method name="LookupDynamicUserByUID">
+   <arg type="u" direction="in"/>
+   <arg type="s" direction="out"/>
+  </method>
+  <method name="GetDynamicUsers">
+   <arg type="a(us)" direction="out"/>
+  </method>
+  <signal name="UnitNew">
+   <arg type="s"/>
+   <arg type="o"/>
+  </signal>
+  <signal name="UnitRemoved">
+   <arg type="s"/>
+   <arg type="o"/>
+  </signal>
+  <signal name="JobNew">
+   <arg type="u"/>
+   <arg type="o"/>
+   <arg type="s"/>
+  </signal>
+  <signal name="JobRemoved">
+   <arg type="u"/>
+   <arg type="o"/>
+   <arg type="s"/>
+   <arg type="s"/>
+  </signal>
+  <signal name="StartupFinished">
+   <arg type="t"/>
+   <arg type="t"/>
+   <arg type="t"/>
+   <arg type="t"/>
+   <arg type="t"/>
+   <arg type="t"/>
+  </signal>
+  <signal name="UnitFilesChanged">
+  </signal>
+  <signal name="Reloading">
+   <arg type="b"/>
+  </signal>
+ </interface>
+ <node name="unit"/>
+ <node name="job"/>
+</node>
+"
+------------End of dbus-send----------------
+
+-----------------run pstree -al------------------
+systemd --switched-root --system --deserialize 18
+  |-AliYunDun
+  |   `-11*[{AliYunDun}]
+  |-AliYunDunMonito
+  |   `-32*[{AliYunDunMonito}]
+  |-AliYunDunUpdate
+  |   `-6*[{AliYunDunUpdate}]
+  |-NetworkManager --no-daemon
+  |   `-2*[{NetworkManager}]
+  |-agetty -o -p -- \\u --noclear tty1 linux
+  |-agetty -o -p -- \\u --keep-baud 115200,38400,9600 ttyS0 vt220
+  |-aliyun-service
+  |   `-8*[{aliyun-service}]
+  |-argusagent -d
+  |   `-argusagent
+  |       `-31*[{argusagent}]
+  |-assist_daemon
+  |   `-7*[{assist_daemon}]
+  |-atd -f
+  |-chronyd
+  |-containerd
+  |   `-26*[{containerd}]
+  |-containerd-shim -namespace k8s.io -id a111981a019affec1aca3a0a0da22f9ccb779fe9616358bafbe682485dc48b6c -address /run/containerd/containerd.sock
+  |   |-csi-node-driver --v=5 --csi-address=/csi/csi.sock --logging-format=text --kubelet-registration-path=/var/lib/kubelet/csi-plugins/diskplugin.csi.alibabacloud.com/csi.sock
+  |   |   `-8*[{csi-node-driver}]
+  |   |-csi-node-driver --v=5 --csi-address=/csi/csi.sock --logging-format=text --kubelet-registration-path=/var/lib/kubelet/csi-plugins/nasplugin.csi.alibabacloud.com/csi.sock
+  |   |   `-7*[{csi-node-driver}]
+  |   |-csi-node-driver --v=5 --csi-address=/csi/csi.sock --logging-format=text --kubelet-registration-path=/var/lib/kubelet/csi-plugins/ossplugin.csi.alibabacloud.com/csi.sock
+  |   |   `-8*[{csi-node-driver}]
+  |   |-pause
+  |   |-plugin.csi.alib --endpoint=unix://csi/driverplugin.csi.alibabacloud.com-replace/csi.sock --v=2 --logging-format=text --driver=disk,nas,oss --run-controller-service=false --run-node-service=true
+  |   |   `-8*[{plugin.csi.alib}]
+  |   `-15*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 83b6f02a299f0c87606e0491177320e26b8a7be865c239a8849c317b8b6b472e -address /run/containerd/containerd.sock
+  |   |-kube-rbac-proxy --secure-listen-address=:9100 --upstream=http://127.0.0.1:9101/ --tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256
+  |   |   `-8*[{kube-rbac-proxy}]
+  |   |-node_exporter --web.listen-address=127.0.0.1:9101 --path.procfs=/host/proc --path.sysfs=/host/sys --path.rootfs=/host/root --collector.processes --collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+)($|/) --collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$ --no-collector.ipvs
+  |   |   `-4*[{node_exporter}]
+  |   |-pause
+  |   `-12*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 82e4ac515945072b66f536449aca4005f4600373e69e32edc31d25831dfd4646 -address /run/containerd/containerd.sock
+  |   |-node-problem-de --logtostderr --v=3 --system-log-monitors=/config/kernel-monitor.json,/config/docker-monitor.json --port=20256 --prometheus-port=20257 --custom-plugin-monitors=/config/ntp-problem-monitor.json --custom-plugin-monitors=/config/network-problem-monitor.json --custom-plugin-monitors=/config/inodes-problem-monitor.json --custom-plugin-monitors=/config/pid-pressure-problem-monitor.json --custom-plugin-monitors=/config/docker-offline-monitor.json --custom-plugin-monitors=/config/instance_expired_checker.json --custom-plugin-monitors=/config/systemd-check-monitor.json
+  |   |   `-7*[{node-problem-de}]
+  |   |-pause
+  |   |-run-npd-gpu.sh /usr/bin/run-npd-gpu.sh diag --MaxEventEmitCount=1 --EnabledIsolateGPU=true --DiagnoseIntervalSeconds=30 --SocketFile=/var/run/npd-gpu/serve.sock --LogLevel=0 --LogLevelDir=/etc/ack-gpud --SqliteDBPath=/etc/ack-gpud/state.sqlite3 --CheckingItemDir=/usr/local/npd-gpu/assets --nvsmi.NvsmiTimeout=20 --LspciBinaryTimeout=10 --dmesg.TailMode --dmesg.ResetDmesgBySystemReboot --dmesg.MatchLastLines=30000 --dmesg.MatchLatestSeconds=120 --dmesg.RecordExpiredSeconds=2592000 --diagnoser=dmesg,nvml
+  |   |   `-sleep inf
+  |   `-13*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 40efe4df209b4b8be37177b572656c1d7122ddebd7eb7c1c647a1373c3c05808 -address /run/containerd/containerd.sock
+  |   |-node-cache -localip 169.254.20.10 -conf /etc/coredns/Corefile -upstreamsvc kube-dns -setupiptables=true -skipteardown=true
+  |   |   `-9*[{node-cache}]
+  |   |-pause
+  |   `-11*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 1cd1c627b99829c5bc118d1c07cfed73c08b441d39324ce7d0d096808b2cd5e1 -address /run/containerd/containerd.sock
+  |   |-pause
+  |   |-terway-cli policy
+  |   |   `-9*[{terway-cli}]
+  |   |-terwayd -log-level info -daemon-mode ENIMultiIP -config /etc/eni/eni_conf --feature-gates=,
+  |   |   `-8*[{terwayd}]
+  |   `-12*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 089c7307a2bbe506d92c1018f357028faf02a043b083806b0eb6ed594db2b63a -address /run/containerd/containerd.sock
+  |   |-kube-proxy --config=/var/lib/kube-proxy/config.conf --hostname-override=cn-hangzhou.10.157.28.94
+  |   |   `-6*[{kube-proxy}]
+  |   |-pause
+  |   `-12*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id bd9d821d6eb9d36a5014fa7c13ebff7c6f4448d07dcbe14f0e77e5da70bc1368 -address /run/containerd/containerd.sock
+  |   |-cmd
+  |   |   `-8*[{cmd}]
+  |   |-pause
+  |   `-11*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 30cf8f5e1e837c7c2f7ed2b4c3c2fa058cffd08fbb6fcac29258be541a0c7e0b -address /run/containerd/containerd.sock
+  |   |-alicloud-monito agent --regionId=cn-hangzhou --clusterId=ca72b74945d55404f84c94fbd27b6a286 --aliUid=1045178262043886 --logtostderr --v=2
+  |   |   `-7*[{alicloud-monito}]
+  |   |-pause
+  |   `-11*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 23b12fe5bf41fcfff71ca456146809b9e0b1d6b0a05ca1fcbb3bc52996eeb0b7 -address /run/containerd/containerd.sock
+  |   |-metrics-server --source=kubernetes.hybrid:'' --kubelet-port=10250 --kubelet-certificate-authority=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt --deprecated-kubelet-completely-insecure=false
+  |   |   `-6*[{metrics-server}]
+  |   |-pause
+  |   `-12*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id b033512b7c2f1a14534f92ebf58a392733f57cb8930bd5506a810093182453b8 -address /run/containerd/containerd.sock
+  |   |-node-local-dns- --include-kube-dns --ndots=3 --attempts=2 --timeout=1 --nameserver 169.254.20.10 --cluster-domain cluster.local --logtostderr -v=4 2>&1
+  |   |   `-8*[{node-local-dns-}]
+  |   |-pause
+  |   `-11*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 37a359f0fdcd8e7af5b3c0984367c825ac53d8a97c7689571a82a365f566ad3b -address /run/containerd/containerd.sock
+  |   |-operator
+  |   |   `-8*[{operator}]
+  |   |-pause
+  |   `-11*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 0b3904bfd6a41b6b8e70b5f16a4234369f1060be7ee40fb610838a0ca4968931 -address /run/containerd/containerd.sock
+  |   |-coredns -conf /etc/coredns/Corefile
+  |   |   `-8*[{coredns}]
+  |   |-pause
+  |   `-12*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 7b5845a65d020087aed5f807257bce80a6238feb4166eb7cc8eac34f46887962 -address /run/containerd/containerd.sock
+  |   |-o11y-addon-cont --leader-elect --feature-flags=controller;tokenRotation --prometheus-instance-id=ca72b74945d55404f84c94fbd27b6a286
+  |   |   `-8*[{o11y-addon-cont}]
+  |   |-pause
+  |   `-11*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id 58f8f7f1d292830adff08a7fc138a2a23f30df04a70ba6be22fc4053d4eac3a6 -address /run/containerd/containerd.sock
+  |   |-kube-eventer --source=kubernetes:https://kubernetes.default --sink=sls:https://sls.aliyuncs.com?internal=true&logStore=k8s-event&project=k8s-log-ca72b74945d55404f84c94fbd27b6a286&topic=&label=clusterId,ca72b74945d55404f84c94fbd27b6a286&label=clusterName,cluster-UWZyex
+  |   |   `-6*[{kube-eventer}]
+  |   |-pause
+  |   `-11*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id cb28e83578e6f3ccb110c4dff847e4dbfe7a7f89ab96e174f3b5aa8bf62c63de -address /run/containerd/containerd.sock
+  |   |-kube-state-metr --port=8080 --telemetry-port=8081 --metric-labels-allowlist=pods=[*],deployments=[*],nodes=[*] --resources=certificatesigningrequests,configmaps,cronjobs,daemonsets,deployments,endpoints,horizontalpodautoscalers,ingresses,jobs,leases,limitranges,mutatingwebhookconfigurations,namespaces,networkpolicies,nodes,persistentvolumeclaims,persistentvolumes,poddisruptionbudgets,pods,replicasets,replicationcontrollers,resourcequotas,services,statefulsets,storageclasses,validatingwebhookconfigurations,volumeattachments
+  |   |   `-8*[{kube-state-metr}]
+  |   |-pause
+  |   `-11*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id c953e7bb00101244e702121eb488d6ee5e29bf51203fea9aff0e84ca282a8a24 -address /run/containerd/containerd.sock
+  |   |-alibaba-cloud-p --listen-address=:9091 --ali-user-id=1045178262043886 --cluster-id=ca72b74945d55404f84c94fbd27b6a286 --region-id=cn-hangzhou --cluster-type=ManagedKubernetes --cluster-profile=Default
+  |   |   `-5*[{alibaba-cloud-p}]
+  |   |-pause
+  |   `-11*[{containerd-shim}]
+  |-containerd-shim -namespace k8s.io -id d1ac83f86877fe20cf38d56ed56869cfb246fe43e7f3b6ed31bf554d97c6d956 -address /run/containerd/containerd.sock
+  |   |-pause
+  |   |-run_loongcollec /usr/local/ilogtail/run_loongcollector.sh
+  |   |   |-loongcollector -enable_host_id=false
+  |   |   |   `-loongcollector -enable_host_id=false
+  |   |   |       `-23*[{loongcollector}]
+  |   |   `-sleep 3
+  |   `-11*[{containerd-shim}]
+  |-crond -n
+  |-csiplugin-conne
+  |   `-4*[{csiplugin-conne}]
+  |-dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+  |-gssproxy -D
+  |   `-5*[{gssproxy}]
+  |-irqbalance --foreground
+  |   `-{irqbalance}
+  |-kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --pod-manifest-path=/etc/kubernetes/manifests --v=3 --authorization-mode=Webhook --authentication-token-webhook=true --anonymous-auth=false --client-ca-file=/etc/kubernetes/pki/ca.crt --container-runtime-endpoint=/var/run/containerd/containerd.sock --cgroup-driver=systemd --node-labels=alibabacloud.com/nodepool-id=npf19e387bbe25431ba8b03075da98b985,ack.aliyun.com=ca72b74945d55404f84c94fbd27b6a286 --rotate-certificates=true --cert-dir=/var/lib/kubelet/pki --node-ip=0.0.0.0 --config=/var/lib/kubelet/ack-managed-config.yaml --hostname-override=cn-hangzhou.10.157.28.94 --cluster-dns=192.168.0.10 --cloud-provider=external --provider-id=cn-hangzhou.i-bp14v1xuplgec3nip1vh --enable-controller-attach-detach=true
+  |   `-14*[{kubelet}]
+  |-polkitd --no-debug
+  |   `-7*[{polkitd}]
+  |-rngd -f --fill-watermark=0 -x pkcs11 -x nist -x qrypt -D daemon:daemon
+  |-rpcbind -w -f
+  |-rsyslogd -n
+  |   `-2*[{rsyslogd}]
+  |-sshd -D -oCiphers=aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes256-cbc,aes128-gcm@openssh.com,aes128-ctr,aes128-cbc -oMACs=hmac-sha2-256-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha1,umac-128@openssh.com,hmac-sha2-512 -oGSSAPIKexAlgorithms=gss-curve25519-sha256-,gss-nistp256-sha256-,gss-group14-sha256-,gss-group16-sha512-,gss-gex-sha1-,gss-group14-sha1- -oKexAlgorithms=curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1 -oHostKeyAlgorithms=ecdsa-sha2-nistp256,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp521-cert-v01@openssh.com,ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,rsa-sha2-256,rsa-sha2-256-cert-v01@openssh.com,rsa-sha2-512,rsa-sha2-512-cert-v01@openssh.com,ssh-rsa,ssh-rsa-cert-v01@openssh.com -oPubkeyAcceptedKeyTypes=ecdsa-sha2-nistp256,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp521-cert-v01@openssh.com,ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,rsa-sha2-256,rsa-sha2-256-cert-v01@openssh.com,rsa-sha2-512,rsa-sha2-512-cert-v01@openssh.com,ssh-rsa,ssh-rsa-cert-v01@openssh.com -oCASignatureAlgorithms=ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519,rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  |   |-sshd
+  |   |   `-sshd
+  |   |-sshd
+  |   |   `-sshd
+  |   `-sshd
+  |       `-sshd
+  |           `-bash
+  |               `-bash ./diagnose_k8s.sh
+  |                   |-bash ./diagnose_k8s.sh
+  |                   |   `-timeout 10s pstree -al
+  |                   |       `-pstree -al
+  |                   `-tee -a /tmp/diagnose_1765626516/system_status
+  |-systemd --user
+  |   `-(sd-pam)
+  |-systemd-journal
+  |-systemd-logind
+  |-systemd-udevd
+  `-tuned -Es /usr/sbin/tuned -l -P
+      `-3*[{tuned}]
+------------End of pstree----------------
+
+-----------------run lsof------------------
+failed to collect info: lsof
+------------End of lsof----------------
+273 fds (PID = 1919), command: /usr/bin/containerd 
+61 fds (PID = 1), command: /usr/lib/systemd/systemd --switched-root --system --deserialize 18 
+60 fds (PID = 2361), command: /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id a111981a019affec1aca3a0a0da22f9ccb779fe9616358bafbe682485dc48b6c -address /run/containerd/containerd.sock 
+41 fds (PID = 5753), command: /usr/local/aegis/aegis_client/aegis_12_61/AliYunDunMonitor 
+37 fds (PID = 2421), command: /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 82e4ac515945072b66f536449aca4005f4600373e69e32edc31d25831dfd4646 -address /run/containerd/containerd.sock 
+36 fds (PID = 9868), command: /usr/local/ilogtail/loongcollector -enable_host_id=false 
+36 fds (PID = 2491), command: /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 1cd1c627b99829c5bc118d1c07cfed73c08b441d39324ce7d0d096808b2cd5e1 -address /run/containerd/containerd.sock 
+36 fds (PID = 2392), command: /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 83b6f02a299f0c87606e0491177320e26b8a7be865c239a8849c317b8b6b472e -address /run/containerd/containerd.sock 
+33 fds (PID = 459), command: /usr/lib/systemd/systemd-journald 
+27 fds (PID = 635), command: /usr/sbin/NetworkManager --no-daemon 
+----------------start pid leak detect---------------------
+     16 2361
+     24 9868
+     27 1919
+     32 2756
+     33 5753
+----------------done pid leak detect---------------------

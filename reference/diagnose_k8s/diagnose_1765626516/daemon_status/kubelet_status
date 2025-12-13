@@ -1,0 +1,35 @@
+
+-----------------run systemctl status kubelet -l------------------
+● kubelet.service - kubelet: The Kubernetes Node Agent
+   Loaded: loaded (/etc/systemd/system/kubelet.service; enabled; vendor preset: disabled)
+  Drop-In: /etc/systemd/system/kubelet.service.d
+           └─10-kubeadm.conf
+   Active: active (running) since Sat 2025-12-13 19:34:20 CST; 14min ago
+     Docs: http://kubernetes.io/docs/
+ Main PID: 2113 (kubelet)
+    Tasks: 15 (limit: 22543)
+   Memory: 83.8M
+   CGroup: /system.slice/kubelet.service
+           └─2113 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --pod-manifest-path=/etc/kubernetes/manifests --v=3 --authorization-mode=Webhook --authentication-token-webhook=true --anonymous-auth=false --client-ca-file=/etc/kubernetes/pki/ca.crt --container-runtime-endpoint=/var/run/containerd/containerd.sock --cgroup-driver=systemd --node-labels=alibabacloud.com/nodepool-id=npf19e387bbe25431ba8b03075da98b985,ack.aliyun.com=ca72b74945d55404f84c94fbd27b6a286 --rotate-certificates=true --cert-dir=/var/lib/kubelet/pki --node-ip=0.0.0.0 --config=/var/lib/kubelet/ack-managed-config.yaml --hostname-override=cn-hangzhou.10.157.28.94 --cluster-dns=192.168.0.10 --cloud-provider=external --provider-id=cn-hangzhou.i-bp14v1xuplgec3nip1vh --enable-controller-attach-detach=true
+
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.460495    2113 kubelet_pods.go:1297] "Clean up orphaned pod directories"
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.460533    2113 kubelet_pods.go:1308] "Clean up orphaned mirror pods"
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.460581    2113 kubelet_pods.go:1450] "Clean up orphaned pod cgroups"
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.552019    2113 secret.go:177] Setting up volume addon-token for pod dc590078-5f5e-4307-8f09-a49d83b5c9e0 at /var/lib/kubelet/pods/dc590078-5f5e-4307-8f09-a49d83b5c9e0/volumes/kubernetes.io~secret/addon-token
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.552042    2113 projected.go:187] Setting up volume kube-api-access-t685s for pod dc590078-5f5e-4307-8f09-a49d83b5c9e0 at /var/lib/kubelet/pods/dc590078-5f5e-4307-8f09-a49d83b5c9e0/volumes/kubernetes.io~projected/kube-api-access-t685s
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.552055    2113 configmap.go:181] Setting up volume csi-plugin-cm for pod dc590078-5f5e-4307-8f09-a49d83b5c9e0 at /var/lib/kubelet/pods/dc590078-5f5e-4307-8f09-a49d83b5c9e0/volumes/kubernetes.io~configmap/csi-plugin-cm
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.552085    2113 configmap.go:205] Received configMap kube-system/csi-plugin containing (0) pieces of data, 0 total bytes
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.552092    2113 secret.go:201] Received secret kube-system/addon.aliyuncsmanagedcsipluginrole.token containing (1) pieces of data, 1264 total bytes
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.552115    2113 quota_linux.go:276] SupportsQuotas called, but quotas disabled
+Dec 13 19:48:36 iZbp14v1xuplgec3nip1vhZ kubelet[2113]: I1213 19:48:36.552122    2113 empty_dir.go:308] assignQuota called, hasQuotas = false userNamespacesEnabled = false
+------------End of systemctl----------------
+root        2113       1  1 19:34 ?        00:00:12 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --pod-manifest-path=/etc/kubernetes/manifests --v=3 --authorization-mode=Webhook --authentication-token-webhook=true --anonymous-auth=false --client-ca-file=/etc/kubernetes/pki/ca.crt --container-runtime-endpoint=/var/run/containerd/containerd.sock --cgroup-driver=systemd --node-labels=alibabacloud.com/nodepool-id=npf19e387bbe25431ba8b03075da98b985,ack.aliyun.com=ca72b74945d55404f84c94fbd27b6a286 --rotate-certificates=true --cert-dir=/var/lib/kubelet/pki --node-ip=0.0.0.0 --config=/var/lib/kubelet/ack-managed-config.yaml --hostname-override=cn-hangzhou.10.157.28.94 --cluster-dns=192.168.0.10 --cloud-provider=external --provider-id=cn-hangzhou.i-bp14v1xuplgec3nip1vh --enable-controller-attach-detach=true
+root        3852    2361  0 19:34 ?        00:00:00 /csi-node-driver-registrar --v=5 --csi-address=/csi/csi.sock --logging-format=text --kubelet-registration-path=/var/lib/kubelet/csi-plugins/diskplugin.csi.alibabacloud.com/csi.sock
+root        4098    2361  0 19:34 ?        00:00:00 /csi-node-driver-registrar --v=5 --csi-address=/csi/csi.sock --logging-format=text --kubelet-registration-path=/var/lib/kubelet/csi-plugins/nasplugin.csi.alibabacloud.com/csi.sock
+root        4148    2361  0 19:34 ?        00:00:00 /csi-node-driver-registrar --v=5 --csi-address=/csi/csi.sock --logging-format=text --kubelet-registration-path=/var/lib/kubelet/csi-plugins/ossplugin.csi.alibabacloud.com/csi.sock
+root        6440    5141  0 19:35 ?        00:00:01 /metrics-server --source=kubernetes.hybrid:'' --kubelet-port=10250 --kubelet-certificate-authority=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt --deprecated-kubelet-completely-insecure=false
+root       19328   15982  0 19:48 pts/0    00:00:00 tee -a /tmp/diagnose_1765626516/daemon_status/kubelet_status
+
+-----------------run kubelet --version------------------
+Kubernetes v1.34.1-aliyun.1
+------------End of kubelet----------------

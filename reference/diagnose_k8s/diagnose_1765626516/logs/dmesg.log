@@ -1,0 +1,796 @@
+
+-----------------run dmesg -T------------------
+[Sat Dec 13 19:33:53 2025] Linux version 5.10.134-19.1.al8.x86_64 (mockbuild@h87c01383.na61) (gcc (GCC) 10.2.1 20200825 (Alibaba 10.2.1-3.8 2.32), GNU ld version 2.35-12.3.al8) #1 SMP Wed Jun 25 10:21:27 CST 2025
+[Sat Dec 13 19:33:53 2025] Command line: BOOT_IMAGE=(hd0,gpt3)/boot/vmlinuz-5.10.134-19.1.al8.x86_64 root=UUID=1b551087-75ce-4530-be37-a8a1b76d59f6 ro rhgb quiet cgroup.memory=nokmem crashkernel=0M-2G:0M,2G-8G:192M,8G-128G:256M,128G-376G:384M,376G-:448M spec_rstack_overflow=off vring_force_dma_api kfence.sample_interval=100 kfence.booting_max=0-2G:0,2G-32G:2M,32G-:32M preempt=none biosdevname=0 net.ifnames=0 console=tty0 console=ttyS0,115200n8 noibrs nvme_core.io_timeout=4294967295 nvme_core.admin_timeout=4294967295 cryptomgr.notests rcupdate.rcu_cpu_stall_timeout=300 systemd.unified_cgroup_hierarchy=1
+[Sat Dec 13 19:33:53 2025] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[Sat Dec 13 19:33:53 2025] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[Sat Dec 13 19:33:53 2025] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[Sat Dec 13 19:33:53 2025] x86/fpu: Supporting XSAVE feature 0x020: 'AVX-512 opmask'
+[Sat Dec 13 19:33:53 2025] x86/fpu: Supporting XSAVE feature 0x040: 'AVX-512 Hi256'
+[Sat Dec 13 19:33:53 2025] x86/fpu: Supporting XSAVE feature 0x080: 'AVX-512 ZMM_Hi256'
+[Sat Dec 13 19:33:53 2025] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[Sat Dec 13 19:33:53 2025] x86/fpu: xstate_offset[5]:  832, xstate_sizes[5]:   64
+[Sat Dec 13 19:33:53 2025] x86/fpu: xstate_offset[6]:  896, xstate_sizes[6]:  512
+[Sat Dec 13 19:33:53 2025] x86/fpu: xstate_offset[7]: 1408, xstate_sizes[7]: 1024
+[Sat Dec 13 19:33:53 2025] x86/fpu: Enabled xstate features 0xe7, context size is 2432 bytes, using 'compacted' format.
+[Sat Dec 13 19:33:53 2025] signal: max sigframe size: 3632
+[Sat Dec 13 19:33:53 2025] BIOS-provided physical RAM map:
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x0000000000000000-0x000000000009ffff] usable
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x0000000000100000-0x000000009fffffff] usable
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000a0000000-0x00000000a211ffff] reserved
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000a2120000-0x00000000be6a6fff] usable
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000be6a7000-0x00000000be6a7fff] ACPI data
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000be6a8000-0x00000000be6a8fff] reserved
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000be6a9000-0x00000000be6e7fff] usable
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000be6e8000-0x00000000be6e8fff] reserved
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000be6e9000-0x00000000bea6afff] usable
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000bea6b000-0x00000000beb1afff] reserved
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000beb1b000-0x00000000bfb9afff] usable
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000bfb9b000-0x00000000bfbf2fff] reserved
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000bfbf3000-0x00000000bfbfafff] ACPI data
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000bfbfb000-0x00000000bfbfefff] ACPI NVS
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000bfbff000-0x00000000bff7bfff] usable
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000bff7c000-0x00000000bfffffff] reserved
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x00000000fffbc000-0x00000000fffbffff] reserved
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x0000000100000000-0x0000000137ffffff] usable
+[Sat Dec 13 19:33:53 2025] BIOS-e820: [mem 0x0000000138000000-0x000000013fffffff] reserved
+[Sat Dec 13 19:33:53 2025] NX (Execute Disable) protection: active
+[Sat Dec 13 19:33:53 2025] e820: update [mem 0xbe69a018-0xbe6a3257] usable ==> usable
+[Sat Dec 13 19:33:53 2025] e820: update [mem 0xbe69a018-0xbe6a3257] usable ==> usable
+[Sat Dec 13 19:33:53 2025] extended physical RAM map:
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x0000000000000000-0x000000000009ffff] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x0000000000100000-0x000000009fffffff] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000a0000000-0x00000000a211ffff] reserved
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000a2120000-0x00000000be69a017] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000be69a018-0x00000000be6a3257] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000be6a3258-0x00000000be6a6fff] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000be6a7000-0x00000000be6a7fff] ACPI data
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000be6a8000-0x00000000be6a8fff] reserved
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000be6a9000-0x00000000be6e7fff] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000be6e8000-0x00000000be6e8fff] reserved
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000be6e9000-0x00000000bea6afff] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000bea6b000-0x00000000beb1afff] reserved
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000beb1b000-0x00000000bfb9afff] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000bfb9b000-0x00000000bfbf2fff] reserved
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000bfbf3000-0x00000000bfbfafff] ACPI data
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000bfbfb000-0x00000000bfbfefff] ACPI NVS
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000bfbff000-0x00000000bff7bfff] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000bff7c000-0x00000000bfffffff] reserved
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x00000000fffbc000-0x00000000fffbffff] reserved
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x0000000100000000-0x0000000137ffffff] usable
+[Sat Dec 13 19:33:53 2025] reserve setup_data: [mem 0x0000000138000000-0x000000013fffffff] reserved
+[Sat Dec 13 19:33:53 2025] efi: EFI v2.70 by EDK II
+[Sat Dec 13 19:33:53 2025] efi: SMBIOS=0xbfbcc000 ACPI=0xbfbfa000 ACPI 2.0=0xbfbfa014 MEMATTR=0xbe6a6018 MOKvar=0xbe6a8000 
+[Sat Dec 13 19:33:53 2025] SMBIOS 2.8 present.
+[Sat Dec 13 19:33:53 2025] DMI: Alibaba Cloud Alibaba Cloud ECS, BIOS 0.0.0 02/06/2015
+[Sat Dec 13 19:33:53 2025] Hypervisor detected: KVM
+[Sat Dec 13 19:33:53 2025] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[Sat Dec 13 19:33:53 2025] kvm-clock: cpu 0, msr 114e01001, primary cpu clock
+[Sat Dec 13 19:33:53 2025] kvm-clock: using sched offset of 8944744100 cycles
+[Sat Dec 13 19:33:53 2025] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[Sat Dec 13 19:33:53 2025] tsc: Detected 2499.998 MHz processor
+[Sat Dec 13 19:33:53 2025] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[Sat Dec 13 19:33:53 2025] e820: remove [mem 0x000a0000-0x000fffff] usable
+[Sat Dec 13 19:33:53 2025] last_pfn = 0x138000 max_arch_pfn = 0x400000000
+[Sat Dec 13 19:33:53 2025] MTRR default type: write-back
+[Sat Dec 13 19:33:53 2025] MTRR fixed ranges enabled:
+[Sat Dec 13 19:33:53 2025]   00000-9FFFF write-back
+[Sat Dec 13 19:33:53 2025]   A0000-FFFFF uncachable
+[Sat Dec 13 19:33:53 2025] MTRR variable ranges enabled:
+[Sat Dec 13 19:33:53 2025]   0 base 0000C0000000 mask 3FFFC0000000 uncachable
+[Sat Dec 13 19:33:53 2025]   1 base 000800000000 mask 3FF800000000 uncachable
+[Sat Dec 13 19:33:53 2025]   2 disabled
+[Sat Dec 13 19:33:53 2025]   3 disabled
+[Sat Dec 13 19:33:53 2025]   4 disabled
+[Sat Dec 13 19:33:53 2025]   5 disabled
+[Sat Dec 13 19:33:53 2025]   6 disabled
+[Sat Dec 13 19:33:53 2025]   7 disabled
+[Sat Dec 13 19:33:53 2025] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[Sat Dec 13 19:33:53 2025] last_pfn = 0xbff7c max_arch_pfn = 0x400000000
+[Sat Dec 13 19:33:53 2025] kexec: Reserving the low 1M of memory for crashkernel
+[Sat Dec 13 19:33:53 2025] Using GB pages for direct mapping
+[Sat Dec 13 19:33:53 2025] Secure boot disabled
+[Sat Dec 13 19:33:53 2025] RAMDISK: [mem 0x5a558000-0x5c761fff]
+[Sat Dec 13 19:33:53 2025] ACPI: Early table checksum verification disabled
+[Sat Dec 13 19:33:53 2025] ACPI: RSDP 0x00000000BFBFA014 000024 (v02 BOCHS )
+[Sat Dec 13 19:33:53 2025] ACPI: XSDT 0x00000000BFBF90E8 00004C (v01 BOCHS  BXPCFACP 00000001      01000013)
+[Sat Dec 13 19:33:53 2025] ACPI: FACP 0x00000000BFBF7000 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+[Sat Dec 13 19:33:53 2025] ACPI: DSDT 0x00000000BFBF8000 000BBE (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+[Sat Dec 13 19:33:53 2025] ACPI: FACS 0x00000000BFBFD000 000040
+[Sat Dec 13 19:33:53 2025] ACPI: SSDT 0x00000000BFBF6000 000D46 (v01 BOCHS  BXPCSSDT 00000001 BXPC 00000001)
+[Sat Dec 13 19:33:53 2025] ACPI: APIC 0x00000000BFBF5000 000090 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+[Sat Dec 13 19:33:53 2025] ACPI: SRAT 0x00000000BFBF4000 0000E8 (v01 BOCHS  BXPCSRAT 00000001 BXPC 00000001)
+[Sat Dec 13 19:33:53 2025] ACPI: BGRT 0x00000000BFBF3000 000038 (v01 INTEL  EDK2     00000002      01000013)
+[Sat Dec 13 19:33:53 2025] ACPI: Reserving FACP table memory at [mem 0xbfbf7000-0xbfbf7073]
+[Sat Dec 13 19:33:53 2025] ACPI: Reserving DSDT table memory at [mem 0xbfbf8000-0xbfbf8bbd]
+[Sat Dec 13 19:33:53 2025] ACPI: Reserving FACS table memory at [mem 0xbfbfd000-0xbfbfd03f]
+[Sat Dec 13 19:33:53 2025] ACPI: Reserving SSDT table memory at [mem 0xbfbf6000-0xbfbf6d45]
+[Sat Dec 13 19:33:53 2025] ACPI: Reserving APIC table memory at [mem 0xbfbf5000-0xbfbf508f]
+[Sat Dec 13 19:33:53 2025] ACPI: Reserving SRAT table memory at [mem 0xbfbf4000-0xbfbf40e7]
+[Sat Dec 13 19:33:53 2025] ACPI: Reserving BGRT table memory at [mem 0xbfbf3000-0xbfbf3037]
+[Sat Dec 13 19:33:53 2025] ACPI: Local APIC address 0xfee00000
+[Sat Dec 13 19:33:53 2025] SRAT: PXM 0 -> APIC 0x00 -> Node 0
+[Sat Dec 13 19:33:53 2025] SRAT: PXM 0 -> APIC 0x01 -> Node 0
+[Sat Dec 13 19:33:53 2025] SRAT: PXM 0 -> APIC 0x02 -> Node 0
+[Sat Dec 13 19:33:53 2025] SRAT: PXM 0 -> APIC 0x03 -> Node 0
+[Sat Dec 13 19:33:53 2025] ACPI: SRAT: Node 0 PXM 0 [mem 0x00000000-0x0009ffff]
+[Sat Dec 13 19:33:53 2025] ACPI: SRAT: Node 0 PXM 0 [mem 0x00100000-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] ACPI: SRAT: Node 0 PXM 0 [mem 0x100000000-0x13fffffff]
+[Sat Dec 13 19:33:53 2025] NUMA: Node 0 [mem 0x00000000-0x0009ffff] + [mem 0x00100000-0xbfffffff] -> [mem 0x00000000-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] NUMA: Node 0 [mem 0x00000000-0xbfffffff] + [mem 0x100000000-0x137ffffff] -> [mem 0x00000000-0x137ffffff]
+[Sat Dec 13 19:33:53 2025] NODE_DATA(0) allocated [mem 0x137ffa000-0x137ffffff]
+[Sat Dec 13 19:33:53 2025] Reserving 0MB of extra memory for crashkernel
+[Sat Dec 13 19:33:53 2025] Reserving 192MB of memory at 2800MB for crashkernel (System RAM: 3932MB)
+[Sat Dec 13 19:33:53 2025] Zone ranges:
+[Sat Dec 13 19:33:53 2025]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[Sat Dec 13 19:33:53 2025]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[Sat Dec 13 19:33:53 2025]   Normal   [mem 0x0000000100000000-0x0000000137ffffff]
+[Sat Dec 13 19:33:53 2025]   Device   empty
+[Sat Dec 13 19:33:53 2025] Movable zone start for each node
+[Sat Dec 13 19:33:53 2025] Early memory node ranges
+[Sat Dec 13 19:33:53 2025]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+[Sat Dec 13 19:33:53 2025]   node   0: [mem 0x0000000000100000-0x000000009fffffff]
+[Sat Dec 13 19:33:53 2025]   node   0: [mem 0x00000000a2120000-0x00000000be6a6fff]
+[Sat Dec 13 19:33:53 2025]   node   0: [mem 0x00000000be6a9000-0x00000000be6e7fff]
+[Sat Dec 13 19:33:53 2025]   node   0: [mem 0x00000000be6e9000-0x00000000bea6afff]
+[Sat Dec 13 19:33:53 2025]   node   0: [mem 0x00000000beb1b000-0x00000000bfb9afff]
+[Sat Dec 13 19:33:53 2025]   node   0: [mem 0x00000000bfbff000-0x00000000bff7bfff]
+[Sat Dec 13 19:33:53 2025]   node   0: [mem 0x0000000100000000-0x0000000137ffffff]
+[Sat Dec 13 19:33:53 2025] Initmem setup node 0 [mem 0x0000000000001000-0x0000000137ffffff]
+[Sat Dec 13 19:33:53 2025] On node 0 totalpages: 1006820
+[Sat Dec 13 19:33:53 2025]   DMA zone: 64 pages used for memmap
+[Sat Dec 13 19:33:53 2025]   DMA zone: 2176 pages reserved
+[Sat Dec 13 19:33:53 2025]   DMA zone: 3999 pages, LIFO batch:0
+[Sat Dec 13 19:33:53 2025]   DMA32 zone: 12086 pages used for memmap
+[Sat Dec 13 19:33:53 2025]   DMA32 zone: 773445 pages, LIFO batch:63
+[Sat Dec 13 19:33:53 2025]   Normal zone: 3584 pages used for memmap
+[Sat Dec 13 19:33:53 2025]   Normal zone: 229376 pages, LIFO batch:63
+[Sat Dec 13 19:33:53 2025] On node 0, zone DMA: 1 pages in unavailable ranges
+[Sat Dec 13 19:33:53 2025] On node 0, zone DMA: 96 pages in unavailable ranges
+[Sat Dec 13 19:33:53 2025] On node 0, zone DMA32: 8480 pages in unavailable ranges
+[Sat Dec 13 19:33:53 2025] On node 0, zone DMA32: 2 pages in unavailable ranges
+[Sat Dec 13 19:33:53 2025] On node 0, zone DMA32: 1 pages in unavailable ranges
+[Sat Dec 13 19:33:53 2025] On node 0, zone DMA32: 176 pages in unavailable ranges
+[Sat Dec 13 19:33:53 2025] On node 0, zone DMA32: 100 pages in unavailable ranges
+[Sat Dec 13 19:33:53 2025] On node 0, zone Normal: 132 pages in unavailable ranges
+[Sat Dec 13 19:33:53 2025] ACPI: PM-Timer IO Port: 0xb008
+[Sat Dec 13 19:33:53 2025] ACPI: Local APIC address 0xfee00000
+[Sat Dec 13 19:33:53 2025] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[Sat Dec 13 19:33:53 2025] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[Sat Dec 13 19:33:53 2025] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[Sat Dec 13 19:33:53 2025] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[Sat Dec 13 19:33:53 2025] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[Sat Dec 13 19:33:53 2025] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[Sat Dec 13 19:33:53 2025] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[Sat Dec 13 19:33:53 2025] ACPI: IRQ0 used by override.
+[Sat Dec 13 19:33:53 2025] ACPI: IRQ5 used by override.
+[Sat Dec 13 19:33:53 2025] ACPI: IRQ9 used by override.
+[Sat Dec 13 19:33:53 2025] ACPI: IRQ10 used by override.
+[Sat Dec 13 19:33:53 2025] ACPI: IRQ11 used by override.
+[Sat Dec 13 19:33:53 2025] Using ACPI (MADT) for SMP configuration information
+[Sat Dec 13 19:33:53 2025] e820: update [mem 0xbe6ed000-0xbe6f5fff] usable ==> reserved
+[Sat Dec 13 19:33:53 2025] TSC deadline timer available
+[Sat Dec 13 19:33:53 2025] smpboot: Allowing 4 CPUs, 0 hotplug CPUs
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000fffff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xa0000000-0xa211ffff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbe69a000-0xbe69afff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbe6a3000-0xbe6a3fff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbe6a7000-0xbe6a7fff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbe6a8000-0xbe6a8fff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbe6e8000-0xbe6e8fff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbe6ed000-0xbe6f5fff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbea6b000-0xbeb1afff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbfb9b000-0xbfbf2fff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbfbf3000-0xbfbfafff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbfbfb000-0xbfbfefff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xbff7c000-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xc0000000-0xfffbbfff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xfffbc000-0xfffbffff]
+[Sat Dec 13 19:33:53 2025] PM: hibernation: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+[Sat Dec 13 19:33:53 2025] [mem 0xc0000000-0xfffbbfff] available for PCI devices
+[Sat Dec 13 19:33:53 2025] Booting paravirtualized kernel on KVM
+[Sat Dec 13 19:33:53 2025] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[Sat Dec 13 19:33:53 2025] setup_percpu: NR_CPUS:1024 nr_cpumask_bits:4 nr_cpu_ids:4 nr_node_ids:1
+[Sat Dec 13 19:33:53 2025] percpu: Embedded 65 pages/cpu s229376 r8192 d28672 u524288
+[Sat Dec 13 19:33:53 2025] pcpu-alloc: s229376 r8192 d28672 u524288 alloc=1*2097152
+[Sat Dec 13 19:33:53 2025] pcpu-alloc: [0] 0 1 2 3 
+[Sat Dec 13 19:33:53 2025] kvm-guest: stealtime: cpu 0, msr 133e37080
+[Sat Dec 13 19:33:53 2025] kvm-guest: PV spinlocks disabled, no host support
+[Sat Dec 13 19:33:53 2025] Built 1 zonelists, mobility grouping on.  Total pages: 988910
+[Sat Dec 13 19:33:53 2025] Policy zone: Normal
+[Sat Dec 13 19:33:53 2025] Kernel command line: BOOT_IMAGE=(hd0,gpt3)/boot/vmlinuz-5.10.134-19.1.al8.x86_64 root=UUID=1b551087-75ce-4530-be37-a8a1b76d59f6 ro rhgb quiet cgroup.memory=nokmem crashkernel=0M-2G:0M,2G-8G:192M,8G-128G:256M,128G-376G:384M,376G-:448M spec_rstack_overflow=off vring_force_dma_api kfence.sample_interval=100 kfence.booting_max=0-2G:0,2G-32G:2M,32G-:32M preempt=none biosdevname=0 net.ifnames=0 console=tty0 console=ttyS0,115200n8 noibrs nvme_core.io_timeout=4294967295 nvme_core.admin_timeout=4294967295 cryptomgr.notests rcupdate.rcu_cpu_stall_timeout=300 systemd.unified_cgroup_hierarchy=1
+[Sat Dec 13 19:33:53 2025] Force vring dma api enabled
+[Sat Dec 13 19:33:53 2025] Dynamic Preempt: none
+[Sat Dec 13 19:33:53 2025] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[Sat Dec 13 19:33:53 2025] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[Sat Dec 13 19:33:53 2025] mem auto-init: stack:off, heap alloc:off, heap free:off
+[Sat Dec 13 19:33:53 2025] software IO TLB: area num 4.
+[Sat Dec 13 19:33:53 2025] Memory: 3572360K/4027280K available (14346K kernel code, 8969K rwdata, 10024K rodata, 2272K init, 6272K bss, 454660K reserved, 0K cma-reserved)
+[Sat Dec 13 19:33:53 2025] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[Sat Dec 13 19:33:53 2025] Kernel/User page tables isolation: enabled
+[Sat Dec 13 19:33:53 2025] ftrace: allocating 47165 entries in 185 pages
+[Sat Dec 13 19:33:53 2025] ftrace: allocated 185 pages with 5 groups
+[Sat Dec 13 19:33:53 2025] rcu: Hierarchical RCU implementation.
+[Sat Dec 13 19:33:53 2025] rcu: 	RCU restricting CPUs from NR_CPUS=1024 to nr_cpu_ids=4.
+[Sat Dec 13 19:33:53 2025] 	RCU CPU stall warnings timeout set to 300 (rcu_cpu_stall_timeout).
+[Sat Dec 13 19:33:53 2025] 	Rude variant of Tasks RCU enabled.
+[Sat Dec 13 19:33:53 2025] 	Tracing variant of Tasks RCU enabled.
+[Sat Dec 13 19:33:53 2025] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[Sat Dec 13 19:33:53 2025] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[Sat Dec 13 19:33:53 2025] NR_IRQS: 65792, nr_irqs: 456, preallocated irqs: 16
+[Sat Dec 13 19:33:53 2025] kfence: initialized - using 2097152 bytes for 255 objects on node 0 at 0xffff8e3880000000-0xffff8e3880200000
+[Sat Dec 13 19:33:53 2025] Console: colour dummy device 80x25
+[Sat Dec 13 19:33:53 2025] printk: console [tty0] enabled
+[Sat Dec 13 19:33:53 2025] printk: console [ttyS0] enabled
+[Sat Dec 13 19:33:53 2025] ACPI: Core revision 20200925
+[Sat Dec 13 19:33:53 2025] APIC: Switch to symmetric I/O mode setup
+[Sat Dec 13 19:33:53 2025] try_to_enable_x2apic: remap_mode: -38
+[Sat Dec 13 19:33:53 2025] x2apic enabled
+[Sat Dec 13 19:33:53 2025] Switched APIC routing to physical x2apic.
+[Sat Dec 13 19:33:53 2025] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x240937b9988, max_idle_ns: 440795218083 ns
+[Sat Dec 13 19:33:53 2025] Calibrating delay loop (skipped) preset value.. 4999.99 BogoMIPS (lpj=2499998)
+[Sat Dec 13 19:33:53 2025] pid_max: default: 32768 minimum: 301
+[Sat Dec 13 19:33:53 2025] LSM: Security Framework initializing
+[Sat Dec 13 19:33:53 2025] SELinux:  Initializing.
+[Sat Dec 13 19:33:53 2025] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[Sat Dec 13 19:33:53 2025] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[Sat Dec 13 19:33:53 2025] Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+[Sat Dec 13 19:33:53 2025] Last level dTLB entries: 4KB 64, 2MB 0, 4MB 0, 1GB 4
+[Sat Dec 13 19:33:53 2025] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[Sat Dec 13 19:33:53 2025] Spectre V2 : Mitigation: Retpolines
+[Sat Dec 13 19:33:53 2025] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[Sat Dec 13 19:33:53 2025] Spectre V2 : Spectre v2 / SpectreRSB : Filling RSB on VMEXIT
+[Sat Dec 13 19:33:53 2025] RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+[Sat Dec 13 19:33:53 2025] RETBleed: Vulnerable
+[Sat Dec 13 19:33:53 2025] Speculative Store Bypass: Vulnerable
+[Sat Dec 13 19:33:53 2025] MDS: Vulnerable: Clear CPU buffers attempted, no microcode
+[Sat Dec 13 19:33:53 2025] MMIO Stale Data: Vulnerable: Clear CPU buffers attempted, no microcode
+[Sat Dec 13 19:33:53 2025] Freeing SMP alternatives memory: 40K
+[Sat Dec 13 19:33:53 2025] smpboot: CPU0: Intel(R) Xeon(R) Platinum (family: 0x6, model: 0x55, stepping: 0x4)
+[Sat Dec 13 19:33:53 2025] Performance Events: unsupported p6 CPU model 85 no PMU driver, software events only.
+[Sat Dec 13 19:33:53 2025] rcu: Hierarchical SRCU implementation.
+[Sat Dec 13 19:33:53 2025] smp: Bringing up secondary CPUs ...
+[Sat Dec 13 19:33:53 2025] x86: Booting SMP configuration:
+[Sat Dec 13 19:33:53 2025] .... node  #0, CPUs:      #1
+[Sat Dec 13 19:33:53 2025] kvm-clock: cpu 1, msr 114e01041, secondary cpu clock
+[Sat Dec 13 19:33:53 2025] kvm-guest: stealtime: cpu 1, msr 133eb7080
+[Sat Dec 13 19:33:53 2025] MDS CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/mds.html for more details.
+[Sat Dec 13 19:33:53 2025] MMIO Stale Data CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/processor_mmio_stale_data.html for more details.
+[Sat Dec 13 19:33:53 2025]  #2
+[Sat Dec 13 19:33:53 2025] kvm-clock: cpu 2, msr 114e01081, secondary cpu clock
+[Sat Dec 13 19:33:53 2025] kvm-guest: stealtime: cpu 2, msr 133f37080
+[Sat Dec 13 19:33:53 2025]  #3
+[Sat Dec 13 19:33:53 2025] kvm-clock: cpu 3, msr 114e010c1, secondary cpu clock
+[Sat Dec 13 19:33:53 2025] kvm-guest: stealtime: cpu 3, msr 133fb7080
+[Sat Dec 13 19:33:53 2025] smp: Brought up 1 node, 4 CPUs
+[Sat Dec 13 19:33:53 2025] smpboot: Max logical packages: 1
+[Sat Dec 13 19:33:53 2025] smpboot: Total of 4 processors activated (19999.98 BogoMIPS)
+[Sat Dec 13 19:33:53 2025] devtmpfs: initialized
+[Sat Dec 13 19:33:53 2025] x86/mm: Memory block size: 128MB
+[Sat Dec 13 19:33:53 2025] PM: Registering ACPI NVS region [mem 0xbfbfb000-0xbfbfefff] (16384 bytes)
+[Sat Dec 13 19:33:53 2025] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[Sat Dec 13 19:33:53 2025] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[Sat Dec 13 19:33:53 2025] pinctrl core: initialized pinctrl subsystem
+[Sat Dec 13 19:33:53 2025] NET: Registered protocol family 16
+[Sat Dec 13 19:33:53 2025] DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
+[Sat Dec 13 19:33:53 2025] DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[Sat Dec 13 19:33:53 2025] DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[Sat Dec 13 19:33:53 2025] audit: initializing netlink subsys (disabled)
+[Sat Dec 13 19:33:53 2025] audit: type=2000 audit(1765625634.549:1): state=initialized audit_enabled=0 res=1
+[Sat Dec 13 19:33:53 2025] thermal_sys: Registered thermal governor 'fair_share'
+[Sat Dec 13 19:33:53 2025] thermal_sys: Registered thermal governor 'bang_bang'
+[Sat Dec 13 19:33:53 2025] thermal_sys: Registered thermal governor 'step_wise'
+[Sat Dec 13 19:33:53 2025] thermal_sys: Registered thermal governor 'user_space'
+[Sat Dec 13 19:33:53 2025] cpuidle: using governor menu
+[Sat Dec 13 19:33:53 2025] HugeTLB: can optimize 4095 vmemmap pages for hugepages-1048576kB
+[Sat Dec 13 19:33:53 2025] ACPI: bus type PCI registered
+[Sat Dec 13 19:33:53 2025] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[Sat Dec 13 19:33:53 2025] PCI: Using configuration type 1 for base access
+[Sat Dec 13 19:33:53 2025] Kprobes globally optimized
+[Sat Dec 13 19:33:53 2025] HugeTLB: can optimize 7 vmemmap pages for hugepages-2048kB
+[Sat Dec 13 19:33:53 2025] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+[Sat Dec 13 19:33:53 2025] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[Sat Dec 13 19:33:53 2025] alg: self-tests disabled
+[Sat Dec 13 19:33:53 2025] cryptd: max_cpu_qlen set to 1000
+[Sat Dec 13 19:33:53 2025] ACPI: Added _OSI(Module Device)
+[Sat Dec 13 19:33:53 2025] ACPI: Added _OSI(Processor Device)
+[Sat Dec 13 19:33:53 2025] ACPI: Added _OSI(3.0 _SCP Extensions)
+[Sat Dec 13 19:33:53 2025] ACPI: Added _OSI(Processor Aggregator Device)
+[Sat Dec 13 19:33:53 2025] ACPI: Added _OSI(Linux-Dell-Video)
+[Sat Dec 13 19:33:53 2025] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+[Sat Dec 13 19:33:53 2025] ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+[Sat Dec 13 19:33:53 2025] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[Sat Dec 13 19:33:53 2025] ACPI: Interpreter enabled
+[Sat Dec 13 19:33:53 2025] ACPI: (supports S0 S5)
+[Sat Dec 13 19:33:53 2025] ACPI: Using IOAPIC for interrupt routing
+[Sat Dec 13 19:33:53 2025] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[Sat Dec 13 19:33:53 2025] ACPI: Enabled 16 GPEs in block 00 to 0F
+[Sat Dec 13 19:33:53 2025] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[Sat Dec 13 19:33:53 2025] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+[Sat Dec 13 19:33:53 2025] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [3] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [4] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [5] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [6] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [7] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [8] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [9] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [10] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [11] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [12] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [13] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [14] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [15] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [16] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [17] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [18] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [19] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [20] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [21] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [22] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [23] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [24] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [25] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [26] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [27] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [28] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [29] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [30] registered
+[Sat Dec 13 19:33:53 2025] acpiphp: Slot [31] registered
+[Sat Dec 13 19:33:53 2025] PCI host bridge to bus 0000:00
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: root bus resource [io  0x0d00-0xadff window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: root bus resource [io  0xae0f-0xaeff window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: root bus resource [io  0xaf20-0xafdf window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: root bus resource [io  0xafe4-0xffff window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: root bus resource [bus 00-ff]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[Sat Dec 13 19:33:53 2025] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[Sat Dec 13 19:33:53 2025] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+[Sat Dec 13 19:33:53 2025] pci 0000:00:01.3: quirk: [io  0xb000-0xb03f] claimed by PIIX4 ACPI
+[Sat Dec 13 19:33:53 2025] pci 0000:00:01.3: quirk: [io  0xb100-0xb10f] claimed by PIIX4 SMB
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: [1013:00b8] type 00 class 0x030000
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: reg 0x10: [mem 0xc0000000-0xc1ffffff pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: reg 0x14: [mem 0xc2001000-0xc2001fff]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: reg 0x30: [mem 0xffff0000-0xffffffff pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: BAR 0: assigned to efifb
+[Sat Dec 13 19:33:53 2025] pci 0000:00:03.0: [1af4:1003] type 00 class 0x078000
+[Sat Dec 13 19:33:53 2025] pci 0000:00:03.0: reg 0x10: [io  0xc020-0xc03f]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:03.0: reg 0x14: [mem 0xc2000000-0xc2000fff]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:04.0: [1af4:1001] type 00 class 0x010000
+[Sat Dec 13 19:33:53 2025] pci 0000:00:04.0: reg 0x10: [mem 0x800000000-0x800000fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:04.0: reg 0x18: [mem 0x800001000-0x800001fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:05.0: [1af4:1001] type 00 class 0x010000
+[Sat Dec 13 19:33:53 2025] pci 0000:00:05.0: reg 0x10: [mem 0x800002000-0x800002fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:05.0: reg 0x18: [mem 0x800003000-0x800003fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:06.0: [1af4:1000] type 00 class 0x020000
+[Sat Dec 13 19:33:53 2025] pci 0000:00:06.0: reg 0x10: [mem 0x800004000-0x800004fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:06.0: reg 0x18: [mem 0x800005000-0x800005fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:07.0: [1af4:1002] type 00 class 0x00ff00
+[Sat Dec 13 19:33:53 2025] pci 0000:00:07.0: reg 0x10: [io  0xc000-0xc01f]
+[Sat Dec 13 19:33:53 2025] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 10 *11)
+[Sat Dec 13 19:33:53 2025] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 10 *11)
+[Sat Dec 13 19:33:53 2025] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 *10 11)
+[Sat Dec 13 19:33:53 2025] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 *10 11)
+[Sat Dec 13 19:33:53 2025] ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+[Sat Dec 13 19:33:53 2025] iommu: Default domain type: Passthrough 
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: vgaarb: bridge control possible
+[Sat Dec 13 19:33:53 2025] vgaarb: loaded
+[Sat Dec 13 19:33:53 2025] SCSI subsystem initialized
+[Sat Dec 13 19:33:53 2025] ACPI: bus type USB registered
+[Sat Dec 13 19:33:53 2025] usbcore: registered new interface driver usbfs
+[Sat Dec 13 19:33:53 2025] usbcore: registered new interface driver hub
+[Sat Dec 13 19:33:53 2025] usbcore: registered new device driver usb
+[Sat Dec 13 19:33:53 2025] pps_core: LinuxPPS API ver. 1 registered
+[Sat Dec 13 19:33:53 2025] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[Sat Dec 13 19:33:53 2025] PTP clock support registered
+[Sat Dec 13 19:33:53 2025] EDAC MC: Ver: 3.0.0
+[Sat Dec 13 19:33:53 2025] Registered efivars operations
+[Sat Dec 13 19:33:53 2025] NetLabel: Initializing
+[Sat Dec 13 19:33:53 2025] NetLabel:  domain hash size = 128
+[Sat Dec 13 19:33:53 2025] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[Sat Dec 13 19:33:53 2025] NetLabel:  unlabeled traffic allowed by default
+[Sat Dec 13 19:33:53 2025] PCI: Using ACPI for IRQ routing
+[Sat Dec 13 19:33:53 2025] PCI: pci_cache_line_size set to 64 bytes
+[Sat Dec 13 19:33:53 2025] pci 0000:00:04.0: can't claim BAR 0 [mem 0x800000000-0x800000fff 64bit pref]: no compatible bridge window
+[Sat Dec 13 19:33:53 2025] pci 0000:00:04.0: can't claim BAR 2 [mem 0x800001000-0x800001fff 64bit pref]: no compatible bridge window
+[Sat Dec 13 19:33:53 2025] pci 0000:00:05.0: can't claim BAR 0 [mem 0x800002000-0x800002fff 64bit pref]: no compatible bridge window
+[Sat Dec 13 19:33:53 2025] pci 0000:00:05.0: can't claim BAR 2 [mem 0x800003000-0x800003fff 64bit pref]: no compatible bridge window
+[Sat Dec 13 19:33:53 2025] pci 0000:00:06.0: can't claim BAR 0 [mem 0x800004000-0x800004fff 64bit pref]: no compatible bridge window
+[Sat Dec 13 19:33:53 2025] pci 0000:00:06.0: can't claim BAR 2 [mem 0x800005000-0x800005fff 64bit pref]: no compatible bridge window
+[Sat Dec 13 19:33:53 2025] e820: reserve RAM buffer [mem 0xbe69a018-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] e820: reserve RAM buffer [mem 0xbe6a7000-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] e820: reserve RAM buffer [mem 0xbe6e8000-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] e820: reserve RAM buffer [mem 0xbe6ed000-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] e820: reserve RAM buffer [mem 0xbea6b000-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] e820: reserve RAM buffer [mem 0xbfb9b000-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] e820: reserve RAM buffer [mem 0xbff7c000-0xbfffffff]
+[Sat Dec 13 19:33:53 2025] clocksource: Switched to clocksource kvm-clock
+[Sat Dec 13 19:33:53 2025] VFS: Disk quotas dquot_6.6.0
+[Sat Dec 13 19:33:53 2025] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[Sat Dec 13 19:33:53 2025] pnp: PnP ACPI init
+[Sat Dec 13 19:33:53 2025] pnp 00:00: Plug and Play ACPI device, IDs PNP0b00 (active)
+[Sat Dec 13 19:33:53 2025] pnp 00:01: Plug and Play ACPI device, IDs PNP0303 (active)
+[Sat Dec 13 19:33:53 2025] pnp 00:02: Plug and Play ACPI device, IDs PNP0f13 (active)
+[Sat Dec 13 19:33:53 2025] pnp 00:03: [dma 2]
+[Sat Dec 13 19:33:53 2025] pnp 00:03: Plug and Play ACPI device, IDs PNP0700 (active)
+[Sat Dec 13 19:33:53 2025] pnp 00:04: Plug and Play ACPI device, IDs PNP0501 (active)
+[Sat Dec 13 19:33:53 2025] pnp: PnP ACPI: found 5 devices
+[Sat Dec 13 19:33:53 2025] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[Sat Dec 13 19:33:53 2025] NET: Registered protocol family 2
+[Sat Dec 13 19:33:53 2025] IP idents hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[Sat Dec 13 19:33:53 2025] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[Sat Dec 13 19:33:53 2025] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[Sat Dec 13 19:33:53 2025] TCP bind hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[Sat Dec 13 19:33:53 2025] TCP: Hash tables configured (established 32768 bind 32768)
+[Sat Dec 13 19:33:53 2025] MPTCP token hash table entries: 4096 (order: 4, 98304 bytes, linear)
+[Sat Dec 13 19:33:53 2025] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[Sat Dec 13 19:33:53 2025] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[Sat Dec 13 19:33:53 2025] NET: Registered protocol family 1
+[Sat Dec 13 19:33:53 2025] NET: Registered protocol family 44
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: can't claim BAR 6 [mem 0xffff0000-0xffffffff pref]: no compatible bridge window
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: BAR 6: assigned [mem 0xc2010000-0xc201ffff pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:04.0: BAR 0: assigned [mem 0xc2002000-0xc2002fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:04.0: BAR 2: assigned [mem 0xc2003000-0xc2003fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:05.0: BAR 0: assigned [mem 0xc2004000-0xc2004fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:05.0: BAR 2: assigned [mem 0xc2005000-0xc2005fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:06.0: BAR 0: assigned [mem 0xc2006000-0xc2006fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:06.0: BAR 2: assigned [mem 0xc2007000-0xc2007fff 64bit pref]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: resource 5 [io  0x0d00-0xadff window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: resource 6 [io  0xae0f-0xaeff window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: resource 7 [io  0xaf20-0xafdf window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: resource 8 [io  0xafe4-0xffff window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: resource 9 [mem 0x000a0000-0x000bffff window]
+[Sat Dec 13 19:33:53 2025] pci_bus 0000:00: resource 10 [mem 0xc0000000-0xfebfffff window]
+[Sat Dec 13 19:33:53 2025] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[Sat Dec 13 19:33:53 2025] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[Sat Dec 13 19:33:53 2025] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[Sat Dec 13 19:33:53 2025] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[Sat Dec 13 19:33:53 2025] PCI: CLS 0 bytes, default 64
+[Sat Dec 13 19:33:53 2025] Trying to unpack rootfs image as initramfs...
+[Sat Dec 13 19:33:53 2025] Freeing initrd memory: 34856K
+[Sat Dec 13 19:33:53 2025] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[Sat Dec 13 19:33:53 2025] software IO TLB: mapped [mem 0x00000000ab000000-0x00000000af000000] (64MB)
+[Sat Dec 13 19:33:53 2025] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x240937b9988, max_idle_ns: 440795218083 ns
+[Sat Dec 13 19:33:53 2025] clocksource: Switched to clocksource tsc
+[Sat Dec 13 19:33:53 2025] Initialise system trusted keyrings
+[Sat Dec 13 19:33:53 2025] Key type blacklist registered
+[Sat Dec 13 19:33:53 2025] workingset: timestamp_bits=40 max_order=20 bucket_order=0
+[Sat Dec 13 19:33:53 2025] zbud: loaded
+[Sat Dec 13 19:33:53 2025] integrity: Platform Keyring initialized
+[Sat Dec 13 19:33:53 2025] Allocating IMA blacklist keyring.
+[Sat Dec 13 19:33:53 2025] NET: Registered protocol family 38
+[Sat Dec 13 19:33:53 2025] Key type asymmetric registered
+[Sat Dec 13 19:33:53 2025] Asymmetric key parser 'x509' registered
+[Sat Dec 13 19:33:53 2025] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[Sat Dec 13 19:33:53 2025] io scheduler mq-deadline registered
+[Sat Dec 13 19:33:53 2025] io scheduler kyber registered
+[Sat Dec 13 19:33:53 2025] io scheduler bfq registered
+[Sat Dec 13 19:33:53 2025] atomic64_test: passed for x86-64 platform with CX8 and with SSE
+[Sat Dec 13 19:33:53 2025] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[Sat Dec 13 19:33:53 2025] efifb: probing for efifb
+[Sat Dec 13 19:33:53 2025] efifb: framebuffer at 0xc0000000, using 1876k, total 1875k
+[Sat Dec 13 19:33:53 2025] efifb: mode is 800x600x32, linelength=3200, pages=1
+[Sat Dec 13 19:33:53 2025] efifb: scrolling: redraw
+[Sat Dec 13 19:33:53 2025] efifb: Truecolor: size=8:8:8:8, shift=24:16:8:0
+[Sat Dec 13 19:33:53 2025] Console: switching to colour frame buffer device 100x37
+[Sat Dec 13 19:33:53 2025] fb0: EFI VGA frame buffer device
+[Sat Dec 13 19:33:53 2025] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[Sat Dec 13 19:33:53 2025] ACPI: Power Button [PWRF]
+[Sat Dec 13 19:33:53 2025] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[Sat Dec 13 19:33:53 2025] ACPI: Sleep Button [SLPF]
+[Sat Dec 13 19:33:53 2025] PCI Interrupt Link [LNKC] enabled at IRQ 10
+[Sat Dec 13 19:33:53 2025] virtio-pci 0000:00:03.0: virtio_pci: leaving for legacy driver
+[Sat Dec 13 19:33:53 2025] virtio-pci 0000:00:04.0: virtio_pci: leaving for legacy driver
+[Sat Dec 13 19:33:53 2025] virtio-pci 0000:00:05.0: virtio_pci: leaving for legacy driver
+[Sat Dec 13 19:33:53 2025] virtio-pci 0000:00:06.0: virtio_pci: leaving for legacy driver
+[Sat Dec 13 19:33:53 2025] virtio-pci 0000:00:07.0: virtio_pci: leaving for legacy driver
+[Sat Dec 13 19:33:53 2025] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[Sat Dec 13 19:33:53 2025] 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[Sat Dec 13 19:33:53 2025] Non-volatile memory driver v1.3
+[Sat Dec 13 19:33:53 2025] Linux agpgart interface v0.103
+[Sat Dec 13 19:33:53 2025] virtio_blk virtio1: 1/0/0 default/read/poll queues
+[Sat Dec 13 19:33:53 2025] virtio_blk virtio1: [vda] 83886080 512-byte logical blocks (42.9 GB/40.0 GiB)
+[Sat Dec 13 19:33:53 2025] vda: detected capacity change from 0 to 42949672960
+[Sat Dec 13 19:33:53 2025] GPT:Primary header thinks Alt. header is not at the end of the disk.
+[Sat Dec 13 19:33:53 2025] GPT:41943039 != 83886079
+[Sat Dec 13 19:33:53 2025] GPT:Alternate GPT header not at the end of the disk.
+[Sat Dec 13 19:33:53 2025] GPT:41943039 != 83886079
+[Sat Dec 13 19:33:53 2025] GPT: Use GNU Parted to correct GPT errors.
+[Sat Dec 13 19:33:53 2025]  vda: vda1 vda2 vda3
+[Sat Dec 13 19:33:53 2025] virtio_blk virtio2: 1/0/0 default/read/poll queues
+[Sat Dec 13 19:33:53 2025] virtio_blk virtio2: [vdb] 251658240 512-byte logical blocks (129 GB/120 GiB)
+[Sat Dec 13 19:33:53 2025] vdb: detected capacity change from 0 to 128849018880
+[Sat Dec 13 19:33:53 2025] rdac: device handler registered
+[Sat Dec 13 19:33:53 2025] hp_sw: device handler registered
+[Sat Dec 13 19:33:53 2025] emc: device handler registered
+[Sat Dec 13 19:33:53 2025] alua: device handler registered
+[Sat Dec 13 19:33:53 2025] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[Sat Dec 13 19:33:53 2025] ehci-pci: EHCI PCI platform driver
+[Sat Dec 13 19:33:53 2025] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[Sat Dec 13 19:33:53 2025] ohci-pci: OHCI PCI platform driver
+[Sat Dec 13 19:33:53 2025] usbcore: registered new interface driver usbserial_generic
+[Sat Dec 13 19:33:53 2025] usbserial: USB Serial support registered for generic
+[Sat Dec 13 19:33:53 2025] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[Sat Dec 13 19:33:53 2025] serio: i8042 KBD port at 0x60,0x64 irq 1
+[Sat Dec 13 19:33:53 2025] serio: i8042 AUX port at 0x60,0x64 irq 12
+[Sat Dec 13 19:33:53 2025] mousedev: PS/2 mouse device common for all mice
+[Sat Dec 13 19:33:53 2025] rtc_cmos 00:00: RTC can wake from S4
+[Sat Dec 13 19:33:53 2025] rtc_cmos 00:00: registered as rtc0
+[Sat Dec 13 19:33:53 2025] rtc_cmos 00:00: setting system clock to 2025-12-13T11:33:54 UTC (1765625634)
+[Sat Dec 13 19:33:53 2025] rtc_cmos 00:00: alarms up to one day, 114 bytes nvram
+[Sat Dec 13 19:33:53 2025] intel_pstate: CPU model not supported
+[Sat Dec 13 19:33:53 2025] cpuidle: using governor haltpoll
+[Sat Dec 13 19:33:53 2025] kvm-guest: host does not support poll control
+[Sat Dec 13 19:33:53 2025] kvm-guest: host upgrade recommended
+[Sat Dec 13 19:33:53 2025] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[Sat Dec 13 19:33:53 2025] EFI Variables Facility v0.08 2004-May-17
+[Sat Dec 13 19:33:53 2025] hid: raw HID events driver (C) Jiri Kosina
+[Sat Dec 13 19:33:53 2025] usbcore: registered new interface driver usbhid
+[Sat Dec 13 19:33:53 2025] usbhid: USB HID core driver
+[Sat Dec 13 19:33:53 2025] drop_monitor: Initializing network drop monitor service
+[Sat Dec 13 19:33:53 2025] Initializing XFRM netlink socket
+[Sat Dec 13 19:33:53 2025] NET: Registered protocol family 10
+[Sat Dec 13 19:33:53 2025] Segment Routing with IPv6
+[Sat Dec 13 19:33:53 2025] NET: Registered protocol family 17
+[Sat Dec 13 19:33:53 2025] mpls_gso: MPLS GSO support
+[Sat Dec 13 19:33:53 2025] No MBM correction factor available
+[Sat Dec 13 19:33:53 2025] IPI shorthand broadcast: enabled
+[Sat Dec 13 19:33:53 2025] AVX2 version of gcm_enc/dec engaged.
+[Sat Dec 13 19:33:53 2025] AES CTR mode by8 optimization enabled
+[Sat Dec 13 19:33:53 2025] sched_clock: Marking stable (687950033, 1230154)->(736794549, -47614362)
+[Sat Dec 13 19:33:53 2025] Group Balancer: Created group balancer mount point.
+[Sat Dec 13 19:33:53 2025] Group Balancer: Registered group balancer file system.
+[Sat Dec 13 19:33:53 2025] registered taskstats version 1
+[Sat Dec 13 19:33:53 2025] Loading compiled-in X.509 certificates
+[Sat Dec 13 19:33:53 2025] Loaded X.509 cert 'Alibaba Cloud: Aliyun Linux Driver update signing key: 8dfb2c9eb02710967eda8d35e890fcabec88bd3f'
+[Sat Dec 13 19:33:53 2025] Loaded X.509 cert 'Alibaba Cloud: Aliyun Linux Driver update signing key: 0b44eb91d8412f625d42a32c9a6d4efb83040852'
+[Sat Dec 13 19:33:53 2025] zswap: loaded using pool lzo/zbud
+[Sat Dec 13 19:33:53 2025] Key type encrypted registered
+[Sat Dec 13 19:33:53 2025] integrity: Loading X.509 certificate: UEFI:MokListRT (MOKvar table)
+[Sat Dec 13 19:33:53 2025] integrity: Loaded X.509 cert 'Red Hat Secure Boot CA 5: cc6fa5e72868ba494e939bbd680b9144769a9f8f'
+[Sat Dec 13 19:33:53 2025] ima: No TPM chip found, activating TPM-bypass!
+[Sat Dec 13 19:33:53 2025] ima: Allocated hash algorithm: sha256
+[Sat Dec 13 19:33:53 2025] ima: No architecture policies found
+[Sat Dec 13 19:33:53 2025] evm: Initialising EVM extended attributes:
+[Sat Dec 13 19:33:53 2025] evm: security.selinux
+[Sat Dec 13 19:33:53 2025] evm: security.ima
+[Sat Dec 13 19:33:53 2025] evm: security.capability
+[Sat Dec 13 19:33:53 2025] evm: HMAC attrs: 0x1
+[Sat Dec 13 19:33:53 2025] NMI watchdog: Perf NMI watchdog permanently disabled
+[Sat Dec 13 19:33:53 2025] integrity: Unable to open file: /etc/keys/x509_ima.der (-2)
+[Sat Dec 13 19:33:53 2025] integrity: Unable to open file: /etc/keys/x509_evm.der (-2)
+[Sat Dec 13 19:33:53 2025] Freeing unused decrypted memory: 2036K
+[Sat Dec 13 19:33:53 2025] Freeing unused kernel image (initmem) memory: 2272K
+[Sat Dec 13 19:33:53 2025] Write protecting the kernel read-only data: 26624k
+[Sat Dec 13 19:33:53 2025] Freeing unused kernel image (text/rodata gap) memory: 2036K
+[Sat Dec 13 19:33:53 2025] Freeing unused kernel image (rodata/data gap) memory: 216K
+[Sat Dec 13 19:33:53 2025] Run /init as init process
+[Sat Dec 13 19:33:53 2025]   with arguments:
+[Sat Dec 13 19:33:53 2025]     /init
+[Sat Dec 13 19:33:53 2025]     rhgb
+[Sat Dec 13 19:33:53 2025]     vring_force_dma_api
+[Sat Dec 13 19:33:53 2025]     noibrs
+[Sat Dec 13 19:33:53 2025]   with environment:
+[Sat Dec 13 19:33:53 2025]     HOME=/
+[Sat Dec 13 19:33:53 2025]     TERM=linux
+[Sat Dec 13 19:33:53 2025]     BOOT_IMAGE=(hd0,gpt3)/boot/vmlinuz-5.10.134-19.1.al8.x86_64
+[Sat Dec 13 19:33:53 2025]     crashkernel=0M-2G:0M,2G-8G:192M,8G-128G:256M,128G-376G:384M,376G-:448M
+[Sat Dec 13 19:33:53 2025]     biosdevname=0
+[Sat Dec 13 19:33:53 2025] systemd[1]: systemd 239 (239-82.0.3.1.al8.3) running in system mode. (+PAM +AUDIT +SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=legacy)
+[Sat Dec 13 19:33:53 2025] systemd[1]: Detected virtualization kvm.
+[Sat Dec 13 19:33:53 2025] systemd[1]: Detected architecture x86-64.
+[Sat Dec 13 19:33:53 2025] systemd[1]: Running in initial RAM disk.
+[Sat Dec 13 19:33:53 2025] systemd[1]: Cannot read /sys/fs/cgroup/cpuset/cgroup.clone_children: No such file or directory
+[Sat Dec 13 19:33:53 2025] systemd[1]: Set hostname to <Aliyun>.
+[Sat Dec 13 19:33:53 2025] random: systemd: uninitialized urandom read (16 bytes read)
+[Sat Dec 13 19:33:53 2025] systemd[1]: Listening on udev Kernel Socket.
+[Sat Dec 13 19:33:53 2025] random: systemd: uninitialized urandom read (16 bytes read)
+[Sat Dec 13 19:33:53 2025] systemd[1]: Reached target Swap.
+[Sat Dec 13 19:33:53 2025] random: systemd: uninitialized urandom read (16 bytes read)
+[Sat Dec 13 19:33:53 2025] systemd[1]: Listening on Journal Socket (/dev/log).
+[Sat Dec 13 19:33:53 2025] systemd[1]: Reached target Local File Systems.
+[Sat Dec 13 19:33:53 2025] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[Sat Dec 13 19:33:53 2025] Bridge firewalling registered
+[Sat Dec 13 19:33:53 2025] FDC 0 is a S82078B
+[Sat Dec 13 19:33:53 2025] checking generic (c0000000 1d5000) vs hw (c0000000 2000000)
+[Sat Dec 13 19:33:53 2025] fb0: switching to cirrusdrmfb from EFI VGA
+[Sat Dec 13 19:33:53 2025] Console: switching to colour dummy device 80x25
+[Sat Dec 13 19:33:53 2025] cirrus 0000:00:02.0: vgaarb: deactivate vga console
+[Sat Dec 13 19:33:53 2025] [drm] Initialized cirrus 2.0.0 2019 for 0000:00:02.0 on minor 0
+[Sat Dec 13 19:33:53 2025] fbcon: cirrusdrmfb (fb0) is primary device
+[Sat Dec 13 19:33:53 2025] Console: switching to colour frame buffer device 128x48
+[Sat Dec 13 19:33:53 2025] cirrus 0000:00:02.0: [drm] fb0: cirrusdrmfb frame buffer device
+[Sat Dec 13 19:33:54 2025] random: crng init done
+[Sat Dec 13 19:33:54 2025] random: 99 urandom warning(s) missed due to ratelimiting
+[Sat Dec 13 19:33:54 2025] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+[Sat Dec 13 19:33:54 2025] EXT4-fs (vda3): mounted filesystem with ordered data mode. Opts: (null)
+[Sat Dec 13 19:33:55 2025] printk: systemd: 20 output lines suppressed due to ratelimiting
+[Sat Dec 13 19:33:55 2025] SELinux:  Runtime disable is deprecated, use selinux=0 on the kernel cmdline.
+[Sat Dec 13 19:33:55 2025] SELinux:  Disabled at runtime.
+[Sat Dec 13 19:33:55 2025] audit: type=1404 audit(1765625636.595:2): enforcing=0 old_enforcing=0 auid=4294967295 ses=4294967295 enabled=0 old-enabled=1 lsm=selinux res=1
+[Sat Dec 13 19:33:55 2025] systemd[1]: systemd 239 (239-82.0.3.1.al8.3) running in system mode. (+PAM +AUDIT +SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=legacy)
+[Sat Dec 13 19:33:55 2025] systemd[1]: Detected virtualization kvm.
+[Sat Dec 13 19:33:55 2025] systemd[1]: Detected architecture x86-64.
+[Sat Dec 13 19:33:55 2025] systemd[1]: Cannot read /sys/fs/cgroup/cpuset/cgroup.clone_children: No such file or directory
+[Sat Dec 13 19:33:55 2025] systemd[1]: Set hostname to <localhost>.
+[Sat Dec 13 19:33:56 2025] systemd[1]: initrd-switch-root.service: Succeeded.
+[Sat Dec 13 19:33:56 2025] systemd[1]: Stopped Switch Root.
+[Sat Dec 13 19:33:56 2025] systemd[1]: systemd-journald.service: Service has no hold-off time (RestartSec=0), scheduling restart.
+[Sat Dec 13 19:33:56 2025] systemd[1]: systemd-journald.service: Scheduled restart job, restart counter is at 1.
+[Sat Dec 13 19:33:56 2025] systemd[1]: Stopped Journal Service.
+[Sat Dec 13 19:33:56 2025] EXT4-fs (vda3): re-mounted. Opts: (null)
+[Sat Dec 13 19:33:56 2025] piix4_smbus 0000:00:01.3: SMBus Host Controller at 0xb100, revision 0
+[Sat Dec 13 19:33:56 2025] input: PC Speaker as /devices/platform/pcspkr/input/input5
+[Sat Dec 13 19:33:56 2025] RPC: Registered named UNIX socket transport module.
+[Sat Dec 13 19:33:56 2025] RPC: Registered udp transport module.
+[Sat Dec 13 19:33:56 2025] RPC: Registered tcp transport module.
+[Sat Dec 13 19:33:56 2025] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[Sat Dec 13 19:33:56 2025] RAPL PMU: API unit is 2^-32 Joules, 0 fixed counters, 10737418240 ms ovfl timer
+[Sat Dec 13 19:33:59 2025] process 'local/aegis/aegis_update/AliYunDunUpdate' started with executable stack
+[Sat Dec 13 19:34:01 2025] EXT4-fs (vda3): resizing filesystem from 5190656 to 10433787 blocks
+[Sat Dec 13 19:34:02 2025] EXT4-fs (vda3): resized filesystem to 10433787
+[Sat Dec 13 19:34:04 2025] IPVS: Registered protocols (TCP, UDP, SCTP, AH, ESP)
+[Sat Dec 13 19:34:04 2025] IPVS: Connection hash table configured (size=4096, memory=32Kbytes)
+[Sat Dec 13 19:34:04 2025] IPVS: ipvs loaded.
+[Sat Dec 13 19:34:04 2025] IPVS: [wrr] scheduler registered.
+[Sat Dec 13 19:34:04 2025] IPVS: [rr] scheduler registered.
+[Sat Dec 13 19:34:04 2025] IPVS: [lc] scheduler registered.
+[Sat Dec 13 19:34:05 2025] IPVS: [dh] scheduler registered.
+[Sat Dec 13 19:34:05 2025] IPVS: [sh] scheduler registered.
+[Sat Dec 13 19:34:05 2025] IPVS: [sed] scheduler registered.
+[Sat Dec 13 19:34:05 2025] IPVS: [nq] scheduler registered.
+[Sat Dec 13 19:34:09 2025] EXT4-fs (vdb): mounted filesystem with ordered data mode. Opts: (null)
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:38 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:43 2025] net_ratelimit: 23652 callbacks suppressed
+[Sat Dec 13 19:34:43 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:43 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:44 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:44 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:45 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:45 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:46 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:46 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:47 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:47 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:48 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:48 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:49 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:49 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:50 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:50 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:51 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:51 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:52 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:52 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:53 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:53 2025] pci 0000:00:08.0: [1af4:1000] type 00 class 0x020000
+[Sat Dec 13 19:34:53 2025] pci 0000:00:08.0: reg 0x10: [mem 0x00000000-0x00000fff 64bit pref]
+[Sat Dec 13 19:34:53 2025] pci 0000:00:08.0: reg 0x18: [mem 0x00000000-0x00000fff 64bit pref]
+[Sat Dec 13 19:34:53 2025] pci 0000:00:08.0: BAR 0: assigned [mem 0xc2008000-0xc2008fff 64bit pref]
+[Sat Dec 13 19:34:53 2025] pci 0000:00:08.0: BAR 2: assigned [mem 0xc2009000-0xc2009fff 64bit pref]
+[Sat Dec 13 19:34:53 2025] virtio-pci 0000:00:08.0: enabling device (0000 -> 0002)
+[Sat Dec 13 19:34:53 2025] virtio-pci 0000:00:08.0: virtio_pci: leaving for legacy driver
+[Sat Dec 13 19:34:53 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:54 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:54 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:55 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:55 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:55 2025] eth0: renamed from vetha1f1142f
+[Sat Dec 13 19:34:55 2025] eth0: renamed from vethfcd7e7af
+[Sat Dec 13 19:34:55 2025] IPv6: ADDRCONF(NETDEV_CHANGE): cali5ad34283949: link becomes ready
+[Sat Dec 13 19:34:55 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:34:55 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:34:56 2025] eth0: renamed from veth2b43d073
+[Sat Dec 13 19:34:56 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:34:56 2025] eth0: renamed from veth74de90a4
+[Sat Dec 13 19:34:56 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:34:56 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:56 2025] eth0: renamed from vethe5707b7e
+[Sat Dec 13 19:34:56 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:34:56 2025] eth0: renamed from veth15628388
+[Sat Dec 13 19:34:56 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:34:56 2025] eth0: renamed from veth04bd0dfd
+[Sat Dec 13 19:34:56 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:34:56 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:57 2025] eth0: renamed from veth33928450
+[Sat Dec 13 19:34:57 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:34:57 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:57 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:58 2025] pci 0000:00:09.0: [1af4:1000] type 00 class 0x020000
+[Sat Dec 13 19:34:58 2025] pci 0000:00:09.0: reg 0x10: [mem 0x00000000-0x00000fff 64bit pref]
+[Sat Dec 13 19:34:58 2025] pci 0000:00:09.0: reg 0x18: [mem 0x00000000-0x00000fff 64bit pref]
+[Sat Dec 13 19:34:58 2025] pci 0000:00:09.0: BAR 0: assigned [mem 0xc200a000-0xc200afff 64bit pref]
+[Sat Dec 13 19:34:58 2025] pci 0000:00:09.0: BAR 2: assigned [mem 0xc200b000-0xc200bfff 64bit pref]
+[Sat Dec 13 19:34:58 2025] virtio-pci 0000:00:09.0: enabling device (0000 -> 0002)
+[Sat Dec 13 19:34:58 2025] virtio-pci 0000:00:09.0: virtio_pci: leaving for legacy driver
+[Sat Dec 13 19:34:58 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:58 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:59 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:34:59 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:00 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:00 2025] eth0: renamed from veth409e0fbd
+[Sat Dec 13 19:35:00 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:00 2025] IPv6: ADDRCONF(NETDEV_CHANGE): cali46c9d9ad507: link becomes ready
+[Sat Dec 13 19:35:00 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:35:00 2025] eth0: renamed from veth5e29ebdc
+[Sat Dec 13 19:35:00 2025] eth0: renamed from veth56e7e2fa
+[Sat Dec 13 19:35:00 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:35:00 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:35:01 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:01 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:02 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:02 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:03 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:03 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:04 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:04 2025] eth0: renamed from veth7170096e
+[Sat Dec 13 19:35:04 2025] IPv6: ADDRCONF(NETDEV_CHANGE): cali6bd58105986: link becomes ready
+[Sat Dec 13 19:35:04 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:35:04 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:05 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:05 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:06 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:06 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:06 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:06 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:08 2025] net_ratelimit: 128 callbacks suppressed
+[Sat Dec 13 19:35:08 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:08 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:09 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:09 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:10 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:10 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:11 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:11 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:12 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:12 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:13 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:18 2025] net_ratelimit: 288 callbacks suppressed
+[Sat Dec 13 19:35:18 2025] IPVS: rr: TCP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:19 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:19 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:19 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:19 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:19 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:19 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:19 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:19 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:19 2025] IPVS: rr: UDP 192.168.0.10:53 - no destination available
+[Sat Dec 13 19:35:25 2025] eth0: renamed from veth7868e750
+[Sat Dec 13 19:35:25 2025] IPv6: ADDRCONF(NETDEV_CHANGE): caliaf7e585270b: link becomes ready
+[Sat Dec 13 19:35:25 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:35:26 2025] eth0: renamed from vethd18b22b2
+[Sat Dec 13 19:35:26 2025] IPv6: ADDRCONF(NETDEV_CHANGE): calif8333d2fb56: link becomes ready
+[Sat Dec 13 19:35:26 2025] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[Sat Dec 13 19:35:55 2025] kpatch_22519882: loading out-of-tree module taints kernel.
+[Sat Dec 13 19:35:55 2025] kpatch_22519882: tainting kernel with TAINT_LIVEPATCH
+[Sat Dec 13 19:35:55 2025] kpatch_22519882: module verification failed: signature and/or required key missing - tainting kernel
+[Sat Dec 13 19:35:55 2025] livepatch: enabling patch 'kpatch_22519882'
+[Sat Dec 13 19:36:00 2025] AliSecGuard : a130d12303ad1ffdfbd0eea01d79bdedea99d53a
+[Sat Dec 13 19:36:00 2025] AliSecGuard : a130d12303ad1ffdfbd0eea01d79bdedea99d53a
+------------End of dmesg----------------

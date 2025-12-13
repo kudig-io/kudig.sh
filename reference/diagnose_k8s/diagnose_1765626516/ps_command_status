@@ -1,0 +1,2 @@
+check if ps -ef command hang
+ps -ef command works fine

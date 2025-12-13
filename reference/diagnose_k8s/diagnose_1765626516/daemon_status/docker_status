@@ -1,0 +1,4 @@
+
+-----------------run systemctl status docker -l------------------
+failed to collect info: systemctl status docker -l
+------------End of systemctl----------------

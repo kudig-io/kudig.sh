@@ -1,0 +1,40 @@
+
+-----------------run systemctl status containerd -l------------------
+● containerd.service - containerd container runtime
+   Loaded: loaded (/etc/systemd/system/containerd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Sat 2025-12-13 19:34:18 CST; 14min ago
+     Docs: https://containerd.io
+ Main PID: 1919 (containerd)
+    Tasks: 242
+   Memory: 1.1G
+   CGroup: /system.slice/containerd.service
+           ├─1919 /usr/bin/containerd
+           ├─2361 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id a111981a019affec1aca3a0a0da22f9ccb779fe9616358bafbe682485dc48b6c -address /run/containerd/containerd.sock
+           ├─2392 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 83b6f02a299f0c87606e0491177320e26b8a7be865c239a8849c317b8b6b472e -address /run/containerd/containerd.sock
+           ├─2421 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 82e4ac515945072b66f536449aca4005f4600373e69e32edc31d25831dfd4646 -address /run/containerd/containerd.sock
+           ├─2474 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 40efe4df209b4b8be37177b572656c1d7122ddebd7eb7c1c647a1373c3c05808 -address /run/containerd/containerd.sock
+           ├─2491 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 1cd1c627b99829c5bc118d1c07cfed73c08b441d39324ce7d0d096808b2cd5e1 -address /run/containerd/containerd.sock
+           ├─2544 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 089c7307a2bbe506d92c1018f357028faf02a043b083806b0eb6ed594db2b63a -address /run/containerd/containerd.sock
+           ├─5048 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id bd9d821d6eb9d36a5014fa7c13ebff7c6f4448d07dcbe14f0e77e5da70bc1368 -address /run/containerd/containerd.sock
+           ├─5095 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 30cf8f5e1e837c7c2f7ed2b4c3c2fa058cffd08fbb6fcac29258be541a0c7e0b -address /run/containerd/containerd.sock
+           ├─5141 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 23b12fe5bf41fcfff71ca456146809b9e0b1d6b0a05ca1fcbb3bc52996eeb0b7 -address /run/containerd/containerd.sock
+           ├─5230 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id b033512b7c2f1a14534f92ebf58a392733f57cb8930bd5506a810093182453b8 -address /run/containerd/containerd.sock
+           ├─5303 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 37a359f0fdcd8e7af5b3c0984367c825ac53d8a97c7689571a82a365f566ad3b -address /run/containerd/containerd.sock
+           ├─5344 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 0b3904bfd6a41b6b8e70b5f16a4234369f1060be7ee40fb610838a0ca4968931 -address /run/containerd/containerd.sock
+           ├─5389 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 7b5845a65d020087aed5f807257bce80a6238feb4166eb7cc8eac34f46887962 -address /run/containerd/containerd.sock
+           ├─5534 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 58f8f7f1d292830adff08a7fc138a2a23f30df04a70ba6be22fc4053d4eac3a6 -address /run/containerd/containerd.sock
+           ├─5562 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id cb28e83578e6f3ccb110c4dff847e4dbfe7a7f89ab96e174f3b5aa8bf62c63de -address /run/containerd/containerd.sock
+           ├─5735 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id c953e7bb00101244e702121eb488d6ee5e29bf51203fea9aff0e84ca282a8a24 -address /run/containerd/containerd.sock
+           └─9403 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id d1ac83f86877fe20cf38d56ed56869cfb246fe43e7f3b6ed31bf554d97c6d956 -address /run/containerd/containerd.sock
+
+Dec 13 19:40:28 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:28.633314539+08:00" level=info msg="container event discarded" container=24d06c8be9e478c247b2be09ebd16d6c253249125f0e00e9b06551620a7c3ae9 type=CONTAINER_STARTED_EVENT
+Dec 13 19:40:30 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:30.795386710+08:00" level=info msg="container event discarded" container=24d06c8be9e478c247b2be09ebd16d6c253249125f0e00e9b06551620a7c3ae9 type=CONTAINER_STOPPED_EVENT
+Dec 13 19:40:32 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:32.903447968+08:00" level=info msg="container event discarded" container=74beddebf21d895dd2b6e2e93b9c06986f8ac9f79702cea174e961d4f1936573 type=CONTAINER_STOPPED_EVENT
+Dec 13 19:40:32 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:32.903477796+08:00" level=info msg="container event discarded" container=eab4d0c5867d1e6b8910794f0611e5d1120cbf6f8d28819bd2c78c37e5ca668f type=CONTAINER_CREATED_EVENT
+Dec 13 19:40:32 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:32.970937085+08:00" level=info msg="container event discarded" container=eab4d0c5867d1e6b8910794f0611e5d1120cbf6f8d28819bd2c78c37e5ca668f type=CONTAINER_STARTED_EVENT
+Dec 13 19:40:33 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:33.046326027+08:00" level=info msg="container event discarded" container=d371dd43bf79ca710995f3f8fa22f296d3a57a9e222a96e5d8f3817152dad879 type=CONTAINER_CREATED_EVENT
+Dec 13 19:40:33 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:33.128525007+08:00" level=info msg="container event discarded" container=d371dd43bf79ca710995f3f8fa22f296d3a57a9e222a96e5d8f3817152dad879 type=CONTAINER_STARTED_EVENT
+Dec 13 19:40:38 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:38.392090236+08:00" level=info msg="container event discarded" container=eab4d0c5867d1e6b8910794f0611e5d1120cbf6f8d28819bd2c78c37e5ca668f type=CONTAINER_STOPPED_EVENT
+Dec 13 19:40:39 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:39.388222479+08:00" level=info msg="container event discarded" container=c907d996c25fe92d42c870f218637fdf1700d3046e7368bec46b54e7ab9897fb type=CONTAINER_DELETED_EVENT
+Dec 13 19:40:40 iZbp14v1xuplgec3nip1vhZ containerd[1919]: time="2025-12-13T19:40:40.431554064+08:00" level=info msg="container event discarded" container=61ebd03b0f49bdfbbe4d1dd5624d27ebe3013f1b4968e827240a947c137dd996 type=CONTAINER_STOPPED_EVENT
+------------End of systemctl----------------

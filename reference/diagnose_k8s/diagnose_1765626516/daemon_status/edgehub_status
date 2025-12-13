@@ -1,0 +1,8 @@
+
+-----------------run systemctl status edge-hub -l------------------
+failed to collect info: systemctl status edge-hub -l
+------------End of systemctl----------------
+
+-----------------run edge-hub --version------------------
+failed to collect info: edge-hub --version
+------------End of edge-hub----------------

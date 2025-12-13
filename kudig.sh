@@ -1046,6 +1046,10 @@ check_configuration() {
 
 # 异常去重
 deduplicate_anomalies() {
+    if [[ ${#ANOMALIES[@]} -eq 0 ]]; then
+        return
+    fi
+    
     local -a unique_anomalies=()
     local -A seen_anomalies
     
@@ -1053,7 +1057,7 @@ deduplicate_anomalies() {
         IFS='|' read -r severity cn_name en_name details location <<< "$anomaly"
         
         # 使用英文标识符作为去重键
-        if [[ -z "${seen_anomalies[$en_name]}" ]]; then
+        if [[ -z "${seen_anomalies[$en_name]:-}" ]]; then
             seen_anomalies[$en_name]=1
             unique_anomalies+=("$anomaly")
         else
@@ -1066,6 +1070,10 @@ deduplicate_anomalies() {
 
 # 排序异常（按严重级别）
 sort_anomalies() {
+    if [[ ${#ANOMALIES[@]} -eq 0 ]]; then
+        return
+    fi
+    
     local -a critical=()
     local -a warning=()
     local -a info=()
@@ -1085,7 +1093,10 @@ sort_anomalies() {
         esac
     done
     
-    ANOMALIES=("${critical[@]}" "${warning[@]}" "${info[@]}")
+    ANOMALIES=()
+    [[ ${#critical[@]} -gt 0 ]] && ANOMALIES+=("${critical[@]}")
+    [[ ${#warning[@]} -gt 0 ]] && ANOMALIES+=("${warning[@]}")
+    [[ ${#info[@]} -gt 0 ]] && ANOMALIES+=("${info[@]}")
 }
 
 # 输出文本格式报告
@@ -1114,9 +1125,9 @@ output_text_report() {
     for anomaly in "${ANOMALIES[@]}"; do
         IFS='|' read -r severity _ _ _ _ <<< "$anomaly"
         case "$severity" in
-            "$SEVERITY_CRITICAL") ((critical_count++)) ;;
-            "$SEVERITY_WARNING") ((warning_count++)) ;;
-            "$SEVERITY_INFO") ((info_count++)) ;;
+            "$SEVERITY_CRITICAL") ((critical_count++)) || true ;;
+            "$SEVERITY_WARNING") ((warning_count++)) || true ;;
+            "$SEVERITY_INFO") ((info_count++)) || true ;;
         esac
     done
     
@@ -1217,14 +1228,16 @@ output_json_report() {
     local warning_count=0
     local info_count=0
     
-    for anomaly in "${ANOMALIES[@]}"; do
-        IFS='|' read -r severity _ _ _ _ <<< "$anomaly"
-        case "$severity" in
-            "$SEVERITY_CRITICAL") ((critical_count++)) ;;
-            "$SEVERITY_WARNING") ((warning_count++)) ;;
-            "$SEVERITY_INFO") ((info_count++)) ;;
-        esac
-    done
+    if [[ ${#ANOMALIES[@]} -gt 0 ]]; then
+        for anomaly in "${ANOMALIES[@]}"; do
+            IFS='|' read -r severity _ _ _ _ <<< "$anomaly"
+            case "$severity" in
+                "$SEVERITY_CRITICAL") ((critical_count++)) || true ;;
+                "$SEVERITY_WARNING") ((warning_count++)) || true ;;
+                "$SEVERITY_INFO") ((info_count++)) || true ;;
+            esac
+        done
+    fi
     
     echo "    \"critical\": $critical_count,"
     echo "    \"warning\": $warning_count,"
@@ -1291,12 +1304,14 @@ main() {
     
     # 根据异常数量返回退出码
     local critical_count=0
-    for anomaly in "${ANOMALIES[@]}"; do
-        IFS='|' read -r severity _ _ _ _ <<< "$anomaly"
-        if [[ "$severity" == "$SEVERITY_CRITICAL" ]]; then
-            ((critical_count++))
-        fi
-    done
+    if [[ ${#ANOMALIES[@]} -gt 0 ]]; then
+        for anomaly in "${ANOMALIES[@]}"; do
+            IFS='|' read -r severity _ _ _ _ <<< "$anomaly"
+            if [[ "$severity" == "$SEVERITY_CRITICAL" ]]; then
+                ((critical_count++)) || true
+            fi
+        done
+    fi
     
     if [[ $critical_count -gt 0 ]]; then
         exit 2  # 有严重异常

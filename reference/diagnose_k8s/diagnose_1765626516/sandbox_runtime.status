@@ -1,0 +1,26 @@
+=====check pouch config=====
+the pouch config is valid
+======check containerd config=====
+please enable iommu
+
+=====check if the current fd number has reached the maximum value=====
+fd number is ok
+
+======check if containerd-shim leaked=====
+0 containerd-shim leaked
+
+=====check if kata-proxy leaked=====
+0 kata-proxy leaked
+
+=====check if netns leaked=====
+0 netns leaked
+
+=====check if qemu leaked=====
+0 qemus leaked
+
+=====check if snapshots leaked=====
+not found dm_check
+0 snapshots leaked
+
+=====check if shim alive=====
+0 shims blocked
