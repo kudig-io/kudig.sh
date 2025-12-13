@@ -113,11 +113,9 @@ log_debug() {
     fi
 }
 
-# 检查项状态输出函数
+# 检查项状态输出函数 - 始终输出
 log_check_ok() {
-    if [[ "$VERBOSE" == true ]]; then
-        echo -e "  ${GREEN}[✓]${NC} $*" >&2
-    fi
+    echo -e "  ${GREEN}[✓]${NC} $*" >&2
 }
 
 log_check_fail() {
@@ -129,16 +127,17 @@ log_check_warn() {
 }
 
 log_check_skip() {
-    if [[ "$VERBOSE" == true ]]; then
-        echo -e "  ${BLUE}[-]${NC} $*" >&2
-    fi
+    echo -e "  ${BLUE}[-]${NC} $*" >&2
 }
 
-# 输出检查类别标题
+# 输出检查类别标题 - 始终输出
 log_section() {
-    if [[ "$VERBOSE" == true ]]; then
-        echo -e "\n${BLUE}>>> $* <<<${NC}" >&2
-    fi
+    echo -e "\n${BLUE}========== $* ==========${NC}" >&2
+}
+
+# 输出问题排查建议
+log_suggestion() {
+    echo -e "    ${YELLOW}→ 建议:${NC} $*" >&2
 }
 
 # 检查命令是否存在
@@ -183,7 +182,7 @@ validate_diagnose_dir() {
     
     for file in "${key_files[@]}"; do
         if [[ -f "$dir/$file" ]]; then
-            ((found_files++))
+            ((found_files++)) || true
         fi
     done
     
@@ -459,6 +458,7 @@ check_system_resources() {
             "15分钟平均负载 $load_15min，超过CPU核心数($cpu_cores)的4倍" \
             "system_status"
         log_check_fail "CPU负载: 过高 (15min负载: $load_15min, CPU核心: $cpu_cores)"
+        log_suggestion "检查高CPU进程: top -c 或 ps aux --sort=-%cpu | head"
     elif (( $(awk "BEGIN {print ($load_15min > $cpu_cores * 2)}") )); then
         add_anomaly "$SEVERITY_WARNING" \
             "系统负载偏高" \
@@ -466,6 +466,7 @@ check_system_resources() {
             "15分钟平均负载 $load_15min，超过CPU核心数($cpu_cores)的2倍" \
             "system_status"
         log_check_warn "CPU负载: 偏高 (15min负载: $load_15min, CPU核心: $cpu_cores)"
+        log_suggestion "检查高CPU进程并评估是否正常"
     else
         log_check_ok "CPU负载: 正常 (15min负载: $load_15min, CPU核心: $cpu_cores)"
     fi
@@ -486,6 +487,7 @@ check_system_resources() {
                     "内存使用率 ${mem_usage_percent}%，可能导致OOM" \
                     "memory_info"
                 log_check_fail "内存使用: 严重不足 (使用率: ${mem_usage_percent}%)"
+                log_suggestion "检查占用内存高的进程: ps aux --sort=-rss | head; 考虑扩容或优化应用"
             elif [[ $mem_usage_percent -ge 85 ]]; then
                 add_anomaly "$SEVERITY_WARNING" \
                     "内存使用率偏高" \
@@ -493,6 +495,7 @@ check_system_resources() {
                     "内存使用率 ${mem_usage_percent}%" \
                     "memory_info"
                 log_check_warn "内存使用: 偏高 (使用率: ${mem_usage_percent}%)"
+                log_suggestion "关注内存趋势，考虑清理缓存: sync; echo 3 > /proc/sys/vm/drop_caches"
             else
                 log_check_ok "内存使用: 正常 (使用率: ${mem_usage_percent}%)"
             fi
@@ -519,6 +522,7 @@ check_system_resources() {
                     "挂载点 $mount 使用率 ${usage}%" \
                     "system_status"
                 log_check_fail "磁盘空间 [$mount]: 严重不足 (使用率: ${usage}%)"
+                log_suggestion "清理磁盘: du -sh $mount/* | sort -rh | head; 删除无用文件或扩容"
             elif [[ $usage -ge 90 ]]; then
                 add_anomaly "$SEVERITY_WARNING" \
                     "磁盘空间不足" \
@@ -526,6 +530,7 @@ check_system_resources() {
                     "挂载点 $mount 使用率 ${usage}%" \
                     "system_status"
                 log_check_warn "磁盘空间 [$mount]: 不足 (使用率: ${usage}%)"
+                log_suggestion "检查占用空间大的目录: du -sh $mount/* | sort -rh | head"
             fi
         done <<< "$high_disk_usage"
     fi
@@ -612,6 +617,7 @@ check_process_services() {
             "kubelet.service状态为failed" \
             "daemon_status/kubelet_status"
         log_check_fail "Kubelet服务: failed"
+        log_suggestion "检查kubelet日志: journalctl -u kubelet -n 100; systemctl restart kubelet"
     elif [[ "$kubelet_status" == "stopped" ]]; then
         add_anomaly "$SEVERITY_CRITICAL" \
             "Kubelet服务停止" \
@@ -619,6 +625,7 @@ check_process_services() {
             "kubelet.service未启动" \
             "daemon_status/kubelet_status"
         log_check_fail "Kubelet服务: stopped"
+        log_suggestion "启动kubelet: systemctl start kubelet; 检查日志: journalctl -u kubelet"
     elif [[ "$kubelet_status" == "running" ]]; then
         log_check_ok "Kubelet服务: running"
     else
@@ -636,6 +643,7 @@ check_process_services() {
             "docker和containerd服务均为failed状态" \
             "daemon_status/"
         log_check_fail "容器运行时: docker和containerd均failed"
+        log_suggestion "检查容器运行时日志: journalctl -u containerd -n 100; systemctl restart containerd"
     elif [[ "$docker_status" == "stopped" && "$containerd_status" == "stopped" ]]; then
         add_anomaly "$SEVERITY_CRITICAL" \
             "容器运行时服务停止" \
@@ -643,6 +651,7 @@ check_process_services() {
             "docker和containerd服务均未启动" \
             "daemon_status/"
         log_check_fail "容器运行时: docker和containerd均stopped"
+        log_suggestion "启动容器运行时: systemctl start containerd"
     elif [[ "$docker_status" == "running" || "$containerd_status" == "running" ]]; then
         log_check_ok "容器运行时: docker=$docker_status, containerd=$containerd_status"
     else
@@ -659,6 +668,7 @@ check_process_services() {
                 "ps -ef命令挂起，系统可能存在D状态进程" \
                 "ps_command_status"
             log_check_fail "ps命令: 挂起"
+            log_suggestion "检查D状态进程: ps aux | grep ' D '; 可能需要重启节点"
         else
             log_check_ok "ps命令: 正常"
         fi
@@ -676,6 +686,7 @@ check_process_services() {
                 "检测到 $d_proc_count 个不可中断睡眠状态的进程" \
                 "ps_command_status"
             log_check_fail "D状态进程: 发现 $d_proc_count 个"
+            log_suggestion "D状态进程通常由IO阻塞引起，检查磁盘/NFS状态; 可能需要重启节点"
         else
             log_check_ok "D状态进程: 未发现"
         fi
@@ -735,6 +746,7 @@ check_network() {
                 "当前连接数 $current_conn/$max_conn (${usage_percent}%)，接近上限" \
                 "network_info"
             log_check_fail "连接跟踪表: 接近满 ($current_conn/$max_conn, ${usage_percent}%)"
+            log_suggestion "增大conntrack表: sysctl -w net.netfilter.nf_conntrack_max=262144"
         elif [[ $usage_percent -ge 80 ]]; then
             add_anomaly "$SEVERITY_WARNING" \
                 "连接跟踪表使用率高" \
@@ -742,6 +754,7 @@ check_network() {
                 "当前连接数 $current_conn/$max_conn (${usage_percent}%)" \
                 "network_info"
             log_check_warn "连接跟踪表: 使用率高 ($current_conn/$max_conn, ${usage_percent}%)"
+            log_suggestion "考虑增大conntrack表大小"
         else
             log_check_ok "连接跟踪表: 正常 ($current_conn/$max_conn, ${usage_percent}%)"
         fi
@@ -793,6 +806,7 @@ check_network() {
                 "10250端口未处于监听状态" \
                 "system_status"
             log_check_fail "Kubelet端口(10250): 未监听"
+            log_suggestion "检查kubelet服务: systemctl status kubelet; journalctl -u kubelet"
         else
             log_check_ok "Kubelet端口(10250): 正常监听"
         fi
@@ -832,6 +846,7 @@ check_kernel() {
                 "内核发生panic事件" \
                 "logs/dmesg.log"
             log_check_fail "内核Panic: 发现"
+            log_suggestion "检查dmesg日志定位问题原因; 可能需要联系厂商支持"
         else
             log_check_ok "内核Panic: 未发现"
         fi
@@ -850,6 +865,7 @@ check_kernel() {
                 "内核OOM Killer被触发 $oom_count 次" \
                 "logs/dmesg.log"
             log_check_fail "OOM Killer: 触发 $oom_count 次"
+            log_suggestion "检查被kill的进程: dmesg | grep -i oom; 考虑增加内存或限制Pod资源"
         else
             log_check_ok "OOM Killer: 未触发"
         fi
@@ -883,6 +899,7 @@ check_kernel() {
                 "文件系统被重新挂载为只读模式" \
                 "logs/dmesg.log"
             log_check_fail "文件系统: 变为只读"
+            log_suggestion "检查磁盘健康: dmesg | grep -i error; fsck修复文件系统"
         else
             log_check_ok "文件系统: 正常"
         fi
@@ -1021,6 +1038,7 @@ check_kubernetes() {
             "PLEG（Pod生命周期事件生成器）不健康，出现 $pleg_count 次" \
             "logs/kubelet.log"
         log_check_fail "PLEG状态: 不健康 ($pleg_count 次)"
+        log_suggestion "检查容器运行时状态; 重启容器运行时: systemctl restart containerd"
     else
         log_check_ok "PLEG状态: 健康"
     fi
@@ -1034,6 +1052,7 @@ check_kubernetes() {
             "CNI网络插件失败 $cni_error 次" \
             "logs/kubelet.log"
         log_check_fail "CNI网络插件: 错误 ($cni_error 次)"
+        log_suggestion "检查CNI插件状态: ls /etc/cni/net.d/; 重启网络插件Pod"
     else
         log_check_ok "CNI网络插件: 正常"
     fi
@@ -1046,6 +1065,7 @@ check_kubernetes() {
             "Kubelet证书已过期" \
             "logs/kubelet.log"
         log_check_fail "Kubelet证书: 已过期"
+        log_suggestion "更新证书: kubeadm certs renew all; systemctl restart kubelet"
     elif pattern_exists "$kubelet_log" "certificate will expire"; then
         add_anomaly "$SEVERITY_WARNING" \
             "证书即将过期" \
@@ -1053,6 +1073,7 @@ check_kubernetes() {
             "Kubelet证书即将过期" \
             "logs/kubelet.log"
         log_check_warn "Kubelet证书: 即将过期"
+        log_suggestion "尽快更新证书: kubeadm certs renew all"
     else
         log_check_ok "Kubelet证书: 正常"
     fi
@@ -1066,6 +1087,7 @@ check_kubernetes() {
             "无法连接到API Server，出现 $api_conn_failed 次" \
             "logs/kubelet.log"
         log_check_fail "API Server连接: 失败 ($api_conn_failed 次)"
+        log_suggestion "检查网络连接: curl -k https://<api-server>:6443/healthz; 检查防火墙规则"
     else
         log_check_ok "API Server连接: 正常 ($api_conn_failed 次失败)"
     fi
@@ -1480,11 +1502,18 @@ generate_report() {
 main() {
     parse_arguments "$@"
     
-    log_info "kudig.sh v$VERSION - Kubernetes节点诊断分析工具"
+    echo -e "${BLUE}================================================================${NC}" >&2
+    echo -e "${BLUE}  kudig.sh v$VERSION - Kubernetes节点诊断分析工具${NC}" >&2
+    echo -e "${BLUE}================================================================${NC}" >&2
+    echo "" >&2
+    echo -e "诊断目录: $DIAGNOSE_DIR" >&2
+    echo -e "分析时间: $(date '+%Y-%m-%d %H:%M:%S')" >&2
     
     # 环境检查
     check_required_commands
     validate_diagnose_dir "$DIAGNOSE_DIR"
+    
+    echo -e "\n${GREEN}开始诊断检查...${NC}" >&2
     
     # 执行所有检测器
     check_system_resources
@@ -1495,6 +1524,10 @@ main() {
     check_kubernetes
     check_time_sync
     check_configuration
+    
+    echo -e "\n${BLUE}================================================================${NC}" >&2
+    echo -e "${BLUE}  诊断结果汇总${NC}" >&2
+    echo -e "${BLUE}================================================================${NC}" >&2
     
     # 生成报告
     generate_report
