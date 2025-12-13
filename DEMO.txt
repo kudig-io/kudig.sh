@@ -1,0 +1,162 @@
+[root@iZbp14v1xuplgec3nip1vhZ ~]# ls
+kudig.sh-main  kudig.sh-main.zip  wget-log
+[root@iZbp14v1xuplgec3nip1vhZ ~]# chmod +x kudig.sh-main
+[root@iZbp14v1xuplgec3nip1vhZ ~]# cd kudig.sh-main/
+[root@iZbp14v1xuplgec3nip1vhZ kudig.sh-main]# ls
+kudig.sh  LICENSE  README.md  reference  TESTING.md
+[root@iZbp14v1xuplgec3nip1vhZ kudig.sh-main]# chmod +x kudig.sh 
+[root@iZbp14v1xuplgec3nip1vhZ kudig.sh-main]# ./kudig.sh --verbose /tmp/diagnose_1765626516
+================================================================
+  kudig.sh v1.0.0 - Kubernetes节点诊断分析工具
+================================================================
+
+诊断目录: /tmp/diagnose_1765626516
+分析时间: 2025-12-13 22:04:21
+[INFO] 环境检查通过
+[INFO] 验证诊断目录: /tmp/diagnose_1765626516
+[INFO] 找到 3 个关键文件
+
+开始诊断检查...
+
+========== 系统资源检查 ==========
+./kudig.sh: line 297: [[: 0
+0: syntax error in expression (error token is "0")
+[DEBUG] 检测到异常: HIGH_SYSTEM_LOAD - 系统负载过高
+  [✗] CPU负载: 过高 (15min负载: 0.34, CPU核心: 0
+0)
+    → 建议: 检查高CPU进程: top -c 或 ps aux --sort=-%cpu | head
+  [✓] 内存使用: 正常 (使用率: 32%)
+  [✓] 磁盘空间: 正常 (所有挂载点使用率<90%)
+  [✓] 文件句柄: 正常 (最大: 273)
+  [✓] 进程/线程数: 正常 (最大线程数: 33)
+[DEBUG] 检测到异常: HIGH_INODE_USAGE - Inode使用率过高
+  [!] Inode使用 [/boot/efi]: 偏高 (使用率: 194M%)
+[DEBUG] 检测到异常: HIGH_INODE_USAGE - Inode使用率过高
+  [!] Inode使用 [/var/lib/container]: 偏高 (使用率: 105G%)
+
+========== 进程与服务检查 ==========
+  [✓] Kubelet服务: running
+  [✓] 容器运行时: docker=unknown, containerd=running
+  [✓] ps命令: 正常
+  [✓] D状态进程: 未发现
+  [✓] runc进程: 正常
+  [✓] Firewalld: 已关闭
+
+========== 网络状态检查 ==========
+  [✓] 连接跟踪表: 正常 (517/262144, 0%)
+[DEBUG] 检测到异常: NETWORK_INTERFACE_DOWN - 网卡接口down
+  [!] 网卡状态: 部分down (kube-ipvs0
+nodelocaldns
+kube-ipvs0
+nodelocaldns)
+  [✓] 默认路由: 已配置
+  [✓] Kubelet端口(10250): 正常监听
+  [✓] iptables规则: 正常 (44 条)
+
+========== 内核状态检查 ==========
+  [✓] 内核Panic: 未发现
+./kudig.sh: line 861: [[: 0
+0: syntax error in expression (error token is "0")
+  [✓] OOM Killer: 未触发
+./kudig.sh: line 879: [[: 0
+0: syntax error in expression (error token is "0")
+  [✓] messages日志OOM: 未发现
+  [✓] 文件系统: 正常
+./kudig.sh: line 909: [[: 0
+0: syntax error in expression (error token is "0")
+  [✓] 磁盘IO: 正常 (0
+0 次错误)
+[DEBUG] 检测到异常: KERNEL_MODULE_LOAD_FAILED - 内核模块加载失败
+  [!] 内核模块: 存在加载失败
+[DEBUG] 检测到异常: NMI_WATCHDOG_TRIGGERED - NMI Watchdog触发
+  [!] NMI Watchdog: 被触发
+
+========== 容器运行时检查 ==========
+  [✓] Docker启动: 正常
+  [✓] Docker存储驱动: 正常
+./kudig.sh: line 988: [[: 0
+0: syntax error in expression (error token is "0")
+  [✓] Containerd容器创建: 正常 (0
+0 次失败)
+./kudig.sh: line 1006: [[: 0
+0: syntax error in expression (error token is "0")
+  [✓] 镜像拉取: 正常 (0
+0 次失败)
+
+========== Kubernetes组件检查 ==========
+  [✓] PLEG状态: 健康
+  [✓] CNI网络插件: 正常
+  [✓] Kubelet证书: 正常
+./kudig.sh: line 1083: [[: 0
+0: syntax error in expression (error token is "0")
+  [✓] API Server连接: 正常 (0
+0 次失败)
+  [✓] Kubelet认证: 正常
+  [✓] Pod驱逐: 未发现
+  [✓] 节点状态: Ready
+  [✓] 磁盘压力: 无
+  [✓] 内存压力: 无
+
+========== 时间同步检查 ==========
+[DEBUG] 检测到异常: TIME_SYNC_SERVICE_DOWN - 时间同步服务未运行
+  [!] 时间同步: ntpd=unknown, chronyd=unknown (建议启用)
+
+========== 系统配置检查 ==========
+  [✓] Swap配置: 已禁用
+  [✓] IP转发: 已启用
+  [✓] bridge-nf-call-iptables: 已启用
+  [✓] ulimit open files: 正常
+  [✓] SELinux: 非Enforcing
+
+================================================================
+  诊断结果汇总
+================================================================
+[INFO] 生成报告...
+[DEBUG] 跳过重复异常: HIGH_INODE_USAGE
+=== Kubernetes节点诊断异常报告 ===
+诊断时间: 2025-12-13 22:04:21
+节点信息: 
+未知
+分析目录: /tmp/diagnose_1765626516
+
+-------------------------------------------
+【严重级别】异常项
+-------------------------------------------
+[严重] 系统负载过高 | HIGH_SYSTEM_LOAD
+  详情: 15分钟平均负载 0.34，超过CPU核心数(0
+  位置: 
+
+-------------------------------------------
+【警告级别】异常项
+-------------------------------------------
+[警告] Inode使用率过高 | HIGH_INODE_USAGE
+  详情: 挂载点 /boot/efi 的inode使用率 194M%
+  位置: system_status
+
+[警告] 网卡接口down | NETWORK_INTERFACE_DOWN
+  详情: 以下网卡处于down状态: kube-ipvs0
+  位置: 
+
+[警告] 内核模块加载失败 | KERNEL_MODULE_LOAD_FAILED
+  详情: 存在内核模块加载失败
+  位置: logs/dmesg.log
+
+[警告] NMI Watchdog触发 | NMI_WATCHDOG_TRIGGERED
+  详情: 硬件看门狗被触发
+  位置: logs/dmesg.log
+
+-------------------------------------------
+【提示级别】异常项
+-------------------------------------------
+[提示] 时间同步服务未运行 | TIME_SYNC_SERVICE_DOWN
+  详情: ntpd和chronyd服务均未运行
+  位置: service_status
+
+-------------------------------------------
+异常统计
+-------------------------------------------
+严重: 1 项
+警告: 4 项
+提示: 1 项
+总计: 6 项
+[root@iZbp14v1xuplgec3nip1vhZ kudig.sh-main]# 
