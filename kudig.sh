@@ -113,6 +113,34 @@ log_debug() {
     fi
 }
 
+# 检查项状态输出函数
+log_check_ok() {
+    if [[ "$VERBOSE" == true ]]; then
+        echo -e "  ${GREEN}[✓]${NC} $*" >&2
+    fi
+}
+
+log_check_fail() {
+    echo -e "  ${RED}[✗]${NC} $*" >&2
+}
+
+log_check_warn() {
+    echo -e "  ${YELLOW}[!]${NC} $*" >&2
+}
+
+log_check_skip() {
+    if [[ "$VERBOSE" == true ]]; then
+        echo -e "  ${BLUE}[-]${NC} $*" >&2
+    fi
+}
+
+# 输出检查类别标题
+log_section() {
+    if [[ "$VERBOSE" == true ]]; then
+        echo -e "\n${BLUE}>>> $* <<<${NC}" >&2
+    fi
+}
+
 # 检查命令是否存在
 command_exists() {
     command -v "$1" >/dev/null 2>&1
@@ -416,14 +444,12 @@ get_conntrack_info() {
 
 # 检测系统资源异常
 check_system_resources() {
-    log_info "检查系统资源..."
+    log_section "系统资源检查"
     
     # 1. 检查CPU负载
     local load_avg=$(get_load_average)
     local cpu_cores=$(get_cpu_cores)
     local load_15min=$(parse_load "$load_avg" 3)
-    
-    # 负载阈值：CPU核心数的4倍
     local load_threshold=$(awk "BEGIN {print $cpu_cores * 4}")
     
     if (( $(awk "BEGIN {print ($load_15min > $load_threshold)}") )); then
@@ -432,12 +458,16 @@ check_system_resources() {
             "HIGH_SYSTEM_LOAD" \
             "15分钟平均负载 $load_15min，超过CPU核心数($cpu_cores)的4倍" \
             "system_status"
+        log_check_fail "CPU负载: 过高 (15min负载: $load_15min, CPU核心: $cpu_cores)"
     elif (( $(awk "BEGIN {print ($load_15min > $cpu_cores * 2)}") )); then
         add_anomaly "$SEVERITY_WARNING" \
             "系统负载偏高" \
             "ELEVATED_SYSTEM_LOAD" \
             "15分钟平均负载 $load_15min，超过CPU核心数($cpu_cores)的2倍" \
             "system_status"
+        log_check_warn "CPU负载: 偏高 (15min负载: $load_15min, CPU核心: $cpu_cores)"
+    else
+        log_check_ok "CPU负载: 正常 (15min负载: $load_15min, CPU核心: $cpu_cores)"
     fi
     
     # 2. 检查内存压力
@@ -455,22 +485,32 @@ check_system_resources() {
                     "HIGH_MEMORY_USAGE" \
                     "内存使用率 ${mem_usage_percent}%，可能导致OOM" \
                     "memory_info"
+                log_check_fail "内存使用: 严重不足 (使用率: ${mem_usage_percent}%)"
             elif [[ $mem_usage_percent -ge 85 ]]; then
                 add_anomaly "$SEVERITY_WARNING" \
                     "内存使用率偏高" \
                     "ELEVATED_MEMORY_USAGE" \
                     "内存使用率 ${mem_usage_percent}%" \
                     "memory_info"
+                log_check_warn "内存使用: 偏高 (使用率: ${mem_usage_percent}%)"
+            else
+                log_check_ok "内存使用: 正常 (使用率: ${mem_usage_percent}%)"
             fi
+        else
+            log_check_skip "内存使用: 无法获取内存信息"
         fi
+    else
+        log_check_skip "内存使用: 文件不存在 (memory_info)"
     fi
     
     # 3. 检查磁盘空间
     local high_disk_usage=$(check_disk_usage)
+    local disk_checked=false
     if [[ -n "$high_disk_usage" ]]; then
         while IFS= read -r line; do
             local usage=$(echo "$line" | awk '{print $(NF-1)}')
             local mount=$(echo "$line" | awk '{print $NF}')
+            disk_checked=true
             
             if [[ $usage -ge 95 ]]; then
                 add_anomaly "$SEVERITY_CRITICAL" \
@@ -478,25 +518,25 @@ check_system_resources() {
                     "DISK_SPACE_CRITICAL" \
                     "挂载点 $mount 使用率 ${usage}%" \
                     "system_status"
+                log_check_fail "磁盘空间 [$mount]: 严重不足 (使用率: ${usage}%)"
             elif [[ $usage -ge 90 ]]; then
                 add_anomaly "$SEVERITY_WARNING" \
                     "磁盘空间不足" \
                     "DISK_SPACE_LOW" \
                     "挂载点 $mount 使用率 ${usage}%" \
                     "system_status"
+                log_check_warn "磁盘空间 [$mount]: 不足 (使用率: ${usage}%)"
             fi
         done <<< "$high_disk_usage"
+    fi
+    if [[ "$disk_checked" == false ]]; then
+        log_check_ok "磁盘空间: 正常 (所有挂载点使用率<90%)"
     fi
     
     # 4. 检查文件句柄
     local system_status="$DIAGNOSE_DIR/system_status"
     if [[ -f "$system_status" ]]; then
-        # 查找文件句柄最多的进程
         local max_fds=$(awk '/fds \(PID/{print $1}' "$system_status" 2>/dev/null | head -1 || echo "0")
-        
-        # 获取系统限制
-        local system_info="$DIAGNOSE_DIR/system_info"
-        local max_files=$(grep 'fs.file-max' "$system_info" 2>/dev/null | awk '{print $NF}' | head -1 || echo "1000000")
         
         if [[ $max_fds -gt 50000 ]]; then
             add_anomaly "$SEVERITY_WARNING" \
@@ -504,12 +544,16 @@ check_system_resources() {
                 "HIGH_FILE_HANDLES" \
                 "进程最大文件句柄数: $max_fds" \
                 "system_status"
+            log_check_warn "文件句柄: 偏高 (最大: $max_fds)"
+        else
+            log_check_ok "文件句柄: 正常 (最大: $max_fds)"
         fi
+    else
+        log_check_skip "文件句柄: 文件不存在 (system_status)"
     fi
     
     # 5. 检查PID泄漏
     if [[ -f "$system_status" ]]; then
-        # 查找线程数最多的进程
         local max_threads=$(awk '/^-+start pid leak detect/,/^-+done pid leak detect/{if($1~/^[0-9]+$/) print $1}' "$system_status" 2>/dev/null | tail -1 || echo "0")
         
         if [[ $max_threads -gt 10000 ]]; then
@@ -518,16 +562,20 @@ check_system_resources() {
                 "PID_LEAK_DETECTED" \
                 "某进程线程数达到 $max_threads" \
                 "system_status"
+            log_check_fail "进程/线程数: 异常 (最大线程数: $max_threads)"
         elif [[ $max_threads -gt 5000 ]]; then
             add_anomaly "$SEVERITY_WARNING" \
                 "进程/线程数偏高" \
                 "HIGH_THREAD_COUNT" \
                 "某进程线程数达到 $max_threads" \
                 "system_status"
+            log_check_warn "进程/线程数: 偏高 (最大线程数: $max_threads)"
+        else
+            log_check_ok "进程/线程数: 正常 (最大线程数: $max_threads)"
         fi
     fi
     
-    # 6. 检查inode使用率（从df -i输出）
+    # 6. 检查inode使用率
     if [[ -f "$system_status" ]]; then
         local high_inode=$(awk '/^-+run df/,/^-+End of df/' "$system_status" 2>/dev/null | \
             grep -E '^/' | \
@@ -543,14 +591,17 @@ check_system_resources() {
                     "HIGH_INODE_USAGE" \
                     "挂载点 $mount 的inode使用率 ${usage}%" \
                     "system_status"
+                log_check_warn "Inode使用 [$mount]: 偏高 (使用率: ${usage}%)"
             done <<< "$high_inode"
+        else
+            log_check_ok "Inode使用: 正常 (所有挂载点<90%)"
         fi
     fi
 }
 
 # 检测进程与服务异常
 check_process_services() {
-    log_info "检查进程与服务..."
+    log_section "进程与服务检查"
     
     # 1. 检查kubelet服务状态
     local kubelet_status=$(get_daemon_status "kubelet")
@@ -560,12 +611,18 @@ check_process_services() {
             "KUBELET_SERVICE_DOWN" \
             "kubelet.service状态为failed" \
             "daemon_status/kubelet_status"
+        log_check_fail "Kubelet服务: failed"
     elif [[ "$kubelet_status" == "stopped" ]]; then
         add_anomaly "$SEVERITY_CRITICAL" \
             "Kubelet服务停止" \
             "KUBELET_SERVICE_STOPPED" \
             "kubelet.service未启动" \
             "daemon_status/kubelet_status"
+        log_check_fail "Kubelet服务: stopped"
+    elif [[ "$kubelet_status" == "running" ]]; then
+        log_check_ok "Kubelet服务: running"
+    else
+        log_check_skip "Kubelet服务: 状态未知"
     fi
     
     # 2. 检查容器运行时服务（docker或containerd）
@@ -578,64 +635,91 @@ check_process_services() {
             "CONTAINER_RUNTIME_DOWN" \
             "docker和containerd服务均为failed状态" \
             "daemon_status/"
+        log_check_fail "容器运行时: docker和containerd均failed"
     elif [[ "$docker_status" == "stopped" && "$containerd_status" == "stopped" ]]; then
         add_anomaly "$SEVERITY_CRITICAL" \
             "容器运行时服务停止" \
             "CONTAINER_RUNTIME_STOPPED" \
             "docker和containerd服务均未启动" \
             "daemon_status/"
+        log_check_fail "容器运行时: docker和containerd均stopped"
+    elif [[ "$docker_status" == "running" || "$containerd_status" == "running" ]]; then
+        log_check_ok "容器运行时: docker=$docker_status, containerd=$containerd_status"
+    else
+        log_check_skip "容器运行时: 状态未知"
     fi
     
     # 3. 检查ps命令是否挂起
     local ps_status="$DIAGNOSE_DIR/ps_command_status"
-    if [[ -f "$ps_status" ]] && pattern_exists "$ps_status" "ps -ef command is hung"; then
-        add_anomaly "$SEVERITY_CRITICAL" \
-            "ps命令挂起" \
-            "PS_COMMAND_HUNG" \
-            "ps -ef命令挂起，系统可能存在D状态进程" \
-            "ps_command_status"
+    if [[ -f "$ps_status" ]]; then
+        if pattern_exists "$ps_status" "ps -ef command is hung"; then
+            add_anomaly "$SEVERITY_CRITICAL" \
+                "ps命令挂起" \
+                "PS_COMMAND_HUNG" \
+                "ps -ef命令挂起，系统可能存在D状态进程" \
+                "ps_command_status"
+            log_check_fail "ps命令: 挂起"
+        else
+            log_check_ok "ps命令: 正常"
+        fi
+    else
+        log_check_skip "ps命令: 文件不存在"
     fi
     
     # 4. 检查D状态进程
-    if [[ -f "$ps_status" ]] && pattern_exists "$ps_status" "process.*is in State D"; then
-        local d_proc_count=$(grep -c "is in State D" "$ps_status" 2>/dev/null || echo "0")
-        
-        add_anomaly "$SEVERITY_CRITICAL" \
-            "存在D状态进程" \
-            "PROCESS_IN_D_STATE" \
-            "检测到 $d_proc_count 个不可中断睡眠状态的进程" \
-            "ps_command_status"
+    if [[ -f "$ps_status" ]]; then
+        if pattern_exists "$ps_status" "process.*is in State D"; then
+            local d_proc_count=$(grep -c "is in State D" "$ps_status" 2>/dev/null || echo "0")
+            add_anomaly "$SEVERITY_CRITICAL" \
+                "存在D状态进程" \
+                "PROCESS_IN_D_STATE" \
+                "检测到 $d_proc_count 个不可中断睡眠状态的进程" \
+                "ps_command_status"
+            log_check_fail "D状态进程: 发现 $d_proc_count 个"
+        else
+            log_check_ok "D状态进程: 未发现"
+        fi
     fi
     
     # 5. 检查runc进程挂起
     local system_status="$DIAGNOSE_DIR/system_status"
-    if [[ -f "$system_status" ]] && pattern_exists "$system_status" "runc process.*maybe hang"; then
-        local runc_count=$(grep -c "runc process.*maybe hang" "$system_status" 2>/dev/null || echo "0")
-        
-        add_anomaly "$SEVERITY_WARNING" \
-            "runc进程可能挂起" \
-            "RUNC_PROCESS_HANG" \
-            "检测到 $runc_count 个runc进程可能处于挂起状态" \
-            "system_status"
+    if [[ -f "$system_status" ]]; then
+        if pattern_exists "$system_status" "runc process.*maybe hang"; then
+            local runc_count=$(grep -c "runc process.*maybe hang" "$system_status" 2>/dev/null || echo "0")
+            add_anomaly "$SEVERITY_WARNING" \
+                "runc进程可能挂起" \
+                "RUNC_PROCESS_HANG" \
+                "检测到 $runc_count 个runc进程可能处于挂起状态" \
+                "system_status"
+            log_check_warn "runc进程: 可能挂起 ($runc_count 个)"
+        else
+            log_check_ok "runc进程: 正常"
+        fi
+    else
+        log_check_skip "runc进程: 文件不存在"
     fi
     
     # 6. 检查关键服务状态
     local service_status="$DIAGNOSE_DIR/service_status"
     if [[ -f "$service_status" ]]; then
-        # 检查firewalld是否运行（Kubernetes节点应关闭）
         if pattern_exists "$service_status" "firewalld.*running"; then
             add_anomaly "$SEVERITY_WARNING" \
                 "Firewalld服务运行中" \
                 "FIREWALLD_RUNNING" \
                 "Kubernetes节点建议关闭firewalld服务" \
                 "service_status"
+            log_check_warn "Firewalld: 运行中 (建议关闭)"
+        else
+            log_check_ok "Firewalld: 已关闭"
         fi
+    else
+        log_check_skip "Firewalld: 文件不存在"
     fi
 }
 
 # 检测网络异常
 check_network() {
-    log_info "检查网络状态..."
+    log_section "网络状态检查"
     
     # 1. 检查连接跟踪表
     local conntrack_info=$(get_conntrack_info)
@@ -650,19 +734,24 @@ check_network() {
                 "CONNTRACK_TABLE_FULL" \
                 "当前连接数 $current_conn/$max_conn (${usage_percent}%)，接近上限" \
                 "network_info"
+            log_check_fail "连接跟踪表: 接近满 ($current_conn/$max_conn, ${usage_percent}%)"
         elif [[ $usage_percent -ge 80 ]]; then
             add_anomaly "$SEVERITY_WARNING" \
                 "连接跟踪表使用率高" \
                 "CONNTRACK_TABLE_HIGH_USAGE" \
                 "当前连接数 $current_conn/$max_conn (${usage_percent}%)" \
                 "network_info"
+            log_check_warn "连接跟踪表: 使用率高 ($current_conn/$max_conn, ${usage_percent}%)"
+        else
+            log_check_ok "连接跟踪表: 正常 ($current_conn/$max_conn, ${usage_percent}%)"
         fi
+    else
+        log_check_skip "连接跟踪表: 无法获取信息"
     fi
     
     # 2. 检查网卡状态
     local network_info="$DIAGNOSE_DIR/network_info"
     if [[ -f "$network_info" ]]; then
-        # 查找down状态的网卡（排除lo和veth）
         local down_interfaces=$(awk '/state DOWN/{print $2}' "$network_info" 2>/dev/null | \
             grep -v '^lo' | grep -v '^veth' | sed 's/:$//')
         
@@ -672,32 +761,43 @@ check_network() {
                 "NETWORK_INTERFACE_DOWN" \
                 "以下网卡处于down状态: $down_interfaces" \
                 "network_info"
+            log_check_warn "网卡状态: 部分down ($down_interfaces)"
+        else
+            log_check_ok "网卡状态: 正常"
         fi
+    else
+        log_check_skip "网卡状态: 文件不存在"
     fi
     
     # 3. 检查路由表
     if [[ -f "$network_info" ]]; then
-        # 检查是否有默认路由
         if ! pattern_exists "$network_info" "default via"; then
             add_anomaly "$SEVERITY_WARNING" \
                 "缺少默认路由" \
                 "NO_DEFAULT_ROUTE" \
                 "未检测到默认路由配置" \
                 "network_info"
+            log_check_warn "默认路由: 缺少"
+        else
+            log_check_ok "默认路由: 已配置"
         fi
     fi
     
     # 4. 检查端口监听
     local system_status="$DIAGNOSE_DIR/system_status"
     if [[ -f "$system_status" ]]; then
-        # 检查kubelet端口（10250）
         if ! pattern_exists "$system_status" ":10250.*LISTEN"; then
             add_anomaly "$SEVERITY_CRITICAL" \
                 "Kubelet端口未监听" \
                 "KUBELET_PORT_NOT_LISTENING" \
                 "10250端口未处于监听状态" \
                 "system_status"
+            log_check_fail "Kubelet端口(10250): 未监听"
+        else
+            log_check_ok "Kubelet端口(10250): 正常监听"
         fi
+    else
+        log_check_skip "Kubelet端口: 文件不存在"
     fi
     
     # 5. 检查iptables规则数量
@@ -710,22 +810,33 @@ check_network() {
                 "TOO_MANY_IPTABLES_RULES" \
                 "iptables规则数量: $iptables_rules，可能影响性能" \
                 "network_info"
+            log_check_warn "iptables规则: 过多 ($iptables_rules 条)"
+        else
+            log_check_ok "iptables规则: 正常 ($iptables_rules 条)"
         fi
     fi
 }
 
 # 检测内核异常
 check_kernel() {
-    log_info "检查内核状态..."
+    log_section "内核状态检查"
+    
+    local dmesg_log="$DIAGNOSE_DIR/logs/dmesg.log"
     
     # 1. 检查内核panic
-    local dmesg_log="$DIAGNOSE_DIR/logs/dmesg.log"
-    if [[ -f "$dmesg_log" ]] && pattern_exists "$dmesg_log" "Kernel panic"; then
-        add_anomaly "$SEVERITY_CRITICAL" \
-            "内核Panic" \
-            "KERNEL_PANIC" \
-            "内核发生panic事件" \
-            "logs/dmesg.log"
+    if [[ -f "$dmesg_log" ]]; then
+        if pattern_exists "$dmesg_log" "Kernel panic"; then
+            add_anomaly "$SEVERITY_CRITICAL" \
+                "内核Panic" \
+                "KERNEL_PANIC" \
+                "内核发生panic事件" \
+                "logs/dmesg.log"
+            log_check_fail "内核Panic: 发现"
+        else
+            log_check_ok "内核Panic: 未发现"
+        fi
+    else
+        log_check_skip "内核Panic: dmesg.log不存在"
     fi
     
     # 2. 检查OOM Killer
@@ -738,10 +849,13 @@ check_kernel() {
                 "KERNEL_OOM_KILLER" \
                 "内核OOM Killer被触发 $oom_count 次" \
                 "logs/dmesg.log"
+            log_check_fail "OOM Killer: 触发 $oom_count 次"
+        else
+            log_check_ok "OOM Killer: 未触发"
         fi
     fi
     
-    # 从logs/messages中也检查OOM
+    # 介logs/messages中也检查OOM
     local messages_log="$DIAGNOSE_DIR/logs/messages"
     if [[ -f "$messages_log" ]]; then
         local oom_count_msg=$(count_pattern_in_log "$messages_log" "Out of memory")
@@ -752,18 +866,25 @@ check_kernel() {
                 "SYSTEM_OUT_OF_MEMORY" \
                 "系统日志显示内存不足 $oom_count_msg 次" \
                 "logs/messages"
+            log_check_fail "messages日志OOM: 发现 $oom_count_msg 次"
+        else
+            log_check_ok "messages日志OOM: 未发现"
         fi
+    else
+        log_check_skip "messages日志: 文件不存在"
     fi
     
     # 3. 检查文件系统错误
     if [[ -f "$dmesg_log" ]]; then
-        # 检查只读文件系统
         if pattern_exists "$dmesg_log" "Read-only file system"; then
             add_anomaly "$SEVERITY_CRITICAL" \
                 "文件系统只读" \
                 "FILESYSTEM_READONLY" \
                 "文件系统被重新挂载为只读模式" \
                 "logs/dmesg.log"
+            log_check_fail "文件系统: 变为只读"
+        else
+            log_check_ok "文件系统: 正常"
         fi
         
         # 检查IO错误
@@ -774,31 +895,44 @@ check_kernel() {
                 "DISK_IO_ERROR" \
                 "检测到 $io_error_count 次IO错误" \
                 "logs/dmesg.log"
+            log_check_fail "磁盘IO: $io_error_count 次错误"
+        else
+            log_check_ok "磁盘IO: 正常 ($io_error_count 次错误)"
         fi
     fi
     
     # 4. 检查内核模块加载失败
-    if [[ -f "$dmesg_log" ]] && pattern_exists "$dmesg_log" "module.*failed"; then
-        add_anomaly "$SEVERITY_WARNING" \
-            "内核模块加载失败" \
-            "KERNEL_MODULE_LOAD_FAILED" \
-            "存在内核模块加载失败" \
-            "logs/dmesg.log"
+    if [[ -f "$dmesg_log" ]]; then
+        if pattern_exists "$dmesg_log" "module.*failed"; then
+            add_anomaly "$SEVERITY_WARNING" \
+                "内核模块加载失败" \
+                "KERNEL_MODULE_LOAD_FAILED" \
+                "存在内核模块加载失败" \
+                "logs/dmesg.log"
+            log_check_warn "内核模块: 存在加载失败"
+        else
+            log_check_ok "内核模块: 加载正常"
+        fi
     fi
     
     # 5. 检查NMI watchdog
-    if [[ -f "$dmesg_log" ]] && pattern_exists "$dmesg_log" "NMI watchdog"; then
-        add_anomaly "$SEVERITY_WARNING" \
-            "NMI Watchdog触发" \
-            "NMI_WATCHDOG_TRIGGERED" \
-            "硬件看门狗被触发" \
-            "logs/dmesg.log"
+    if [[ -f "$dmesg_log" ]]; then
+        if pattern_exists "$dmesg_log" "NMI watchdog"; then
+            add_anomaly "$SEVERITY_WARNING" \
+                "NMI Watchdog触发" \
+                "NMI_WATCHDOG_TRIGGERED" \
+                "硬件看门狗被触发" \
+                "logs/dmesg.log"
+            log_check_warn "NMI Watchdog: 被触发"
+        else
+            log_check_ok "NMI Watchdog: 未触发"
+        fi
     fi
 }
 
 # 检测容器运行时异常
 check_container_runtime() {
-    log_info "检查容器运行时..."
+    log_section "容器运行时检查"
     
     # 1. 检查Docker日志中的错误
     local docker_log="$DIAGNOSE_DIR/logs/docker.log"
@@ -810,6 +944,9 @@ check_container_runtime() {
                 "DOCKER_START_FAILED" \
                 "Docker服务启动失败" \
                 "logs/docker.log"
+            log_check_fail "Docker启动: 失败"
+        else
+            log_check_ok "Docker启动: 正常"
         fi
         
         # 检查存储驱动错误
@@ -819,13 +956,17 @@ check_container_runtime() {
                 "DOCKER_STORAGE_DRIVER_ERROR" \
                 "Docker存储驱动出现错误" \
                 "logs/docker.log"
+            log_check_fail "Docker存储驱动: 错误"
+        else
+            log_check_ok "Docker存储驱动: 正常"
         fi
+    else
+        log_check_skip "Docker日志: 文件不存在"
     fi
     
     # 2. 检查Containerd日志
     local containerd_log="$DIAGNOSE_DIR/logs/containerd.log"
     if [[ -f "$containerd_log" ]]; then
-        # 检查容器创建失败
         local create_failed=$(count_pattern_in_log "$containerd_log" "failed to create")
         if [[ $create_failed -gt 10 ]]; then
             add_anomaly "$SEVERITY_WARNING" \
@@ -833,7 +974,12 @@ check_container_runtime() {
                 "CONTAINER_CREATE_FAILED" \
                 "容器创建失败 $create_failed 次" \
                 "logs/containerd.log"
+            log_check_warn "Containerd容器创建: 失败 $create_failed 次"
+        else
+            log_check_ok "Containerd容器创建: 正常 ($create_failed 次失败)"
         fi
+    else
+        log_check_skip "Containerd日志: 文件不存在"
     fi
     
     # 3. 检查镜像拉取失败
@@ -846,20 +992,23 @@ check_container_runtime() {
                 "IMAGE_PULL_FAILED" \
                 "镜像拉取失败 $pull_failed 次" \
                 "logs/kubelet.log"
+            log_check_warn "镜像拉取: 失败 $pull_failed 次"
+        else
+            log_check_ok "镜像拉取: 正常 ($pull_failed 次失败)"
         fi
+    else
+        log_check_skip "镜像拉取: kubelet.log不存在"
     fi
-    
-    # 4. 检查runc挂起（已在check_process_services中检查）
-    # 这里不重复检测
 }
 
 # 检测Kubernetes组件异常
 check_kubernetes() {
-    log_info "检查Kubernetes组件..."
+    log_section "Kubernetes组件检查"
     
     local kubelet_log="$DIAGNOSE_DIR/logs/kubelet.log"
     
     if [[ ! -f "$kubelet_log" ]]; then
+        log_check_skip "Kubelet日志: 文件不存在"
         return
     fi
     
@@ -871,6 +1020,9 @@ check_kubernetes() {
             "KUBELET_PLEG_UNHEALTHY" \
             "PLEG（Pod生命周期事件生成器）不健康，出现 $pleg_count 次" \
             "logs/kubelet.log"
+        log_check_fail "PLEG状态: 不健康 ($pleg_count 次)"
+    else
+        log_check_ok "PLEG状态: 健康"
     fi
     
     # 2. 检查CNI错误
@@ -881,6 +1033,9 @@ check_kubernetes() {
             "CNI_PLUGIN_ERROR" \
             "CNI网络插件失败 $cni_error 次" \
             "logs/kubelet.log"
+        log_check_fail "CNI网络插件: 错误 ($cni_error 次)"
+    else
+        log_check_ok "CNI网络插件: 正常"
     fi
     
     # 3. 检查证书过期
@@ -890,12 +1045,16 @@ check_kubernetes() {
             "CERTIFICATE_EXPIRED" \
             "Kubelet证书已过期" \
             "logs/kubelet.log"
+        log_check_fail "Kubelet证书: 已过期"
     elif pattern_exists "$kubelet_log" "certificate will expire"; then
         add_anomaly "$SEVERITY_WARNING" \
             "证书即将过期" \
             "CERTIFICATE_EXPIRING" \
             "Kubelet证书即将过期" \
             "logs/kubelet.log"
+        log_check_warn "Kubelet证书: 即将过期"
+    else
+        log_check_ok "Kubelet证书: 正常"
     fi
     
     # 4. 检查API Server连接失败
@@ -906,6 +1065,9 @@ check_kubernetes() {
             "APISERVER_CONNECTION_FAILED" \
             "无法连接到API Server，出现 $api_conn_failed 次" \
             "logs/kubelet.log"
+        log_check_fail "API Server连接: 失败 ($api_conn_failed 次)"
+    else
+        log_check_ok "API Server连接: 正常 ($api_conn_failed 次失败)"
     fi
     
     # 5. 检查认证失败
@@ -916,6 +1078,9 @@ check_kubernetes() {
             "KUBELET_AUTH_FAILED" \
             "Kubelet认证失败 $auth_failed 次" \
             "logs/kubelet.log"
+        log_check_fail "Kubelet认证: 失败 ($auth_failed 次)"
+    else
+        log_check_ok "Kubelet认证: 正常"
     fi
     
     # 6. 检查Pod驱逐事件
@@ -926,6 +1091,9 @@ check_kubernetes() {
             "POD_EVICTED" \
             "Pod被驱逐 $evicted 次，可能由于资源不足" \
             "logs/kubelet.log"
+        log_check_warn "Pod驱逐: $evicted 次"
+    else
+        log_check_ok "Pod驱逐: 未发现"
     fi
     
     # 7. 检查Node NotReady
@@ -935,6 +1103,9 @@ check_kubernetes() {
             "NODE_NOT_READY" \
             "节点处于NotReady状态" \
             "logs/kubelet.log"
+        log_check_fail "节点状态: NotReady"
+    else
+        log_check_ok "节点状态: Ready"
     fi
     
     # 8. 检查磁盘压力驱逐
@@ -944,6 +1115,9 @@ check_kubernetes() {
             "DISK_PRESSURE" \
             "节点存在磁盘压力" \
             "logs/kubelet.log"
+        log_check_warn "磁盘压力: 存在"
+    else
+        log_check_ok "磁盘压力: 无"
     fi
     
     # 9. 检查内存压力驱逐
@@ -953,16 +1127,20 @@ check_kubernetes() {
             "MEMORY_PRESSURE" \
             "节点存在内存压力" \
             "logs/kubelet.log"
+        log_check_warn "内存压力: 存在"
+    else
+        log_check_ok "内存压力: 无"
     fi
 }
 
 # 检测时间同步异常
 check_time_sync() {
-    log_info "检查时间同步..."
+    log_section "时间同步检查"
     
     local service_status="$DIAGNOSE_DIR/service_status"
     
     if [[ ! -f "$service_status" ]]; then
+        log_check_skip "时间同步服务: 文件不存在"
         return
     fi
     
@@ -976,22 +1154,25 @@ check_time_sync() {
             "TIME_SYNC_SERVICE_DOWN" \
             "ntpd和chronyd服务均未运行" \
             "service_status"
+        log_check_warn "时间同步: ntpd=$ntpd_status, chronyd=$chronyd_status (建议启用)"
+    else
+        log_check_ok "时间同步: ntpd=$ntpd_status, chronyd=$chronyd_status"
     fi
 }
 
 # 检测配置异常
 check_configuration() {
-    log_info "检查系统配置..."
+    log_section "系统配置检查"
     
     local system_info="$DIAGNOSE_DIR/system_info"
     
     if [[ ! -f "$system_info" ]]; then
+        log_check_skip "系统配置: 文件不存在"
         return
     fi
     
     # 1. 检查swap是否禁用
     if pattern_exists "$system_info" "SwapTotal:.*[1-9]"; then
-        # swap不为0，说明没有完全禁用
         local swap_total=$(grep -oP 'SwapTotal:\s*\K\d+' "$system_info" 2>/dev/null | head -1 || echo "0")
         if [[ $swap_total -gt 0 ]]; then
             add_anomaly "$SEVERITY_INFO" \
@@ -999,17 +1180,24 @@ check_configuration() {
                 "SWAP_NOT_DISABLED" \
                 "Kubernetes节点建议禁用swap，当前 ${swap_total}KB" \
                 "system_info"
+            log_check_warn "Swap配置: 未禁用 (${swap_total}KB)"
+        else
+            log_check_ok "Swap配置: 已禁用"
         fi
+    else
+        log_check_ok "Swap配置: 已禁用"
     fi
     
     # 2. 检查关键的sysctl参数
-    # 检查ip_forward
     if pattern_exists "$system_info" "net.ipv4.ip_forward = 0"; then
         add_anomaly "$SEVERITY_WARNING" \
             "IP转发未启用" \
             "IP_FORWARD_DISABLED" \
             "net.ipv4.ip_forward = 0，Kubernetes需要启用" \
             "system_info"
+        log_check_warn "IP转发: 未启用"
+    else
+        log_check_ok "IP转发: 已启用"
     fi
     
     # 检查bridge-nf-call-iptables
@@ -1019,6 +1207,9 @@ check_configuration() {
             "BRIDGE_NF_CALL_IPTABLES_DISABLED" \
             "net.bridge.bridge-nf-call-iptables = 0，Kubernetes需要启用" \
             "system_info"
+        log_check_warn "bridge-nf-call-iptables: 未启用"
+    else
+        log_check_ok "bridge-nf-call-iptables: 已启用"
     fi
     
     # 3. 检查ulimit限制
@@ -1028,15 +1219,21 @@ check_configuration() {
             "LOW_ULIMIT_NOFILE" \
             "open files限制为1024，建议设置为65536或更高" \
             "system_info"
+        log_check_warn "ulimit open files: 1024 (建议提高)"
+    else
+        log_check_ok "ulimit open files: 正常"
     fi
     
-    # 4. 检查SELinux状态（可选）
+    # 4. 检查SELinux状态
     if pattern_exists "$system_info" "SELinux.*enforcing"; then
         add_anomaly "$SEVERITY_INFO" \
             "SELinux处于Enforcing模式" \
             "SELINUX_ENFORCING" \
             "SELinux处于Enforcing模式，可能影响Kubernetes运行" \
             "system_info"
+        log_check_warn "SELinux: Enforcing (可能影响运行)"
+    else
+        log_check_ok "SELinux: 非Enforcing"
     fi
 }
 
