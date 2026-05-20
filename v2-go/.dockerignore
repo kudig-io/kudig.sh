@@ -1,0 +1,40 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Build artifacts
+build/
+coverage.out
+coverage.html
+*.spdx.json
+*.cyclonedx.json
+sbom.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation (not needed in image)
+*.md
+!rules/*.md
+docs/
+
+# Test data
+reference/
+*_test.go
+
+# CI
+.github/
+.golangci.yml
+
+# Operator (separate image)
+operator/
+charts/

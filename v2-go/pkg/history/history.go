@@ -237,7 +237,11 @@ func issueKey(issue types.Issue) string {
 // generateID generates a unique ID for a history entry
 func generateID() string {
 	b := make([]byte, 16)
-	_, _ = rand.Read(b)
+	if _, err := rand.Read(b); err != nil {
+		// crypto/rand.Read should never fail on modern systems,
+		// but fall back to time-based ID if it does
+		return fmt.Sprintf("%x", time.Now().UnixNano())
+	}
 	data := fmt.Sprintf("%d-%x", time.Now().UnixNano(), b)
 	hash := sha256.Sum256([]byte(data))
 	return fmt.Sprintf("%x", hash)[:16]

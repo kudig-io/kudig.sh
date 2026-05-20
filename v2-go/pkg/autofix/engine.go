@@ -40,6 +40,27 @@ type FixResult struct {
 	AfterState  string
 }
 
+// allowedCommands defines the set of safe commands permitted for auto-fix.
+// Any command not matching this prefix will be rejected.
+var allowedCommands = []string{
+	"swapoff",
+	"sed ",
+	"docker system prune",
+	"journalctl --vacuum",
+	"kubectl delete pod",
+	"kubectl rollout restart",
+}
+
+// isCommandAllowed checks if a command matches one of the allowed prefixes.
+func isCommandAllowed(cmd string) bool {
+	for _, allowed := range allowedCommands {
+		if strings.HasPrefix(cmd, allowed) {
+			return true
+		}
+	}
+	return false
+}
+
 // Engine manages automatic fixes
 type Engine struct {
 	actions map[string][]FixAction
@@ -89,6 +110,15 @@ func (e *Engine) Fix(ctx context.Context, issue types.Issue) FixResult {
 			IssueCode: issue.ENName,
 			Success:   true,
 			Message:   fmt.Sprintf("[DRY-RUN] Would execute: %s", action.Command),
+		}
+	}
+
+	// Validate command against allowlist to prevent injection
+	if !isCommandAllowed(action.Command) {
+		return FixResult{
+			IssueCode: issue.ENName,
+			Success:   false,
+			Message:   fmt.Sprintf("Command not in allowlist: %s", action.Command),
 		}
 	}
 

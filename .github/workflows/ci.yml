@@ -1,0 +1,125 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.25"
+          cache: true
+          cache-dependency-path: v2-go/go.sum
+
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: latest
+          working-directory: v2-go
+          args: --timeout=5m
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: ["1.24", "1.25"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go-version }}
+          cache: true
+          cache-dependency-path: v2-go/go.sum
+
+      - name: Run tests
+        working-directory: v2-go
+        run: go test -v -race -coverprofile=coverage.out -covermode=atomic ./...
+
+      - name: Upload coverage
+        if: matrix.go-version == '1.25'
+        uses: codecov/codecov-action@v4
+        with:
+          files: v2-go/coverage.out
+          flags: v2-go
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    strategy:
+      matrix:
+        include:
+          - goos: linux
+            goarch: amd64
+          - goos: linux
+            goarch: arm64
+          - goos: darwin
+            goarch: amd64
+          - goos: darwin
+            goarch: arm64
+          - goos: windows
+            goarch: amd64
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.25"
+          cache: true
+          cache-dependency-path: v2-go/go.sum
+
+      - name: Build
+        working-directory: v2-go
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          CGO_ENABLED: "0"
+        run: |
+          VERSION=$(git describe --tags --always --dirty 2>/dev/null || echo "dev")
+          go build -trimpath -ldflags="-s -w -X main.version=${VERSION}" \
+            -o kudig-${{ matrix.goos }}-${{ matrix.goarch }} ./cmd/kudig
+          go build -trimpath -ldflags="-s -w -X main.version=${VERSION}" \
+            -o kubectl-kudig-${{ matrix.goos }}-${{ matrix.goarch }} ./cmd/kubectl-kudig
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: kudig-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: |
+            v2-go/kudig-*
+            v2-go/kubectl-kudig-*
+
+  docker:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: v2-go
+          push: false
+          tags: kudig/kudig:ci
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            VERSION=ci-${{ github.sha }}
+            BUILD_TIME=${{ github.event.head_commit.timestamp }}

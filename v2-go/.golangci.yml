@@ -1,23 +1,11 @@
-# golangci-lint 配置文件
+# golangci-lint v2 配置文件
 # 参考: https://golangci-lint.run/usage/configuration/
 
 run:
-  # 超时设置
   timeout: 5m
-  
-  # 模块下载模式
   modules-download-mode: readonly
-  
-  # 跳过的目录
-  skip-dirs:
-    - vendor
-    - build
-    - reference
-  
-  # 并发运行数
   concurrency: 4
 
-# 输出配置
 output:
   format: colored-line-number
   print-issued-lines: true
@@ -25,128 +13,138 @@ output:
   uniq-by-line: true
   sort-results: true
 
-# Linter 配置
 linters-settings:
-  # 错误检查
   errcheck:
     check-type-assertions: true
     check-blank: true
-  
-  # 代码复杂度
+    exclude-functions:
+      - (io.Closer).Close
+      - (net/http.ResponseWriter).Write
+
   gocyclo:
     min-complexity: 15
-  
-  # 代码行长度
+
   lll:
     line-length: 120
-  
-  # 函数长度
+
   funlen:
     lines: 60
     statements: 40
-  
-  # 包引入循环检测
+
   importas:
     alias:
       - pkg: k8s.io/api/core/v1
         alias: corev1
       - pkg: k8s.io/apimachinery/pkg/apis/meta/v1
         alias: metav1
-  
-  # 变量命名
-  varnamelen:
-    min-name-length: 2
-    max-distance: 5
-    ignore-type-assert-ok: true
-    ignore-map-index-ok: true
-    ignore-chan-recv-ok: true
-  
-  # 静态检查
+
   staticcheck:
     checks: ["all"]
-  
-  # 代码风格
+
   gofmt:
     simplify: true
-  
-  # import 排序
+
   gci:
     sections:
       - standard
       - default
       - prefix(github.com/kudig)
     custom-order: true
-  
-  # 标签对齐
+
   tagalign:
     order:
       - json
       - yaml
 
-# 启用哪些 linter
+  govet:
+    enable-all: true
+
+  revive:
+    rules:
+      - name: blank-imports
+      - name: context-as-argument
+      - name: dot-imports
+      - name: error-return
+      - name: error-strings
+      - name: error-naming
+      - name: exported
+      - name: increment-decrement
+      - name: var-naming
+      - name: package-comments
+      - name: range
+      - name: receiver-naming
+      - name: time-naming
+      - name: unexported-return
+      - name: indent-error-flow
+      - name: errorf
+      - name: empty-block
+      - name: superfluous-else
+      - name: unreachable-code
+      - name: redefines-builtin-id
+
 linters:
   enable:
     # 基础检查
-    - errcheck        # 检查未处理的错误
-    - gosimple        # 简化代码建议
-    - govet           # go vet 检查
-    - ineffassign     # 无效赋值检查
-    - staticcheck     # 静态分析
-    - typecheck       # 类型检查
-    - unused          # 未使用代码
-    
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+
     # 代码质量
-    - gocyclo         # 代码复杂度
-    - funlen          # 函数长度
-    - lll             # 行长度
-    - nestif          # 嵌套 if
-    - goconst         # 常量提取建议
-    - gocritic        # 代码批评
-    - godot           # 注释句号检查
-    - gofmt           # 格式检查
-    - gofumpt         # 严格格式
-    - goimports       # import 检查
-    - gci             # import 排序
-    - misspell        # 拼写检查
-    - whitespace      # 空白字符
-    - wsl             # 空白行风格
-    
+    - gocyclo
+    - funlen
+    - lll
+    - nestif
+    - goconst
+    - gocritic
+    - godot
+    - gofmt
+    - gofumpt
+    - goimports
+    - gci
+    - misspell
+    - whitespace
+    - wsl
+
     # 安全相关
-    - gosec           # 安全检查
-    - bodyclose       # HTTP body 关闭
-    - noctx           # context 使用
-    
+    - gosec
+    - bodyclose
+    - noctx
+
     # 性能相关
-    - prealloc        # 预分配建议
-    
+    - prealloc
+
     # 风格相关
-    - revive          # 通用 linter
-    - stylecheck      # 风格检查
-    - tagalign        # 标签对齐
-    - nakedret        # 裸返回
-    - nilnil          # nil 检查
+    - revive
+    - stylecheck
+    - tagalign
+    - nakedret
+    - nilnil
+    - errorlint
+    - wrapcheck
+    - forcetypeassert
 
   disable:
-    # 暂时禁用的 linter（可根据需要开启）
-    - varnamelen      # 变量名长度（可能太严格）
-    - exhaustruct     # 结构体字段填充（可能太严格）
-    - paralleltest    # 并行测试（需要逐步改造）
-    - testpackage     # 测试包（需要逐步改造）
-    - wrapcheck       # 错误包装（需要逐步改造）
-    - errorlint       # 错误类型（需要逐步改造）
-    - forcetypeassert # 强制类型断言（需要逐步改造）
-    - gomnd           # 魔法数字（可能太严格）
+    # 暂时禁用
+    - varnamelen
+    - exhaustruct
+    - paralleltest
+    - testpackage
+    - gomnd
 
-# 问题配置
 issues:
-  # 排除使用建议
   exclude-use-default: false
-  
-  # 最大问题数
   max-issues-per-linter: 50
   max-same-issues: 3
-  
-  # 排除规则
+
+  exclude-dirs:
+    - vendor
+    - build
+    - reference
+    - operator
+
   exclude-rules:
     # 测试文件放宽
     - path: _test\.go
@@ -155,25 +153,26 @@ issues:
         - gocyclo
         - lll
         - gosec
-    
+        - wrapcheck
+        - errorlint
+        - forcetypeassert
+
     # main 包放宽
     - path: cmd/
       linters:
         - funlen
         - gocyclo
-    
+        - wrapcheck
+
     # 忽略特定的警告
     - text: 'Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*print(f|ln)?) is not checked'
       linters:
         - errcheck
-    
+
     # 忽略 defer 中的错误检查
     - text: "defer"
       linters:
         - errcheck
-  
-  # 新代码检查
+
   new: false
-  
-  # 修复配置
   fix: false

@@ -7,7 +7,8 @@ require (
 	github.com/charmbracelet/bubbletea v1.3.10
 	github.com/charmbracelet/lipgloss v1.1.0
 	github.com/cilium/ebpf v0.21.0
-	github.com/owenrumney/go-sarif/v2 v2.3.3
+	github.com/google/uuid v1.6.0
+	github.com/gorilla/mux v1.8.1
 	github.com/prometheus/client_golang v1.23.2
 	github.com/prometheus/client_model v0.6.2
 	github.com/sashabaranov/go-openai v1.41.2
@@ -16,6 +17,7 @@ require (
 	golang.org/x/sync v0.18.0
 	gopkg.in/yaml.v3 v3.0.1
 	k8s.io/api v0.35.0
+	k8s.io/apiextensions-apiserver v0.35.0
 	k8s.io/apimachinery v0.35.0
 	k8s.io/client-go v0.35.0
 	k8s.io/klog/v2 v2.140.0
@@ -42,7 +44,6 @@ require (
 	github.com/go-openapi/jsonreference v0.20.2 // indirect
 	github.com/go-openapi/swag v0.23.0 // indirect
 	github.com/google/gnostic-models v0.7.0 // indirect
-	github.com/google/uuid v1.6.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect

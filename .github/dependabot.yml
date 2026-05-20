@@ -1,65 +1,53 @@
-# Dependabot configuration
-# 自动依赖更新配置
-# 参考: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
-  # Go 模块依赖更新
-  - package-ecosystem: "gomod"
-    directory: "/v2-go"
+  # Go modules — v2-go
+  - package-ecosystem: gomod
+    directory: /v2-go
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "Asia/Shanghai"
+      interval: weekly
+      day: monday
+    reviewers:
+      - "@kudig/maintainers"
+    labels:
+      - dependencies
+      - go
+    commit-message:
+      prefix: "deps(go):"
     open-pull-requests-limit: 10
-    reviewers:
-      - "kudig/maintainers"
-    assignees:
-      - "kudig/maintainers"
-    commit-message:
-      prefix: "deps(go)"
-      include: "scope"
-    labels:
-      - "dependencies"
-      - "go"
-    # 忽略某些自动更新（可选）
-    # ignore:
-    #   - dependency-name: "k8s.io/*"
-    #     update-types: ["version-update:semver-major"]
 
-  # GitHub Actions 更新
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  # Go modules — operator
+  - package-ecosystem: gomod
+    directory: /v2-go/operator
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "Asia/Shanghai"
-    open-pull-requests-limit: 5
+      interval: weekly
+      day: monday
     reviewers:
-      - "kudig/maintainers"
-    commit-message:
-      prefix: "deps(ci)"
-      include: "scope"
+      - "@kudig/maintainers"
     labels:
-      - "dependencies"
-      - "ci"
+      - dependencies
+      - go
+      - operator
+    commit-message:
+      prefix: "deps(operator):"
 
-  # Docker 镜像更新
-  - package-ecosystem: "docker"
-    directory: "/v2-go"
+  # GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "Asia/Shanghai"
-    open-pull-requests-limit: 5
-    reviewers:
-      - "kudig/maintainers"
-    commit-message:
-      prefix: "deps(docker)"
-      include: "scope"
+      interval: weekly
     labels:
-      - "dependencies"
-      - "docker"
+      - dependencies
+      - ci
+    commit-message:
+      prefix: "ci:"
+
+  # Docker
+  - package-ecosystem: docker
+    directory: /v2-go
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+      - docker
+    commit-message:
+      prefix: "docker:"
