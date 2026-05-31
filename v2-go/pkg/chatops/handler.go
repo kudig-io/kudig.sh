@@ -232,17 +232,7 @@ func (h *Handler) handleService(ctx context.Context, namespace string) (string, 
 }
 
 func (h *Handler) handleHelp() string {
-	return `## ChatOps Commands
-
-| Command | Description |
-|---------|-------------|
-| ` + "`cluster`" + ` | Show cluster overview (nodes, status, versions) |
-| ` + "`deployment [namespace]`" + ` | List deployments (default namespace) |
-| ` + "`pod [namespace]`" + ` | List pods (default namespace) |
-| ` + "`node`" + ` | Show detailed node information |
-| ` + "`service [namespace]`" + ` | List services (default namespace) |
-| ` + "`help`" + ` | Show this help message |
-`
+	return RenderHelp(DefaultCommandCatalog)
 }
 
 // formatAge returns a human-readable duration string for a given creation time.
