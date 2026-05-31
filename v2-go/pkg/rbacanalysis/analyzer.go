@@ -4,6 +4,7 @@ package rbacanalysis
 import (
 	"context"
 	"fmt"
+	"strings"
 	"time"
 
 	rbacv1 "k8s.io/api/rbac/v1"
@@ -13,11 +14,11 @@ import (
 
 // Analyzer performs RBAC analysis against a Kubernetes cluster.
 type Analyzer struct {
-	clientset *kubernetes.Clientset
+	clientset kubernetes.Interface
 }
 
 // NewAnalyzer creates a new RBAC Analyzer.
-func NewAnalyzer(clientset *kubernetes.Clientset) *Analyzer {
+func NewAnalyzer(clientset kubernetes.Interface) *Analyzer {
 	return &Analyzer{clientset: clientset}
 }
 
@@ -40,14 +41,15 @@ type RoleBindingInfo struct {
 
 // RBACAnalysis holds the result of a full RBAC analysis.
 type RBACAnalysis struct {
-	TotalRoles          int                              `json:"total_roles"`
-	TotalClusterRoles   int                              `json:"total_cluster_roles"`
-	TotalBindings       int                              `json:"total_bindings"`
-	TotalClusterBindings int                             `json:"total_cluster_bindings"`
-	RolesByNamespace    map[string][]string              `json:"roles_by_namespace"`
-	BindingsBySubject   map[string][]SubjectBinding      `json:"bindings_by_subject"`
-	BindingsByRole      map[string][]RoleBindingInfo     `json:"bindings_by_role"`
-	Timestamp           time.Time                        `json:"timestamp"`
+	TotalRoles           int                          `json:"total_roles"`
+	TotalClusterRoles    int                          `json:"total_cluster_roles"`
+	TotalBindings        int                          `json:"total_bindings"`
+	TotalClusterBindings int                          `json:"total_cluster_bindings"`
+	RolesByNamespace     map[string][]string          `json:"roles_by_namespace"`
+	ClusterRolesByPrefix map[string][]string          `json:"cluster_roles_by_prefix"`
+	BindingsBySubject    map[string][]SubjectBinding  `json:"bindings_by_subject"`
+	BindingsByRole       map[string][]RoleBindingInfo `json:"bindings_by_role"`
+	Timestamp            time.Time                    `json:"timestamp"`
 }
 
 // ListRoles returns all Roles in the given namespace.
@@ -97,6 +99,7 @@ func (a *Analyzer) AnalyzeRBAC(ctx context.Context) (*RBACAnalysis, error) {
 		TotalBindings:        len(roleBindings.Items),
 		TotalClusterBindings: len(clusterRoleBindings.Items),
 		RolesByNamespace:     make(map[string][]string),
+		ClusterRolesByPrefix: make(map[string][]string),
 		BindingsBySubject:    make(map[string][]SubjectBinding),
 		BindingsByRole:       make(map[string][]RoleBindingInfo),
 		Timestamp:            time.Now(),
@@ -105,6 +108,12 @@ func (a *Analyzer) AnalyzeRBAC(ctx context.Context) (*RBACAnalysis, error) {
 	// Index roles by namespace.
 	for _, r := range roles {
 		analysis.RolesByNamespace[r.Namespace] = append(analysis.RolesByNamespace[r.Namespace], r.Name)
+	}
+
+	// Index cluster roles by name prefix (supports both ':' and '-' delimiters).
+	for _, cr := range clusterRoles {
+		prefix := strings.SplitN(strings.SplitN(cr.Name, ":", 2)[0], "-", 2)[0]
+		analysis.ClusterRolesByPrefix[prefix] = append(analysis.ClusterRolesByPrefix[prefix], cr.Name)
 	}
 
 	// Process namespace-scoped RoleBindings.
