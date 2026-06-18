@@ -31,7 +31,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
 RUN mkdir -p /app/rules-out && cp /app/rules/*.yaml /app/rules-out/ 2>/dev/null || true
 
 # Runtime stage — minimal distroless-style image
-FROM alpine:3.21
+FROM alpine:3.24
 
 WORKDIR /app
 
