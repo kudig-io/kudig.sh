@@ -28,7 +28,7 @@ jobs:
           
       - name: 上传 ShellCheck 报告
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: shellcheck-report
           path: shellcheck.log
@@ -282,7 +282,7 @@ jobs:
             });
       
       - name: 上传质量报告
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: quality-summary
           path: quality-summary.md
@@ -386,7 +386,7 @@ jobs:
           syft scan dir:. -o cyclonedx-json=../sbom-go.cyclonedx.json
       
       - name: 上传 SBOM 产物
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: sbom-reports
           path: |
