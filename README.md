@@ -1,4 +1,16 @@
-# kudig - Kubernetes 节点诊断工具
+# kudig — 已归并至 klaw
+
+> ⚠️ **本仓库所有功能已完整迁移至 [klaw](../klaw)，源代码已全部清除。**
+>
+> | kudig 组件 | klaw 目标位置 |
+> |-----------|--------------|
+> | 诊断核心 (20 pkg: types/analyzer/collector/rca/autofix/reporter/rules/cost/scanner/ai/history/notifier/tui/ebpf 等) | `klaw/internal/diag/` |
+> | CLI 入口 (cmd/) | `klaw/cmd/klaw/` (`klaw diag` 子命令) |
+> | K8s Operator (CRD + 控制器) | `klaw/operator/` |
+> | etcd 备份模块 | `klaw/modules/etcd-backup/` |
+> | v1-bash 诊断脚本 | 功能已被 Go 分析器取代 |
+>
+> klaw 现为唯一活跃仓库。所有功能可通过 `klaw diag` CLI 或 `GET /api/v1/diag/run` API 使用。
 
 > **快速选择**: 
 > - ✅ [v1.0 Bash 版本](v1-bash/) - **生产可用**，轻量级 Bash 脚本
